@@ -5,62 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b923344-7107-48be-bb40-76c8dc099423" name="변경" comment="Front">
-      <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/md5-checksums.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/sha1-checksums.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/dependencies-accessors/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileChanges/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HELP.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/CSS/FIndPW.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/CSS/Table.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/CSS/UserPage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/CSS/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/JS/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/Login/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/PW/FindPW.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/UserPage/UserPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CC/com/spring/ex/CcApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/CSS/FIndPW.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/CSS/Table.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/CSS/UserPage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/CSS/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/CSS/pagination.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/JS/Pagination.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/JS/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/Login/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/PW/FindPW.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/UserPage/UserPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/UserPage/test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CC/com/spring/ex/CcApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/CSS/Table.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/CSS/Table.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/UserPage/UserPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/UserPage/UserPage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,8 +127,16 @@
       <workItem from="1681781862229" duration="3146000" />
       <workItem from="1682060483023" duration="1478000" />
       <workItem from="1682155786754" duration="877000" />
-      <workItem from="1682309071621" duration="2605000" />
+      <workItem from="1682309071621" duration="5169000" />
     </task>
+    <task id="LOCAL-00001" summary="Front">
+      <created>1682314379880</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682314379880</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
