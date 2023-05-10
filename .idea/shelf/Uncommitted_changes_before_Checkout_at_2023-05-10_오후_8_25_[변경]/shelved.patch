@@ -1,0 +1,215 @@
+Index: build/resources/main/static/CSS/Table.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>table.type11 {\r\n  border-collapse: separate;\r\n  border-spacing: 1px;\r\n  text-align: center;\r\n  line-height: 1.5;\r\n  margin: 20px 10px;\r\n}\r\ntable.type11 th {\r\n  width: 155px;\r\n  padding: 10px;\r\n  font-weight: bold;\r\n  vertical-align: top;\r\n  color: #fff;\r\n  background: #ce4869 ;\r\n}\r\ntable.type11 td {\r\n  width: 155px;\r\n  padding: 10px;\r\n  vertical-align: top;\r\n  border-bottom: 1px solid #ccc;\r\n  background: #eee;\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build/resources/main/static/CSS/Table.css b/build/resources/main/static/CSS/Table.css
+--- a/build/resources/main/static/CSS/Table.css	(revision b9b1b9121c30693befb0f24493ec3c7c2cfaf182)
++++ b/build/resources/main/static/CSS/Table.css	(date 1683717916974)
+@@ -1,22 +1,29 @@
+-table.type11 {
++table.type02 {
+   border-collapse: separate;
+-  border-spacing: 1px;
++  border-spacing: 0;
+   text-align: center;
+   line-height: 1.5;
+-  margin: 20px 10px;
++  /*margin : 20px 10px;*/
++  border: 1px solid white;
++  background-color: #EDF2FF;
++  border-radius: 15px;
+ }
+-table.type11 th {
+-  width: 155px;
++table.type02 th {
++  width: 150px;
+   padding: 10px;
+   font-weight: bold;
+   vertical-align: top;
+-  color: #fff;
+-  background: #ce4869 ;
++  background: #eee;
++  border: 1px solid white;
++  background-color: #EDF2FF;
++  text-align: center;
+ }
+-table.type11 td {
+-  width: 155px;
++table.type02 td {
++  width: 350px;
+   padding: 10px;
+   vertical-align: top;
++  border-right: 1px solid #ccc;
+   border-bottom: 1px solid #ccc;
+-  background: #eee;
++  border: 1px solid white;
++  text-align: center;
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"6b923344-7107-48be-bb40-76c8dc099423\" name=\"변경\" comment=\"Front\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/static/UserPage/UserPage.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/static/UserPage/UserPage.html\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ExternalProjectsData\">\r\n    <projectState path=\"$PROJECT_DIR$\">\r\n      <ProjectState />\r\n    </projectState>\r\n  </component>\r\n  <component name=\"ExternalProjectsManager\">\r\n    <system id=\"GRADLE\">\r\n      <state>\r\n        <task path=\"$PROJECT_DIR$\">\r\n          <activation />\r\n        </task>\r\n        <projects_view>\r\n          <tree_state>\r\n            <expand>\r\n              <path>\r\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\r\n                <item name=\"CC\" type=\"f1a62948:ProjectNode\" />\r\n              </path>\r\n            </expand>\r\n            <select />\r\n          </tree_state>\r\n        </projects_view>\r\n      </state>\r\n    </system>\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"CSS File\" />\r\n        <option value=\"JavaScript File\" />\r\n        <option value=\"HTML File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"front\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/resources/static/UserPage/UserPage.html\" root0=\"FORCE_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2OJ8Bsmebh4u9m2W5nRhfUruOau\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,\r\n    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,\r\n    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,\r\n    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,\r\n    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;/Users/jms/Desktop/CC/build.gradle&quot;,\r\n    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.web.browsers&quot;,\r\n    &quot;spring.configuration.checksum&quot;: &quot;61fa75d3a6892d8f6809afa9d7a8c69a&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"$PROJECT_DIR$/src/main/resources/static/CSS\" />\r\n      <recent name=\"$PROJECT_DIR$/src/main/resources/static/Login\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"CcApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\">\r\n      <module name=\"CC.main\" />\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"CC.com.spring.ex.CcApplication\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"애플리케이션 수준\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration>$USER_HOME$/.subversion</configuration>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"디폴트 작업\">\r\n      <changelist id=\"6b923344-7107-48be-bb40-76c8dc099423\" name=\"변경\" comment=\"\" />\r\n      <created>1681267192519</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1681267192519</updated>\r\n      <workItem from=\"1681267193844\" duration=\"174000\" />\r\n      <workItem from=\"1681267386276\" duration=\"1441000\" />\r\n      <workItem from=\"1681268964705\" duration=\"2792000\" />\r\n      <workItem from=\"1681445724228\" duration=\"6457000\" />\r\n      <workItem from=\"1681565604507\" duration=\"1241000\" />\r\n      <workItem from=\"1681648461710\" duration=\"4324000\" />\r\n      <workItem from=\"1681703903625\" duration=\"2160000\" />\r\n      <workItem from=\"1681710471789\" duration=\"3430000\" />\r\n      <workItem from=\"1681781862229\" duration=\"3146000\" />\r\n      <workItem from=\"1682060483023\" duration=\"1478000\" />\r\n      <workItem from=\"1682155786754\" duration=\"877000\" />\r\n      <workItem from=\"1682309071621\" duration=\"6510000\" />\r\n      <workItem from=\"1682991010159\" duration=\"713000\" />\r\n      <workItem from=\"1682991893394\" duration=\"1030000\" />\r\n      <workItem from=\"1682993035905\" duration=\"1851000\" />\r\n      <workItem from=\"1683120136621\" duration=\"450000\" />\r\n      <workItem from=\"1683459694281\" duration=\"4294000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Front\">\r\n      <created>1682314379880</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682314379880</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Front\">\r\n      <created>1682317330330</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682317330330</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Front\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Front\" />\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision b9b1b9121c30693befb0f24493ec3c7c2cfaf182)
++++ b/.idea/workspace.xml	(date 1683717873796)
+@@ -5,8 +5,11 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="6b923344-7107-48be-bb40-76c8dc099423" name="변경" comment="Front">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/UserPage/UserPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/UserPage/UserPage.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -50,13 +53,20 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="front" />
++        <entry key="$PROJECT_DIR$" value="back" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="HighlightingSettingsPerFile">
+     <setting file="file://$PROJECT_DIR$/src/main/resources/static/UserPage/UserPage.html" root0="FORCE_HIGHLIGHTING" />
++  </component>
++  <component name="LogFilters">
++    <option name="FILTER_ERRORS" value="false" />
++    <option name="FILTER_WARNINGS" value="false" />
++    <option name="FILTER_INFO" value="true" />
++    <option name="FILTER_DEBUG" value="true" />
++    <option name="CUSTOM_FILTER" />
+   </component>
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+Index: build/resources/main/static/UserPage/UserPage.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <title>UserPage</title>\r\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"/static/CSS/UserPage.css\">\r\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"/static/CSS/Table.css\">\r\n</head>\r\n<body>\r\n<!-- Form-->\r\n<div class=\"form\">\r\n  <div class=\"form-toggle\"></div>\r\n  <div class=\"form-panel one\">\r\n    <div class=\"form-header\">\r\n      <h1>${User_Name}</h1>\r\n    </div>\r\n    <div class=\"form-content\">\r\n      <form>\r\n        <!-- Table -->\r\n        <table class=\"type11\">\r\n          <tbody>\r\n          <tr>\r\n            <td>1주차</th>\r\n            <td>내용</th>\r\n          </tr>\r\n          <tr>\r\n            <td>2주차</th>\r\n            <td>내용</th>\r\n          </tr>\r\n          <tr>\r\n            <td>3주차</th>\r\n            <td>내용</th>\r\n          </tr>\r\n          <tr>\r\n            <td>4주차</th>\r\n            <td>내용</th>\r\n          </tr>\r\n          <tr>\r\n            <td>5주차</th>\r\n            <td>내용</th>\r\n          </tr>\r\n          <tr>\r\n            <td>6주차</th>\r\n            <td>내용</th>\r\n          </tr>\r\n          <tr>\r\n            <td>7주차</th>\r\n            <td>내용</th>\r\n          </tr>\r\n          <tr>\r\n            <td>8주차</th>\r\n            <td>내용</th>\r\n          </tr>\r\n          </tbody>\r\n        </table>\r\n        <!-- Table End -->\r\n        <div class=\"form-group\">\r\n          <button type=\"submit\">UPDATE</button>\r\n        </div>\r\n      </form>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-panel two\">\r\n    <div class=\"form-header\">\r\n    </div>\r\n    <div class=\"form-content\">\r\n    </div>\r\n  </div>\r\n</div>\r\n</body>\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build/resources/main/static/UserPage/UserPage.html b/build/resources/main/static/UserPage/UserPage.html
+--- a/build/resources/main/static/UserPage/UserPage.html	(revision b9b1b9121c30693befb0f24493ec3c7c2cfaf182)
++++ b/build/resources/main/static/UserPage/UserPage.html	(date 1683717916996)
+@@ -5,6 +5,14 @@
+   <title>UserPage</title>
+   <link rel="stylesheet" type="text/css" href="/static/CSS/UserPage.css">
+   <link rel="stylesheet" type="text/css" href="/static/CSS/Table.css">
++  <!-- Test -->
++  <!-- Bootstrap cdn 설정 -->
++  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
++  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
++  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
++  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
++  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
++  <!-- Test End-->
+ </head>
+ <body>
+ <!-- Form-->
+@@ -17,43 +25,71 @@
+     <div class="form-content">
+       <form>
+         <!-- Table -->
+-        <table class="type11">
+-          <tbody>
++        <table class="type02">
+           <tr>
+-            <td>1주차</th>
+-            <td>내용</th>
++            <th scope="row" style="border-radius: 15px 0px 0px 0px">1주차</th>
++            <td></td>
+           </tr>
+           <tr>
+-            <td>2주차</th>
+-            <td>내용</th>
++            <th scope="row">2주차</th>
++            <td></td>
+           </tr>
+           <tr>
+-            <td>3주차</th>
+-            <td>내용</th>
+-          </tr>
++            <th scope="row">3주차</th>
++            <td></td>
++          </tr><tr>
+           <tr>
+-            <td>4주차</th>
+-            <td>내용</th>
++            <th scope="row">4주차</th>
++            <td></td>
+           </tr>
+           <tr>
+-            <td>5주차</th>
+-            <td>내용</th>
++            <th scope="row">5주차</th>
++            <td></td>
+           </tr>
+-          <tr>
+-            <td>6주차</th>
+-            <td>내용</th>
+-          </tr>
++          <th scope="row">6주차</th>
++          <td></td>
++        </tr>
+           <tr>
+-            <td>7주차</th>
+-            <td>내용</th>
++            <th scope="row">7주차</th>
++            <td></td>
+           </tr>
+           <tr>
+-            <td>8주차</th>
+-            <td>내용</th>
++            <th scope="row" style="border-radius: 0px 0px 0px 15px">8주차</th>
++            <td></td>
+           </tr>
+-          </tbody>
+         </table>
++        <div class="page">
++          <ul class="pagination modal">
++            <li><a href="#" class="first">처음 페이지</a></li>
++            <li><a href="#" class="active num">1</a></li>
++            <li><a href="#" class="num">2</a></li>
++            <li><a href="#" class="last">끝 페이지</a></li>
++          </ul>
++        </div>
+         <!-- Table End -->
++        <!-- paging
++        <ul class="pagination" style="margin-left: 100px">
++           li태그의 클래스에 disabled를 넣으면 마우스를 위에 올렸을 때 클릭 금지 마크가 나오고 클릭도 되지 않는다.
++           disabled의 의미는 앞의 페이지가 존재하지 않다는 뜻이다.
++          <li class="disabled">
++            <a href="#">
++              <span><</span>
++            </a>
++          </li>
++           li태그의 클래스에 active를 넣으면 색이 반전되고 클릭도 되지 않는다.
++           active의 의미는 현재 페이지의 의미이다.
++          <li class="active"><a href="#">1</a></li>
++          <li><a href="#">2</a></li>
++          <li><a href="#">3</a></li>
++          <li><a href="#">4</a></li>
++          <li><a href="#">5</a></li>
++          <li>
++            <a href="#">
++              <span>></span>
++            </a>
++          </li>
++        </ul>
++         paging End -->
+         <div class="form-group">
+           <button type="submit">UPDATE</button>
+         </div>
