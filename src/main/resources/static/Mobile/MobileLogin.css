@@ -3,6 +3,13 @@ html {
   height: 100%;
 }
 
+@media (max-width: 600px) {
+  .html {
+    width: 40%;
+    height: 40%;
+  }
+}
+
 body {
   background: linear-gradient(45deg, rgba(66, 183, 245, 0.8) 0%, rgba(66, 245, 189, 0.4) 100%);
   color: rgba(0, 0, 0, 0.6);
@@ -201,6 +208,7 @@ body {
   padding: 60px calc(10% + 60px) 60px 60px;
   transition: 0.3s ease;
   cursor: pointer;
+  transform : rotate(0deg);
 }
 
 .form-panel.two:before, .form-panel.two:after {
