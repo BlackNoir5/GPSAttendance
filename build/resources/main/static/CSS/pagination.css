@@ -23,7 +23,7 @@
   font-size: 14px;
   text-decoration: none;
   padding: 5px 12px;
-  color: #96a0ad;
+  color: black;
   line-height: 1.5;
 }
 
@@ -59,7 +59,7 @@
   border-radius: 100%;
 }
 
-.modal .num:hover {
+.modal .num:hover, .modal .num:active {
   background-color: #2e9cdf;
   cursor: pointer;
 }
