@@ -416,7 +416,7 @@ function binarize(data, width, height, returnInverted) {
     var greyscalePixels = new Matrix(width, height);
     for (var x = 0; x < width; x++) {
         for (var y = 0; y < height; y++) {
-            var r = data[((y * width + x) * 4) + 0];
+            var r = data[((y * width + x) * 4)];
             var g = data[((y * width + x) * 4) + 1];
             var b = data[((y * width + x) * 4) + 2];
             greyscalePixels.set(x, y, 0.2126 * r + 0.7152 * g + 0.0722 * b);

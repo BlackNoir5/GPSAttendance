@@ -4,62 +4,59 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b923344-7107-48be-bb40-76c8dc099423" name="변경" comment="QR연결 끝">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10__8_23___.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10__8_25___.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10__8_31___.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10_오후_8_23_[변경]/file-system.probe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10_오후_8_23_[변경]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10_오후_8_25_[변경]/buildOutputCleanup.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10_오후_8_25_[변경]/executionHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10_오후_8_25_[변경]/executionHistory.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10_오후_8_25_[변경]/fileHashes.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10_오후_8_25_[변경]/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10_오후_8_25_[변경]/outputFiles.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10_오후_8_25_[변경]/resourceHashesCache.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10_오후_8_25_[변경]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10_오후_8_31_[변경]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[변경]/buildOutputCleanup.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[변경]/executionHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[변경]/executionHistory.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[변경]/fileHashes.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[변경]/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[변경]/outputFiles.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[변경]/resourceHashesCache.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[변경]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase___.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/AdminPage/QRWrite.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/CSS/pagination.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/JS/Pagination.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/JS/jsQR.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/JS/timer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/UserPage/QRRead.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/UserPage/test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CC/com/spring/ex/controller/QRController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/AdminPage/QRWrite.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/JS/jsQR.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/JS/timer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/UserPage/QRRead.html" afterDir="false" />
+    <list default="true" id="6b923344-7107-48be-bb40-76c8dc099423" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/CC/com/spring/ex/command/TestCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CC/com/spring/ex/command/TestLoginCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CC/com/spring/ex/command/TestSignUpCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CC/com/spring/ex/controller/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CC/com/spring/ex/dao/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CC/com/spring/ex/dto/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/mapper/userDAO.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10__8_23___.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10__8_23___.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10__8_25___.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10__8_25___.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10__8_31___.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10__8_31___.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase___.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase___.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/AdminPage/QRWrite.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/AdminPage/QRWrite.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/static/CSS/Table.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/CSS/Table.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/CSS/UserPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/CSS/UserPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/CSS/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/CSS/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/CSS/pagination.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/CSS/pagination.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/JS/jsQR.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/JS/jsQR.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/UserPage/QRRead.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/UserPage/QRRead.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/static/UserPage/UserPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/UserPage/UserPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/UserPage/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/UserPage/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/QRController.class.uniqueId0" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/AdminPage/QRWrite.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/AdminPage/qrWrite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/CSS/Table.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/CSS/Table.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/CSS/UserPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/CSS/userPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/CSS/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/CSS/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/CSS/pagination.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/CSS/pagination.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/PW/FindPW.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/PW/findPW.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/UserPage/QRRead.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/UserPage/qrRead.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/UserPage/UserPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/UserPage/userPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/UserPage/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/UserPage/test.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -91,22 +88,35 @@
       <list>
         <option value="CSS File" />
         <option value="JavaScript File" />
-        <option value="AnnotationType" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Attendance" />
+        <entry key="$PROJECT_DIR$" value="fff645a585832faeee75873cd91da9f2546123f9" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="69654157-f3f9-42b2-819b-fa29a7220929" />
+        <option name="url" value="https://github.com/BlackNoir5/GPSAttendance.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/resources/static/UserPage/UserPage.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/static/UserPage/userPage.html" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -126,7 +136,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/kjskj/IdeaProjects/GPSAttendance/src/main/resources/static/UserPage",
+    "last_opened_file_path": "C:/Users/kjskj/IdeaProjects/GPSAttendance/src/main/java/CC/com/spring/ex",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -136,15 +146,18 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settings.ide.settings.web.browsers",
-    "spring.configuration.checksum": "61fa75d3a6892d8f6809afa9d7a8c69a"
+    "spring.configuration.checksum": "61fa75d3a6892d8f6809afa9d7a8c69a",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\kjskj\IdeaProjects\GPSAttendance\src\main\resources\static\UserPage" />
-      <recent name="C:\Users\kjskj\IdeaProjects\GPSAttendance\src\main\resources\static\JS" />
+      <recent name="C:\Users\kjskj\IdeaProjects\GPSAttendance\src\main\java\CC\com\spring\ex" />
+      <recent name="C:\Users\kjskj\IdeaProjects\GPSAttendance\src\main\resources\static\mapper" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kjskj\IdeaProjects\GPSAttendance\src\main\resources\static\CSS" />
+      <recent name="C:\Users\kjskj\IdeaProjects\GPSAttendance\src\main\resources\static\UserPage" />
       <recent name="$PROJECT_DIR$/src/main/resources/static/CSS" />
       <recent name="$PROJECT_DIR$/src/main/resources/static/Login" />
     </key>
@@ -159,6 +172,9 @@
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringBeansView">
+    <option name="beanDetailsProportion" value="0.3" />
+  </component>
   <component name="SvnConfiguration">
     <configuration>$USER_HOME$/.subversion</configuration>
   </component>
@@ -180,13 +196,9 @@
       <workItem from="1681781862229" duration="3146000" />
       <workItem from="1682060483023" duration="1478000" />
       <workItem from="1682155786754" duration="877000" />
-      <workItem from="1682309071621" duration="6510000" />
-      <workItem from="1682991010159" duration="713000" />
-      <workItem from="1682991893394" duration="1030000" />
-      <workItem from="1682993035905" duration="1851000" />
-      <workItem from="1683120136621" duration="450000" />
-      <workItem from="1683459694281" duration="4294000" />
-      <workItem from="1683718210488" duration="2115000" />
+      <workItem from="1682309071621" duration="5169000" />
+      <workItem from="1684127732948" duration="3620000" />
+      <workItem from="1684131572483" duration="5427000" />
     </task>
     <task id="LOCAL-00001" summary="Front">
       <created>1682314379880</created>
@@ -213,7 +225,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Back" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

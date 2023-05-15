@@ -19,6 +19,8 @@ dependencies {
 	implementation group: 'com.google.zxing', name: 'core', version: '3.4.1'
 	// https://mvnrepository.com/artifact/com.google.zxing/javase
 	implementation group: 'com.google.zxing', name: 'javase', version: '3.4.1'
+	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4'
 }
 
 tasks.named('test') {
