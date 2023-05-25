@@ -5,13 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b923344-7107-48be-bb40-76c8dc099423" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/CC/com/spring/ex/command/TestCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CC/com/spring/ex/command/TestLoginCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CC/com/spring/ex/command/TestSignUpCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CC/com/spring/ex/controller/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CC/com/spring/ex/dao/UserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CC/com/spring/ex/dto/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/mapper/userDAO.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/sha1-checksums.bin" afterDir="false" />
@@ -21,34 +14,23 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10__8_23___.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10__8_23___.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10__8_25___.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10__8_25___.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10__8_31___.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-05-10__8_31___.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase___.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase___.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/AdminPage/QRWrite.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/AdminPage/QRWrite.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/CSS/Table.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/CSS/Table.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/CSS/UserPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/CSS/UserPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/CSS/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/CSS/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/CSS/pagination.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/CSS/pagination.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/JS/jsQR.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/JS/jsQR.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/UserPage/QRRead.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/UserPage/QRRead.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/UserPage/UserPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/UserPage/UserPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/UserPage/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/UserPage/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/QRController.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/HomeController.class.uniqueId0" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CC/com/spring/ex/command/TestCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CC/com/spring/ex/command/TestLoginCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CC/com/spring/ex/command/TestSignUpCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CC/com/spring/ex/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CC/com/spring/ex/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CC/com/spring/ex/dao/UserDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CC/com/spring/ex/dto/UserDTO.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/AdminPage/QRWrite.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/AdminPage/qrWrite.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/CSS/Table.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/CSS/Table.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/CSS/UserPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/CSS/userPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/CSS/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/CSS/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/CSS/pagination.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/CSS/pagination.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/PW/FindPW.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/PW/findPW.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/UserPage/QRRead.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/UserPage/qrRead.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/UserPage/UserPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/UserPage/userPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/UserPage/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/UserPage/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/mapper/userDAO.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +127,7 @@
     "project.structure.last.edited": "프로젝트",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.web.browsers",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "spring.configuration.checksum": "61fa75d3a6892d8f6809afa9d7a8c69a",
     "vue.rearranger.settings.migration": "true"
   }

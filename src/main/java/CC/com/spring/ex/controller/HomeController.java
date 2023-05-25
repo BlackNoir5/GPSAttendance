@@ -1,6 +1,5 @@
 package CC.com.spring.ex.controller;
 
-import CC.com.spring.ex.command.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,11 +22,11 @@ public class HomeController {
     public String loginCheck(HttpServletRequest request, Model model) {
         System.out.println("===== Login Checking =====");
 
-        int uid = request.getParameter("uid");
+        String uid = request.getParameter("uid");
         String pw = request.getParameter("pw");
         System.out.println("===== ID : " + uid + ", PW : " + pw + " =====");
 
-        int result = CC.com.spring.ex.command.TestLoginCommand.execute(uid, pw);
+        int result = 0;
         if (1 == result) {
             System.out.println("===== Login Success =====");
             model.addAttribute("uid", uid);
