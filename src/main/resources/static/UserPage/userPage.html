@@ -1,100 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>UserPage</title>
-  <link rel="stylesheet" type="text/css" href="../CSS/userPage.css">
-  <link rel="stylesheet" type="text/css" href="../CSS/table.css">
-  <!-- Test -->
-  <!-- Bootstrap cdn 설정 -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <!-- Test End-->
+    <meta charset="UTF-8">
+    <title>UserPage</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/userPage.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/table.css">
+    <!-- Test -->
+    <!-- Bootstrap cdn 설정 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Test End-->
 </head>
 <body>
 <!-- Form-->
 <div class="form">
-  <div class="form-toggle"></div>
-  <div class="form-panel one">
-    <div class="form-header">
-      <h1>${User_Name}</h1>
-    </div>
-    <div class="form-content">
-      <form>
-        <!-- Table -->
-        <table class="type02">
-          <tr>
-            <th scope="row" style="border-radius: 15px 0px 0px 0px">1주차</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="row">2주차</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="row">3주차</th>
-            <td></td>
-          </tr>
-          <tr>
-          <tr>
-            <th scope="row">4주차</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="row">5주차</th>
-            <td></td>
-          </tr>
-          <th scope="row">6주차</th>
-          <td></td>
-          </tr>
-          <tr>
-            <th scope="row">7주차</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="row" style="border-radius: 0px 0px 0px 15px">8주차</th>
-            <td></td>
-          </tr>
-        </table>
-        <!-- Table End -->
-        <!--paging-->
-        <ul class="pagination" style="margin-left: 100px">
-          <!--li태그의 클래스에 disabled를 넣으면 마우스를 위에 올렸을 때 클릭 금지 마크가 나오고 클릭도 되지 않는다.
-          disabled의 의미는 앞의 페이지가 존재하지 않다는 뜻이다.-->
-          <li class="disabled">
-            <a href="#">
-              <span><</span>
-            </a>
-          </li>
-          <!-- li태그의 클래스에 active를 넣으면 색이 반전되고 클릭도 되지 않는다.
-           active의 의미는 현재 페이지의 의미이다.-->
-          <li class="active"><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
-          <li>
-            <a href="#">
-              <span>></span>
-            </a>
-          </li>
-        </ul>
-        <!--paging End-->
-        <div class="form-group">
-          <button type="submit">UPDATE</button>
+    <div class="form-toggle"></div>
+    <div class="form-panel one">
+        <div class="form-header">
+            <h1>${User_Name}</h1>
         </div>
-      </form>
+        <div class="form-content">
+            <form>
+                <!-- Table -->
+                <table class="type02">
+                    <tr>
+                        <th scope="row" style="border-radius: 15px 0px 0px 0px">1주차</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2주차</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3주차</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                    <tr>
+                        <th scope="row">4주차</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5주차</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6주차</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7주차</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="border-radius: 0px 0px 0px 15px">8주차</th>
+                        <td></td>
+                    </tr>
+                </table>
+                <!-- Table End -->
+                <!--paging-->
+                <ul class="pagination" style="margin-left: 100px">
+                    <!--li태그의 클래스에 disabled를 넣으면 마우스를 위에 올렸을 때 클릭 금지 마크가 나오고 클릭도 되지 않는다.
+                    disabled의 의미는 앞의 페이지가 존재하지 않다는 뜻이다.-->
+                    <li class="disabled">
+                        <a href="#">
+                            <span><</span>
+                        </a>
+                    </li>
+                    <!-- li태그의 클래스에 active를 넣으면 색이 반전되고 클릭도 되지 않는다.
+                     active의 의미는 현재 페이지의 의미이다.-->
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                        <a href="#">
+                            <span>></span>
+                        </a>
+                    </li>
+                </ul>
+                <!--paging End-->
+                <div class="form-group">
+                    <button type="submit">UPDATE</button>
+                </div>
+            </form>
+        </div>
     </div>
-  </div>
-  <div class="form-panel two">
-    <div class="form-header">
+    <div class="form-panel two">
+        <div class="form-header">
+        </div>
+        <div class="form-content">
+        </div>
     </div>
-    <div class="form-content">
-    </div>
-  </div>
 </div>
 </body>
 </html>
