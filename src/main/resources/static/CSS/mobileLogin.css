@@ -34,12 +34,13 @@ body {
   z-index: 15;
   position: relative;
   background: #FFFFFF;
-  width: 600px;
+  width: 350px;
   border-radius: 4px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  margin: 100px auto 10px;
+  margin: 185px auto 10px;
   overflow: hidden;
+  border-radius: 3%;
 }
 
 .form-toggle {
@@ -179,7 +180,7 @@ body {
 }
 
 .form-panel {
-  padding: 60px calc(5% + 60px) 60px 60px;
+  padding: 60px calc(5% + 10px) 60px 30px;
   box-sizing: border-box;
 }
 
@@ -200,8 +201,9 @@ body {
 .form-panel.two {
   z-index: 5;
   position: absolute;
-  top: 0;
-  left: 95%;
+  /*top: 0;*/
+  bottom: 425px;
+  /*left: 95%;*/
   background: #4285F4;
   width: 100%;
   min-height: 100%;
@@ -215,8 +217,8 @@ body {
   content: '';
   display: block;
   position: absolute;
-  top: 60px;
-  left: 1.5%;
+  top: 15px;
+  left: 15.5%;
   background: rgba(255, 255, 255, 0.2);
   height: 30px;
   width: 2px;
@@ -224,27 +226,27 @@ body {
 }
 
 .form-panel.two:after {
-  left: 3%;
+  left: 12%;
 }
 
-.form-panel.two:hover {
+/*.form-panel.two:hover {
   left: 93%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
+}*/
 
-.form-panel.two:hover:before, .form-panel.two:hover:after {
+/*.form-panel.two:hover:before, .form-panel.two:hover:after {
   opacity: 0;
-}
+}*/
 
-.form-panel.two.active {
+/*.form-panel.two.active {
   left: 10%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   cursor: default;
-}
+}*/
 
-.form-panel.two.active:before, .form-panel.two.active:after {
+/*.form-panel.two.active:before, .form-panel.two.active:after {
   opacity: 0;
-}
+}*/
 
 .form-header {
   margin: 0 0 40px;
