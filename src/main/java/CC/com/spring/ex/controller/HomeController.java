@@ -46,7 +46,7 @@ public class HomeController {
             System.out.println("===== Login Fail =====");
 
             System.out.println("===== Page Loading =====");
-            return "test";
+            return "UserPage/test";
         }
     }
 }
