@@ -22,6 +22,9 @@ dependencies {
 	// https://mvnrepository.com/artifact/com.google.zxing/javase
 	implementation group: 'com.google.zxing', name: 'javase', version: '3.4.1'
 	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client:2.7.4'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.7.11'
+
 
 }
 
