@@ -38,7 +38,7 @@ body {
   border-radius: 4px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  margin: 100px auto 10px;
+  margin: 185px auto 10px;
   overflow: hidden;
   border-radius: 3%;
 }
@@ -229,24 +229,24 @@ body {
   left: 12%;
 }
 
-.form-panel.two:hover {
+/*.form-panel.two:hover {
   left: 93%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
+}*/
 
-.form-panel.two:hover:before, .form-panel.two:hover:after {
+/*.form-panel.two:hover:before, .form-panel.two:hover:after {
   opacity: 0;
-}
+}*/
 
-.form-panel.two.active {
+/*.form-panel.two.active {
   left: 10%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   cursor: default;
-}
+}*/
 
-.form-panel.two.active:before, .form-panel.two.active:after {
+/*.form-panel.two.active:before, .form-panel.two.active:after {
   opacity: 0;
-}
+}*/
 
 .form-header {
   margin: 0 0 40px;
