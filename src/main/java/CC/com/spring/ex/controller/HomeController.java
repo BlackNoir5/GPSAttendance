@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 public class HomeController {
     @Autowired
     private UserService userService;
+
+    @RequestMapping(value = "/")
+    private String main() { return "index.html";}
     @RequestMapping(value = "/admin")
     private String admin() { return "Login/login.html"; }
 
