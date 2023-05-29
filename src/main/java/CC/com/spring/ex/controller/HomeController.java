@@ -13,13 +13,19 @@ import javax.servlet.http.HttpServletRequest;
 public class HomeController {
     @Autowired
     private UserService userService;
+    @RequestMapping(value = "/admin")
+    private String admin() { return "Login/login.html"; }
 
-    @RequestMapping(value = "/user")
-    private String userPage(){ return "UserPage/userPage.html";}
+    @RequestMapping(value = "/adminPW")
+    private String adminPW() { return "PW/findPW.html"; }
+
     @RequestMapping(value = "/mobile")
-    protected String test(){
-        return "UserPage/mobileLogin.html";
+    protected String mobile(){
+        return "Login/mobileLogin.html";
     }
+
+    @RequestMapping(value = "/mobilePW")
+    private String mobilePW() { return "PW/mobileFindPW.html"; }
 
     @RequestMapping(value = "/write")
     protected String write(){

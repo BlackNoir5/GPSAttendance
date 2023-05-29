@@ -3,13 +3,6 @@ html {
     height: 100%;
 }
 
-@media (max-width: 600px) {
-    .html {
-        width: 40%;
-        height: 40%;
-    }
-}
-
 body {
     background: linear-gradient(45deg, rgba(66, 183, 245, 0.8) 0%, rgba(66, 245, 189, 0.4) 100%);
     color: rgba(0, 0, 0, 0.6);
@@ -200,7 +193,7 @@ body {
 
 .form-panel.two {
     position: absolute;
-    bottom: 425px;
+    bottom: 630px;
     background: #4285F4;
     width: 100%;
 }
