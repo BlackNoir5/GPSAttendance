@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>CHECK ATTENDANCE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../static/CSS/mobileUserPage.css">
-    <link rel="stylesheet" type="text/css" href="../../static/CSS/mobiletable.css">
-    <link rel="stylesheet" type="text/css" href="../../static/CSS/mediaQuery/mobileUserQuery.css">
+    <link rel="stylesheet" type="text/css" href="CSS/mobileUserPage.css">
+    <link rel="stylesheet" type="text/css" href="CSS/mobiletable.css">
+    <link rel="stylesheet" type="text/css" href="CSS/mediaQuery/mobileUserQuery.css">
     <!-- Test -->
     <!-- Bootstrap cdn 설정 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -21,7 +21,7 @@
     <div class="form-toggle"></div>
     <div class="form-panel one">
         <div class="form-header">
-            <h1>${User_Name}</h1>
+            <h1 th:text="${session.name}"></h1>
         </div>
         <div class="form-content">
             <form>

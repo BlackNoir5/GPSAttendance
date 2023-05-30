@@ -6,20 +6,21 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Data
-@Entity(name = "user")
+@Entity(name = "attendance")
 @NoArgsConstructor
-public class UserEntity {
+public class AttendEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String uid;
+    private int aid;
+
+    @ManyToOne
+    @JoinColumn(name = "uid")
+    private UserEntity user;
 
     @Column
-    private String name;
+    private int week;
 
     @Column
-    private String pw;
-
-    @Column
-    private int authority;
+    private int attend;
 }

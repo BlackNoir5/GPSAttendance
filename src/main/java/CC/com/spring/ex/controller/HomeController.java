@@ -1,13 +1,14 @@
 package CC.com.spring.ex.controller;
 
+import CC.com.spring.ex.Entity.UserEntity;
 import CC.com.spring.ex.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class HomeController {
@@ -16,6 +17,7 @@ public class HomeController {
 
     @RequestMapping(value = "/")
     private String main() { return "index.html";}
+
     @RequestMapping(value = "/admin")
     private String admin() { return "Login/login.html"; }
 
@@ -35,27 +37,73 @@ public class HomeController {
         return "AdminPage/qrWrite.html";
     }
 
-    @RequestMapping("/loginCheck")
-    public String  loginCheck(HttpServletRequest request, Model model) {
+    @RequestMapping("/loginCheckA")
+    public String  loginCheckA(HttpServletRequest request, Model model) {
         System.out.println("===== Login Checking =====");
 
         String uid = request.getParameter("uid");
         String pw = request.getParameter("pw");
         System.out.println("===== ID : " + uid + ", PW : " + pw + " =====");
 
-        int result = userService.login(request);
-        if (1 == result) {
+        UserEntity result = userService.getUserById(uid);
+
+        if (pw.equals(result.getPw())) {
+            if (0 == result.getAuthority()){
+                return showMessageAndRedirect("관리자 로그인 실패", "/admin", model);
+            }
             System.out.println("===== Login Success =====");
-            userService.findName(request);
+            HttpSession session = request.getSession();
+            session.setAttribute("uid", result.getUid());
+            session.setAttribute("name", result.getName());
+            session.setAttribute("pw", result.getPw());
+            session.setAttribute("authority", result.getAuthority());
             model.addAttribute("uid", uid);
 
             System.out.println("===== Page Loading =====");
-            return "UserPage/userPage";
+
+            return "AdminPage/userPage";
+        } else {
+            System.out.println("===== Login Fail =====");
+            System.out.println("===== Page Loading =====");
+            return showMessageAndRedirect("로그인 실패", "/admin", model);
+        }
+    }
+
+    @RequestMapping("/loginCheckU")
+    public String  loginCheckU(HttpServletRequest request, Model model) {
+        System.out.println("===== Login Checking =====");
+
+        String uid = request.getParameter("uid");
+        String pw = request.getParameter("pw");
+        System.out.println("===== ID : " + uid + ", PW : " + pw + " =====");
+
+        UserEntity result = userService.getUserById(uid);
+
+        if (pw.equals(result.getPw())) {
+            if (1 == result.getAuthority()){
+                return showMessageAndRedirect("유저 로그인 실패", "/mobile", model);
+            }
+            System.out.println("===== Login Success =====");
+            HttpSession session = request.getSession();
+            session.setAttribute("uid", result.getUid());
+            session.setAttribute("name", result.getName());
+            session.setAttribute("pw", result.getPw());
+            session.setAttribute("authority", result.getAuthority());
+            model.addAttribute("uid", uid);
+
+            System.out.println("===== Page Loading =====");
+            return "UserPage/mobileUserPage";
         } else {
             System.out.println("===== Login Fail =====");
 
             System.out.println("===== Page Loading =====");
-            return "UserPage/test";
+            return showMessageAndRedirect("로그인 실패", "/mobile", model);
         }
+    }
+
+    private String showMessageAndRedirect(String message, String Uri, Model model) {
+        model.addAttribute("message", message);
+        model.addAttribute("Uri", Uri);
+        return "common/messageRedirect";
     }
 }
