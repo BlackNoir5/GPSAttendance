@@ -30,7 +30,11 @@
                     <table class="type02">
                         <tr th:each=" att : ${attend}">
                             <th scope="row" th:text="${att.getWeek()} + 주차"></th>
-                            <td th:text="${att.getAttend()} ? 'O' : 'X'"></td>
+                            <td th:switch= "${att.getAttend()}">
+                                <span th:case="null"></span>
+                                <span th:case="1">O</span>
+                                <span th:case="0">X</span>
+                            </td>
                         </tr>
                     </table>
                 </div>

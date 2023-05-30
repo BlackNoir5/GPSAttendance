@@ -22,5 +22,5 @@ public class AttendEntity {
     private int week;
 
     @Column
-    private int attend;
+    private Integer attend;
 }
