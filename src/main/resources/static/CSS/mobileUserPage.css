@@ -28,16 +28,21 @@ body {
     position: relative;
     background: #FFFFFF;
     width: 350px;
-    height: 680px;
     border-radius: 4px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
     margin: 185px auto 10px;
-    overflow: auto;
+    overflow: hidden;
     border-radius: 3%;
 }
 
-.form::-webkit-scrollbar{
+.scroll {
+    height: 340px;
+    border-radius: 15px;
+    overflow: auto;
+}
+
+.scroll::-webkit-scrollbar{
     display:none;
 }
 
@@ -86,7 +91,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 0 0 20px;
+    margin-top: 20px;
 }
 
 .form-group:last-child {
@@ -223,7 +228,7 @@ body {
 }*/
 
 .form-header {
-    margin: 0 0 40px;
+    margin: 0 0 20px;
 }
 
 .form-header h1 {

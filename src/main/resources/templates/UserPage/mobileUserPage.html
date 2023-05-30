@@ -26,47 +26,15 @@
         <div class="form-content">
             <form>
                 <!-- Table -->
-                <table class="type02">
-                    <tr th:each=" att : ${attend}">
-                        <th scope="row" th:text="${att.getWeek()} + 주차"></th>
-                        <td th:text="${att.getAttend()} ? 'O' : 'X'"></td>
-                    </tr>
-                </table>
+                <div class="scroll">
+                    <table class="type02">
+                        <tr th:each=" att : ${attend}">
+                            <th scope="row" th:text="${att.getWeek()} + 주차"></th>
+                            <td th:text="${att.getAttend()} ? 'O' : 'X'"></td>
+                        </tr>
+                    </table>
+                </div>
                 <!-- Table End -->
-                <!--paging-->
-                <nav style="text-align: center;">
-                    <!--표에 사용될 변수값 초기화 -->
-                    <ul class="pagination" th:with="start=${T(Math).floor(list.number/10)*10 + 1},
-                    last=(${start + 9 < list.totalPages ? start + 9 : list.totalPages})">
-                        <th:block th:with="
-                                prevAddr=@{/chart(page=${list.number})},
-                                nextAddr=@{/chart(page=${list.number + 2})}">
-<!--                             이전 페이지로 가기 버튼 -->
-                            <li>
-                                    th:class="${list.first} ? 'disabled'">
-                                <a th:href="${list.first} ? '#' :${prevAddr}"
-                                   aria-label="Previous">
-                                    <span aria-hidden="true">&lt;</span>
-                                </a>
-                            </li>
-                            <!--1,2,3,4,.. 등 페이지-->
-                            <li>
-                                th:each="page: ${#numbers.sequence(start, last)}"
-                                th:class="${page == list.number + 1} ? 'active'">
-                                <a th:text="${page}" th:href="@{/chart(page=${page})}"></a>
-                            </li>
-                            <!--다음 페이지로 -->
-                            <li>
-                                th:class="${list.last} ? 'disabled'">
-                                <a th:href="${list.last} ? '#' : ${nextAddr}"
-                                   aria-label="Next">
-                                    <span aria-hidden="true">&gt;</span>
-                                </a>
-                            </li>
-                        </th:block>
-                    </ul>
-                </nav>
-                <!--paging End-->
                 <div class="form-group">
                     <button type="submit">제안하기</button>
                 </div>
