@@ -1,0 +1,22 @@
+.head {
+    text-align: right;
+    margin: 15px 30px;
+}
+
+button {
+    color: white;
+    border: none;
+    background-color: unset;
+    font-size: 15px;
+}
+
+span {
+    color: white;
+    font-size: 15px;
+}
+
+#name {
+    position: relative;
+    top: 1px;
+    right: 5px;
+}

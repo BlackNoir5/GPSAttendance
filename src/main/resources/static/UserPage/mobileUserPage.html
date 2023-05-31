@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>UserPage</title>
-    <link rel="stylesheet" type="text/css" href="CSS/userPage.css">
-    <link rel="stylesheet" type="text/css" href="CSS/table.css">
+    <title>CHECK ATTENDANCE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../CSS/mobileUserPage.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/mobiletable.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/mediaQuery/mobileUserQuery.css">
     <!-- Test -->
     <!-- Bootstrap cdn 설정 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -15,14 +17,12 @@
     <!-- Test End-->
 </head>
 <body>
-<p th:text="${session.name}"></p>
 <div id="headers"></div>
-<!-- Form-->
 <div class="form">
     <div class="form-toggle"></div>
     <div class="form-panel one">
         <div class="form-header">
-            <h1>User</h1>
+            <h1>${User_Name}</h1>
         </div>
         <div class="form-content">
             <form>
@@ -64,7 +64,7 @@
                 </table>
                 <!-- Table End -->
                 <!--paging-->
-                <ul class="pagination" style="margin-left: 100px">
+                <ul class="pagination" style="margin-left: 30px">
                     <!--li태그의 클래스에 disabled를 넣으면 마우스를 위에 올렸을 때 클릭 금지 마크가 나오고 클릭도 되지 않는다.
                     disabled의 의미는 앞의 페이지가 존재하지 않다는 뜻이다.-->
                     <li class="disabled">
@@ -87,22 +87,24 @@
                 </ul>
                 <!--paging End-->
                 <div class="form-group">
-                    <button type="submit">UPDATE</button>
+                    <button type="submit">제안하기</button>
                 </div>
             </form>
         </div>
     </div>
     <div class="form-panel two">
-        <div class="form-header">
-        </div>
-        <div class="form-content">
-        </div>
+    </div>
+</div>
+<div class="back-panel">
+    <div class="header">
+        <p>ATTENDANCE</p>
     </div>
 </div>
 </body>
+<!-- Form-->
 <script>
     $(document).ready( function() {
-        $("#headers").load("../Header/header.html");
+        $("#headers").load("../Header/mobileHeader.html");
     });
 </script>
 </html>
