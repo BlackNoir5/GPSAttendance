@@ -15,6 +15,7 @@
     <!-- Test End-->
 </head>
 <body>
+<div id="headers"></div>
 <!-- Form-->
 <div class="form">
     <div class="form-toggle"></div>
@@ -98,4 +99,9 @@
     </div>
 </div>
 </body>
+<script>
+    $(document).ready( function() {
+        $("#headers").load("../Header/header.html");
+    });
+</script>
 </html>

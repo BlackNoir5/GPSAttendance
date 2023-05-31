@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>ATTENDANCE</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../CSS/mobileQRPage.css">
     <link rel="stylesheet" type="text/css" href="../CSS/mediaQuery/mobileQRQuery.css">
 </head>
 <body>
+<div id="headers"></div>
 <div class="form">
     <div class="form-toggle"></div>
     <div class="form-panel one">
@@ -40,4 +42,9 @@
 </div>
 </body>
 <!-- Form-->
+<script>
+    $(document).ready( function() {
+        $("#headers").load("../Header/mobileHeader.html");
+    });
+</script>
 </html>

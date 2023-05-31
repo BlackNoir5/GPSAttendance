@@ -13,6 +13,8 @@
         line-height: 1.6em;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        margin: 0;
+        padding: 0;
     }
 
     .overlay, .form-panel.one:before {
@@ -241,7 +243,7 @@
 
     .back-panel {
         position: relative;
-        left: 109px;
+        left: 117px;
         bottom: 677px;
         width: 350px;
         height: 300px;
@@ -277,6 +279,8 @@
         line-height: 1.6em;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        margin: 0;
+        padding: 0;
     }
 
     .overlay, .form-panel.one:before {
@@ -505,7 +509,7 @@
 
     .back-panel {
         position: relative;
-        left: 205px;
+        left: 213px;
         bottom: 675px;
         width: 350px;
         height: 300px;
@@ -540,6 +544,8 @@
         line-height: 1.6em;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        margin: 0;
+        padding: 0;
     }
 
     .overlay, .form-panel.one:before {
@@ -768,7 +774,7 @@
 
     .back-panel {
         position: relative;
-        left: 317px;
+        left: 325px;
         bottom: 675px;
         width: 350px;
         height: 300px;
