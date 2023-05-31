@@ -16,6 +16,8 @@ import java.util.List;
 
 @Controller
 public class JPAController {
+    @Autowired
+    private HttpSession session;
 
     @Autowired
     private UserService userService;
@@ -38,7 +40,6 @@ public class JPAController {
                 return showMessageAndRedirect("관리자 로그인 실패", "/admin", model);
             }
             System.out.println("===== Login Success =====");
-            HttpSession session = request.getSession();
             session.setAttribute("uid", result.getUid());
             session.setAttribute("name", result.getName());
             session.setAttribute("pw", result.getPw());
@@ -72,7 +73,6 @@ public class JPAController {
                 return mv;
             }
             System.out.println("===== Login Success =====");
-            HttpSession session = request.getSession();
             session.setAttribute("uid", result.getUid());
             session.setAttribute("name", result.getName());
             session.setAttribute("pw", result.getPw());
@@ -122,6 +122,15 @@ public class JPAController {
             System.out.println("===== Page Loading =====");
             return showMessageAndRedirect("존재하지 않는 아이디입니다.", "/mobilePW", model);
         }
+    }
+
+    @RequestMapping("logout")
+    public String logout() {
+        System.out.println("===== User LogOut =====");
+
+        session.invalidate();
+
+        return "index";
     }
 
     private String showMessageAndRedirect(String message, String Uri, Model model) {

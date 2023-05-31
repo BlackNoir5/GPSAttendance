@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="../CSS/header.css">
+  <link rel="stylesheet" type="text/css" href="CSS/header.css">
 </head>
 <body>
 <div class="head">
-  <form>
+  <form method="post" action="/logout">
     <div class="head_btn">
-      <span id="name">이름</span>
+      <span id="name" th:text="${session.name}"></span>
       <span> | </span>
       <button type="submit">Logout</button>
     </div>

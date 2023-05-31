@@ -28,4 +28,10 @@ public class HomeController {
     protected String write(){
         return "AdminPage/qrWrite.html";
     }
+
+    @RequestMapping(value = "/Ahead")
+    private String aHeader() { return "Header/header.html"; }
+
+    @RequestMapping(value = "/Header")
+    private String uHeader() { return "Header/mobileHeader.html"; }
 }
