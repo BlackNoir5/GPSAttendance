@@ -94,6 +94,36 @@ public class JPAController {
         return mv;
     }
 
+    @RequestMapping(value = "/pwSearchA")
+    private String pwSearchA(HttpServletRequest request, Model model){
+        String uid = request.getParameter("uid");
+
+        if (userService.existsById(uid)) {
+            UserEntity result = userService.getUserById(uid);
+            System.out.println("===== ID Loading =====");
+            return showMessageAndRedirect("패스워드는 " + result.getPw() + " 입니다.", "/admin", model);
+        } else {
+            System.out.println("===== Search Fail =====");
+            System.out.println("===== Page Loading =====");
+            return showMessageAndRedirect("존재하지 않는 아이디입니다.", "/adminPW", model);
+        }
+    }
+
+    @RequestMapping(value = "/pwSearchU")
+    private String pwSearchU(HttpServletRequest request, Model model){
+        String uid = request.getParameter("uid");
+
+        if (userService.existsById(uid)) {
+            UserEntity result = userService.getUserById(uid);
+            System.out.println("===== ID Loading =====");
+            return showMessageAndRedirect("패스워드는 " + result.getPw() + " 입니다.", "/mobile", model);
+        } else {
+            System.out.println("===== Search Fail =====");
+            System.out.println("===== Page Loading =====");
+            return showMessageAndRedirect("존재하지 않는 아이디입니다.", "/mobilePW", model);
+        }
+    }
+
     private String showMessageAndRedirect(String message, String Uri, Model model) {
         model.addAttribute("message", message);
         model.addAttribute("Uri", Uri);

@@ -14,4 +14,5 @@ public class UserService {
     private UserRepository userRepository;
 
     public UserEntity getUserById(String id){ return userRepository.getReferenceById(id); }
+    public Boolean existsById(String id){ return userRepository.existsById(id); }
 }
