@@ -25,7 +25,7 @@ public class QRController {
         String text = Integer.toString(code);
 
         //qr에 코드 입력
-        BitMatrix bitMatrix = qr.encode(text, BarcodeFormat.QR_CODE, 500, 500);
+        BitMatrix bitMatrix = qr.encode(text, BarcodeFormat.QR_CODE, 300, 300);
         MatrixToImageWriter.writeToStream(bitMatrix, "png", out);
 
         //이미지 출력

@@ -24,9 +24,9 @@ public class HomeController {
     @RequestMapping(value = "/mobilePW")
     private String mobilePW() { return "PW/mobileFindPW.html"; }
 
-    @RequestMapping(value = "/write")
+    @RequestMapping(value = "/QRPage")
     protected String write(){
-        return "AdminPage/qrWrite.html";
+        return "AdminPage/qrPage.html";
     }
 
     @RequestMapping(value = "/Ahead")
@@ -34,6 +34,9 @@ public class HomeController {
 
     @RequestMapping(value = "/Header")
     private String uHeader() { return "Header/mobileHeader.html"; }
+
+    @RequestMapping(value = "/Footer")
+    private String aFooter() { return "Footer/footer.html"; }
 
     @RequestMapping(value = "/mobileQR")
     private String mobileQR() { return "UserPage/mobileQRPage.html";}

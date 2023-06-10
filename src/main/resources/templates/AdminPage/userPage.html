@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>UserPage</title>
@@ -52,10 +52,14 @@
         </div>
     </div>
 </div>
+<div id="footer"></div>
 </body>
 <script>
     $(document).ready( function() {
-        $("#headers").load('/Ahead');
+        $("#headers").load("/Ahead");
+    });
+    $(document).ready( function() {
+        $("#footer").load("/Footer");
     });
 </script>
 </html>
