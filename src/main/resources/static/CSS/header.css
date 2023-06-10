@@ -10,6 +10,12 @@ button {
     font-size: 15px;
 }
 
+button > img {
+    width: 23px;
+    height: 30px;
+    margin-right: 10px;
+}
+
 span {
     color: white;
     font-size: 15px;
