@@ -2,12 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="/CSS/qrPage.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/qrPage.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <title>QRPage</title>
 </head>
 <body>
-<div id="headers"></div>
+<div class="head">
+    <form>
+        <div class="head_btn">
+            <button type="button" id="but"><img src="../img/Search.png" alt=""></button>
+            <span id="name">이름</span>
+            <span> | </span>
+            <button type="submit">Logout</button>
+        </div>
+    </form>
+</div>
 <!-- Form-->
 <div class="form">
     <div class="form-toggle"></div>
@@ -17,7 +26,7 @@
                 <div class="form-group">
                     <!--오기 아래로 QR코드 넣으면 될듯-->
                     <div class="qr">
-                        <iframe id = "QR" src="http://localhost:8080/qr" style="display:block; width: 300px; height: 300px"></iframe>
+                        <iframe id = "QR" src="http://localhost:8080/qr"></iframe>
                         <input id="Timer" type="text" value="" readonly/>
                     </div>
                 </div>
@@ -32,10 +41,5 @@
     </div>
 </div>
 </body>
-<script>
-    $(document).ready(function () {
-        $("#headers").load("/Ahead");
-    });
-</script>
-<script type="text/javascript" src="/JS/timer.js"></script>
+<script type="text/javascript" src="../JS/timer.js"></script>
 </html>
