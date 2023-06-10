@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../CSS/qrPage.css">
+    <link rel="stylesheet" type="text/css" href="/CSS/qrPage.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <title>QRPage</title>
 </head>
@@ -17,9 +17,9 @@
                 <div class="form-group">
                     <!--오기 아래로 QR코드 넣으면 될듯-->
                     <div class="qr">
-
+                        <iframe id = "QR" src="http://localhost:8080/qr" style="display:block; width: 300px; height: 300px"></iframe>
+                        <input id="Timer" type="text" value="" readonly/>
                     </div>
-                    <button type="submit">Attendance</button>
                 </div>
             </form>
         </div>
@@ -34,7 +34,8 @@
 </body>
 <script>
     $(document).ready(function () {
-        $("#headers").load("../Header/header.html");
+        $("#headers").load("/Ahead");
     });
 </script>
+<script type="text/javascript" src="/JS/timer.js"></script>
 </html>
