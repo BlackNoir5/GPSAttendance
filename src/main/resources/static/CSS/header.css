@@ -11,8 +11,9 @@ button {
 }
 
 button > img {
-  width: 30px;
-  height: 30px;
+    width: 23px;
+    height: 30px;
+    margin-right: 10px;
 }
 
 span {

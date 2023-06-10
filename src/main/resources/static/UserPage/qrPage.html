@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../CSS/qrPage.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <title>QRPage</title>
+</head>
+<body>
+<div id="headers"></div>
+<!-- Form-->
+<div class="form">
+    <div class="form-toggle"></div>
+    <div class="form-panel one">
+        <div class="form-content">
+            <form>
+                <div class="form-group">
+                    <!--오기 아래로 QR코드 넣으면 될듯-->
+                    <div class="qr">
+
+                    </div>
+                    <button type="submit">Attendance</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="form-panel two">
+        <div class="form-header">
+        </div>
+        <div class="form-content">
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    $(document).ready(function () {
+        $("#headers").load("../Header/header.html");
+    });
+</script>
+</html>
