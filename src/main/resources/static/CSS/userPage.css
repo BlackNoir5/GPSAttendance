@@ -33,6 +33,21 @@ body {
   box-sizing: border-box;
   margin: 110px auto 10px;
   overflow: hidden;
+  border-radius: 3%;
+}
+
+.scroll {
+  height: 340px;
+  border-radius: 15px;
+  overflow: auto;
+}
+
+.scroll::-webkit-scrollbar{
+  display:none;
+}
+
+.text {
+  color: black;
 }
 
 .form-toggle {

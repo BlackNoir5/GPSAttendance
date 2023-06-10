@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -15,4 +16,5 @@ public class UserService {
 
     public UserEntity getUserById(String id){ return userRepository.getReferenceById(id); }
     public Boolean existsById(String id){ return userRepository.existsById(id); }
+    public List<UserEntity> findByAuthority(int auth) { return userRepository.findByAuthority(auth); }
 }
