@@ -135,6 +135,20 @@ public class JPAController {
         }
     }
 
+    @RequestMapping("searchUser")
+    private ModelAndView searchUser(HttpServletRequest request, Model model){
+        String uid = request.getParameter("id");
+        ModelAndView mv;
+
+        System.out.println("===== Page Loading =====");
+        List<AttendEntity> attend = attendService.findByAttendEntityList(uid);
+        UserEntity usr = userService.getUserById(uid);
+        model.addAttribute("attend", attend);
+        model.addAttribute("name", usr.getName());
+        mv = new ModelAndView("AdminPage/userPage");
+        return mv;
+    }
+
     @RequestMapping("logout")
     public String logout() {
         System.out.println("===== User LogOut =====");
