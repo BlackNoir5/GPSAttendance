@@ -24,12 +24,15 @@
             <h1 th:text="${name}"></h1>
         </div>
         <div class="form-content">
-            <form method="post" action="">
+            <form method="post" action="/changeAttend">
+                <input type="hidden" name="uid" th:value="${id}">
+                <input type="hidden" name="week">
+                <input type="hidden" name="attend">
                 <!-- Table -->
                 <div class="scroll">
                     <table class="type02">
                         <tr th:each=" att : ${attend}" onclick="HighLightTR(this)">
-                            <th scope="row" th:text="${att.getWeek()} + 주차"><input type="hidden" th:text="${att.getAid()}"></th>
+                            <th scope="row" th:text="${att.getWeek()} + 주차"></th>
                             <td>
                                 <span class="text" th:if="${#strings.isEmpty(att.getAttend())}"></span>
                                 <span class="text" th:if="${att.getAttend() == 1}">O</span>
@@ -62,8 +65,11 @@
         $("#footer").load("/Footer");
     });
 
-    var BColor = '#EDF2FF';
-    var cColor = '#c9cc99';
+    let week = "";
+    let atte = "";
+
+    let BColor = '#EDF2FF';
+    let cColor = '#c9cc99';
     function HighLightTR(target) {
         var tbody = target.parentNode;
         var trs = tbody.getElementsByTagName('tr');
@@ -74,6 +80,17 @@
                 trs[i].style.backgroundColor = cColor;
             }
         }
+        let weektext = target.children[0].innerHTML;
+        week = weektext.slice(0, weektext.length - 2 );
+        atte = target.children[1].children[0].innerHTML;
+        $('input[name=week]').val(week);
+        if (atte == "O"){
+            $('input[name=attend]').val(0);
+        }else {
+            $('input[name=attend]').val(1);
+        }
+        console.log(week);
+        console.log(atte);
     }
 </script>
 </html>

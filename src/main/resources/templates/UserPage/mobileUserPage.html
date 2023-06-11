@@ -57,12 +57,14 @@
 </body>
 <!-- Form-->
 <script>
-    $(document).ready( function() {
+    $(document).ready(function () {
         $("#headers").load("/Header");
     });
 
-    var BColor = '#EDF2FF';
-    var cColor = '#c9cc99';
+    let week = "";
+
+    let BColor = '#EDF2FF';
+    let cColor = '#c9cc99';
     function HighLightTR(target) {
         var tbody = target.parentNode;
         var trs = tbody.getElementsByTagName('tr');
@@ -73,5 +75,9 @@
                 trs[i].style.backgroundColor = cColor;
             }
         }
-    }</script>
+        let weektext = target.children[0].innerHTML;
+        week = weektext.slice(0, weeks.length - 2 );
+        console.log(week);
+    }
+</script>
 </html>

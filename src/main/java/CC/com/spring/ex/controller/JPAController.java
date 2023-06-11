@@ -54,6 +54,7 @@ public class JPAController {
             List<UserEntity> users = userService.findByAuthority(0);
             List<AttendEntity> attend = attendService.findByAttendEntityList(users.get(0).getUid());
             model.addAttribute("attend", attend);
+            model.addAttribute("id", users.get(0).getUid());
             model.addAttribute("name", users.get(0).getName());
             mv = new ModelAndView("AdminPage/userPage");
         } else {
@@ -156,6 +157,31 @@ public class JPAController {
         session.invalidate();
 
         return "index";
+    }
+
+    @RequestMapping("/changeAttend")
+    private ModelAndView changeAttend(HttpServletRequest request, Model model) {
+
+        String uid = request.getParameter("uid");
+        int week = Integer.parseInt(request.getParameter("week"));
+        int attend = Integer.parseInt(request.getParameter("attend"));
+
+        ModelAndView mv;
+        int result = attendService.updateByUid(uid, week, attend);
+
+        if (result == 1){
+            UserEntity user = userService.getUserById(uid);
+            List<AttendEntity> attends = attendService.findByAttendEntityList(uid);
+            model.addAttribute("attend", attends);
+            model.addAttribute("id", uid);
+            model.addAttribute("name", user.getName());
+            mv = new ModelAndView("AdminPage/userPage");
+        }else {
+            model.addAttribute("message", "업데이트 실패");
+            model.addAttribute("Uri", "AdminPage/userPage");
+            mv = new ModelAndView("Common/messageRedirect");
+        }
+        return mv;
     }
 
     private String showMessageAndRedirect(String message, String Uri, Model model) {
