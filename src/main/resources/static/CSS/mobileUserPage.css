@@ -46,6 +46,10 @@ body {
     display:none;
 }
 
+.text {
+    color: black;
+}
+
 .form-toggle {
     z-index: 10;
     position: absolute;

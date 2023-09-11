@@ -13,4 +13,6 @@ public class AttendService {
     private AttendRepository attendRepository;
 
     public List<AttendEntity> findByAttendEntityList(String uid){return attendRepository.findByUser_UidOrderByWeek(uid);}
+
+    public int updateByUid(String uid, int week, int attend) { return attendRepository.updateByUid(uid, week, attend);}
 }
