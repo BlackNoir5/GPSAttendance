@@ -72,6 +72,33 @@ body {
 }
 
 .form-toggle.visible {
+  transform: translate(0, -25%) scale(0);
+  opacity: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-toggle:before, .form-toggle:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 4px;
+  background: #4285F4;
+  transform: translate(-50%, -50%);
+}
+
+.form-toggle:before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.form-toggle:after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.form-toggle.visible {
   transform: translate(0, -25%) scale(1);
   opacity: 1;
 }

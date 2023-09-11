@@ -6,12 +6,14 @@
         content="width=device-width, intial-scale=1, minimum-sacle=1, maximum-scale=1, user-scalable-no">
   <title>이의 신청</title>
   <link rel="stylesheet" type="text/css" href="../CSS/mobilesuggest.css">
-  <script type="text/javascript" src="/static/JS/login.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+          integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
 <div class="form">
   <div class="form-panel one">
-    <div class="form2">
+    <div class="form-top">
     </div>
     <div class="form-header">
       <h1>이의 신청</h1>
@@ -21,9 +23,12 @@
         <div class="form-group_1">
           <input type="textarea" id="username" name="username" required="required" placeholder="이의신청 내용"/>
         </div>
-        <div class="form-group_2">
-          <input type="file" id="file" name="file" required="required"/>
+        <div class="file_box">
+          <input type="file" id="input_file" class="file_hidden">
+          <label for="input_file"><img src="../img/file.png" alt="파일 찾기"></label>
+          <input class="upload_name" value="파일명.jpg/png" disabled="disabled"/>
         </div>
+        <!--<input type="file" id="file" name="file" required="required"/>-->
         <div class="form-group">
           <button type="submit">신청하기</button>
         </div>
@@ -31,5 +36,23 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  /* 파일명 가져오기 start */
+  var fileTarget = $('.file_box .file_hidden');
+
+  fileTarget.on('change', function () {
+    if (window.FileReader) {
+      // 파일명 추출
+      var filename = $(this)[0].files[0].name;
+    } else {
+      // Old IE 파일명 추출
+      var filename = $(this).val().split('/').pop().split('\\').pop();
+    }
+    ;
+
+    $(this).siblings('.upload_name').val(filename);
+  });
+  /* 파일명 가져오기 end */
+</script>
 </body>
 </html>
