@@ -160,6 +160,7 @@ body {
   line-height: inherit;
   text-transform: uppercase;
   cursor: pointer;
+  margin-top: 5px
 }
 
 .two .form-group button {

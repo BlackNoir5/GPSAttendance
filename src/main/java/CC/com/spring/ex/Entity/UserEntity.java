@@ -21,5 +21,8 @@ public class UserEntity {
     private String pw;
 
     @Column
+    private String dept;
+
+    @Column
     private int authority;
 }
