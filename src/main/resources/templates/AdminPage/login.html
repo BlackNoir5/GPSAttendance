@@ -5,7 +5,7 @@
   <meta name="viewport"
         content="width=device-width, intial-scale=1, minimum-sacle=1, maximum-scale=1, user-scalable-no">
   <title>Login</title>
-  <link rel="stylesheet" type="text/css" href="../../static/CSS/login.css">
+  <link rel="stylesheet" type="text/css" href="/CSS/login.css">
   <script type="text/javascript" src="/JS/login.js"></script>
 </head>
 <body>
@@ -15,19 +15,19 @@
       <h1>Account Login</h1>
     </div>
     <div class="form-content">
-      <form>
+      <form action="/loginCheckA" method="post">
         <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text" id="username" name="username" required="required"/>
+          <label for="uid">Username</label>
+          <input type="text" id="uid" name="uid" required="required"/>
         </div>
         <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" required="required"/>
+          <label for="pw">Password</label>
+          <input type="password" id="pw" name="pw" required="required"/>
         </div>
         <div class="form-group">
           <label class="form-remember">
             <input type="checkbox"/>다음에도 기억하기</label>
-          <a class="form-recovery" href="#">비밀번호 찾기</a>
+          <a class="form-recovery" href="/adminPW">비밀번호 찾기</a>
         </div>
         <div class="form-group">
           <button type="submit">로그인</button>
