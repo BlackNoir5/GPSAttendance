@@ -11,18 +11,18 @@ public class HomeController {
     private String main() { return "index.html";}
 
     @RequestMapping(value = "/admin")
-    private String admin() { return "Login/login.html"; }
+    private String admin() { return "AdminPage/login.html"; }
 
     @RequestMapping(value = "/adminPW")
-    private String adminPW() { return "PW/findPW.html"; }
+    private String adminPW() { return "AdminPage/findPW.html"; }
 
     @RequestMapping(value = "/mobile")
     protected String mobile(){
-        return "Login/mobileLogin.html";
+        return "UserPage/mobileLogin.html";
     }
 
     @RequestMapping(value = "/mobilePW")
-    private String mobilePW() { return "PW/mobileFindPW.html"; }
+    private String mobilePW() { return "UserPage/mobileFindPW.html"; }
 
     @RequestMapping(value = "/QRPage")
     protected String write(){
@@ -34,9 +34,6 @@ public class HomeController {
 
     @RequestMapping(value = "/Header")
     private String uHeader() { return "Header/mobileHeader.html"; }
-
-    @RequestMapping(value = "/Footer")
-    private String aFooter() { return "Footer/footer.html"; }
 
     @RequestMapping(value = "/mobileQR")
     private String mobileQR() { return "UserPage/mobileQRPage.html";}
