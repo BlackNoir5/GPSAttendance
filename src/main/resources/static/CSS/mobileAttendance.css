@@ -148,7 +148,7 @@ body {
   background: #397DED;
   width: 100%;
   height: 50px;
-  top: 0%;
+  top: 8%;
   right: 0%;
   border: none;
   border-radius: 15px 15px 0px 0px;
@@ -166,82 +166,18 @@ body {
   text-transform: uppercase;
 }
 
-/* 첨부파일 css */
-
-.file_box{
-  position:relative;
-  margin-top:30px;
-  margin-bottom:30px;
-  font-size:0;
-  border: none;
-  border-radius: 5px;
-  background-color: #EDEDED;
-}
-
-.file_box input[type="file"] {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip:rect(0,0,0,0);
-  border: 0;
-}
-
-.file_box label {
-  display: inline-block;
-  line-height: 0;
-  margin-left: 5px;
-  margin-right: 5px;
-  color: #999;
-  vertical-align: middle;
-  background-color: #fff;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 400;
-  color: #0fb5bf;
-  text-align:center;
-  box-sizing:border-box;
-  background:#fff;
-}
-
-/* 파일 이름 */
-.file_box .upload_name {
-  display: inline-block;
-  text-align: center;
-  width: calc(100% - 42px);
-  height:40px;
-  line-height:40px;
-  vertical-align: middle;
-  font-size: 14px;
-  font-weight: 500;
-  color: #a8a8a8;
-  background-color: #EDEDED;
-  border: none;
-}
-
-#file {
-  outline: none;
-  display: inline-block;
-  background: rgba(0, 0, 0, 0.1);
+/* top css */
+#top {
   width: 100%;
-  border: none;
-  border-radius: 10px;
-  box-sizing: border-box;
-  padding: 8px;
-  color: black;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: 500;
-  line-height: inherit;
-  transition: 0.3s ease;
+  background-color: #6197F1;
+  height: 60px;
+  padding: 18px;
 }
-
-.file_box img {
-  background-color: #EDEDED;
+#top a {
+  color: white;
+  font-size: 2em;
 }
-/* 첨부파일 css end */
+/* top css end */
 
 /* header css */
 .head_btn {
@@ -261,3 +197,14 @@ body {
   border: none;
 }
 /* header css end*/
+
+#loadingMessage {
+  text-align: center;
+  padding: 40px;
+  background-color: #eee;
+}
+
+#canvas {
+  width: 100%;
+  height: 300px;
+}

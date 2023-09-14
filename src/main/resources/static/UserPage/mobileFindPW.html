@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, intial-scale=1, minimum-sacle=1, maximum-scale=1, user-scalable-no">
-  <title>비밀번호 찾기</title>
+  <title>모바일 비밀번호 찾기</title>
   <link rel="stylesheet" type="text/css" href="../CSS/mobileFindPW.css">
   <script type="text/javascript" src="/JS/login.js"></script>
 </head>
@@ -15,10 +15,10 @@
       <h1>비밀번호 찾기</h1>
     </div>
     <div class="form-content">
-      <form>
+      <form action="/loginCheckU" method="post">
         <div class="form-group">
-          <label for="username">학 번</label>
-          <input type="text" id="username" name="username" required="required"/>
+          <label for="uid">학 번</label>
+          <input type="text" id="uid" name="uid" required="required"/>
         </div>
         <div class="form-group">
           <label for="password">생년월일</label>
