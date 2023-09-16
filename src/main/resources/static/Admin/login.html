@@ -14,7 +14,7 @@
       <h1>관리자 로그인</h1>
     </div>
     <div class="form-content">
-      <form method="post" action="">
+      <form action="/loginCheckA" method="post">
         <div class="form-group">
           <label for="username">학번</label>
           <input type="text" id="username" name="username" required="required"/>
@@ -26,7 +26,7 @@
         <div class="form-group">
           <label class="form-remember">
             <input type="checkbox"/>다음에도 기억하기</label>
-          <a class="form-recovery" href="#">비밀번호 찾기</a>
+          <a class="form-recovery" href="/adminPW">비밀번호 찾기</a>
         </div>
         <div class="form-group">
           <button type="submit">학생 출결 관리</button>
