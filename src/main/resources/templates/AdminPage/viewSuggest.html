@@ -1,52 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, intial-scale=1, minimum-sacle=1, maximum-scale=1, user-scalable-no">
-  <title>모바일 이의 신청</title>
-  <link rel="stylesheet" type="text/css" href="../CSS/mobilesuggest.css">
+  <title>이의신청 관리 보기</title>
+  <link rel="stylesheet" type="text/css" href="../CSS/viewSuggest.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
           integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
           crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
-<header>
-  <div id="head">
-    <form method="post" action="">
-      <div class="head_btn">
-        <span id="name">이름</span>
-        <span> | </span>
-        <button type="submit">Logout</button>
-      </div>
-    </form>
-  </div>
-</header>
 <body>
 <div class="form">
   <div class="form-panel one">
-    <div class="form-top">
-    </div>
     <div class="form-header">
-      <h1>이의 신청</h1>
+      <h1>이의신청 관리</h1>
     </div>
     <div class="form-content">
       <form method="post" action="">
         <div class="form-group_1">
-          <textarea id="username" name="username" required="required" placeholder="이의신청 내용"></textarea>
+          <textarea id="username" name="username" required="required">이의신청 내용</textarea>
         </div>
         <div class="file_box">
           <input type="file" id="input_file" class="file_hidden">
-          <label for="input_file"><img src="../../static/img/file.png" alt="파일 찾기"></label>
-          <input class="upload_name" value="파일명.jpg/png" disabled="disabled"/>
+          <label for="input_file" vlaue="disabled" disabled><img src="../img/file.png" alt="파일 찾기"></label>
+          <input class="upload_name" value="파일명.jpg/png"/>
         </div>
-        <!--<input type="file" id="file" name="file" required="required"/>-->
         <div class="form-group">
-          <button type="submit">신청하기</button>
+          <button type="submit">학생 찾기</button>
         </div>
       </form>
     </div>
   </div>
 </div>
+</body>
 <script type="text/javascript">
   /* 파일명 가져오기 start */
   var fileTarget = $('.file_box .file_hidden');
@@ -65,5 +52,4 @@
   });
   /* 파일명 가져오기 end */
 </script>
-</body>
 </html>

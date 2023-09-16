@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, intial-scale=1, minimum-sacle=1, maximum-scale=1, user-scalable-no">
+  <title>모바일 출결 확인</title>
+  <link rel="stylesheet" type="text/css" href="../CSS/mobileAttendance.css">
+  <script type="text/javascript" src="../JS/jsQR.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+          integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<header>
+  <div id="head">
+    <form method="post" action="">
+      <div class="head_btn">
+        <span id="name">이름</span>
+        <span> | </span>
+        <button type="submit">Logout</button>
+      </div>
+    </form>
+  </div>
+</header>
+<body>
+<div class="form">
+  <div id="top">
+    <a href="mobileUserPage.html">출결확인</a>
+  </div>
+  <div class="form-panel one">
+    <div class="form-top">
+    </div>
+    <div class="form-header">
+      <h1>출석</h1>
+    </div>
+    <div class="form-content">
+      <form method="post" action="">
+        <div id="loadingMessage">Unable to access video stream (please make sure you have a webcam enabled)</div>
+        <canvas id="canvas" hidden></canvas>
+        <script>
+          let video = document.createElement("video");
+          let canvasElement = document.getElementById("canvas");
+          let canvas = canvasElement.getContext("2d");
+          let loadingMessage = document.getElementById("loadingMessage");
+
+          function drawLine(begin, end, color) {
+            canvas.beginPath();
+            canvas.moveTo(begin.x, begin.y);
+            canvas.lineTo(end.x, end.y);
+            canvas.lineWidth = 4;
+            canvas.strokeStyle = color;
+            canvas.stroke();
+          }
+
+          // Use facingMode: environment to attemt to get the front camera on phones
+          navigator.mediaDevices.getUserMedia({video: {facingMode: "environment"}}).then(function (stream) {
+            video.srcObject = stream;
+            video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
+            video.play();
+            requestAnimationFrame(tick);
+          });
+
+          function tick() {
+            loadingMessage.innerText = "Loading video..."
+            if (video.readyState === video.HAVE_ENOUGH_DATA) {
+              loadingMessage.hidden = true;
+              canvasElement.hidden = false;
+
+              canvasElement.height = video.videoHeight;
+              canvasElement.width = video.videoWidth;
+              canvas.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);
+              let imageData = canvas.getImageData(0, 0, canvasElement.width, canvasElement.height);
+              let code = jsQR(imageData.data, imageData.width, imageData.height, {
+                inversionAttempts: "dontInvert",
+              });
+              if (code) {
+                drawLine(code.location.topLeftCorner, code.location.topRightCorner, "#FF3B58");
+                drawLine(code.location.topRightCorner, code.location.bottomRightCorner, "#FF3B58");
+                drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#FF3B58");
+                drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF3B58");
+                alert(code.data);
+              } else {
+              }
+            }
+            requestAnimationFrame(tick);
+          }
+        </script>
+        <div class="form-group">
+          <button type="submit">출 석</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

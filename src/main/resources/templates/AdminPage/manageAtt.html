@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, intial-scale=1, minimum-sacle=1, maximum-scale=1, user-scalable-no">
+  <title>이의신청 관리</title>
+  <link rel="stylesheet" type="text/css" href="../CSS/manageAtt.css">
+</head>
+<body>
+<div class="form">
+  <div class="form-panel one">
+    <div class="form-header">
+      <h1>이의신청 관리</h1>
+    </div>
+    <div class="form-content">
+      <form method="post" action="">
+        <!-- Table -->
+        <div class="scroll">
+          <table class="type02">
+            <tr th:each=" att : ${attend}" onclick="HighLightTR(this)">
+              <th scope="row" th:text="${att.getWeek()} + 주차"></th>
+              <td>
+                <span class="text" th:if="${#strings.isEmpty(att.getAttend())}"></span>
+                <span class="text" th:if="${att.getAttend() == 1}">O</span>
+                <span class="text" th:if="${att.getAttend() == 0}">X</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <!-- Table End -->
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+<script>
+  let week = "";
+  let atte = "";
+
+  let BColor = '#EDF2FF';
+  let cColor = '#c9cc99';
+
+  function HighLightTR(target) {
+    var tbody = target.parentNode;
+    var trs = tbody.getElementsByTagName('tr');
+    for (var i = 0; i < trs.length; i++) {
+      if (trs[i] != target) {
+        trs[i].style.backgroundColor = BColor;
+      } else {
+        trs[i].style.backgroundColor = cColor;
+      }
+    }
+    let weektext = target.children[0].innerHTML;
+    week = weektext.slice(0, weektext.length - 2);
+    atte = target.children[1].children[0].innerHTML;
+    $('input[name=week]').val(week);
+    if (atte == "O") {
+      $('input[name=attend]').val(0);
+    } else {
+      $('input[name=attend]').val(1);
+    }
+    console.log(week);
+    console.log(atte);
+  }
+</script>
+</html>
