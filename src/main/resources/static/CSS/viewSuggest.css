@@ -1,0 +1,163 @@
+* {
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #21D6CC;
+  font-size: 14px;
+  line-height: 1.6em;
+  height: 100%;
+}
+
+.form {
+  position: relative;
+  background: #FFFFFF;
+  width: 600px;
+  border-radius: 4px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  margin: 250px auto 10px;
+  overflow: hidden;
+}
+
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 0 20px;
+}
+
+.form-group:last-child {
+  margin: 0;
+}
+
+.form-group button {
+  outline: none;
+  background: #4285F4;
+  width: 100%;
+  border: 0;
+  border-radius: 4px;
+  padding: 12px 20px;
+  color: #FFFFFF;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 500;
+  line-height: inherit;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.form-panel {
+  padding: 60px calc(0% + 60px) 60px 60px;
+  box-sizing: border-box;
+}
+
+#username {
+  outline: none;
+  display: block;
+  background: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 8px;
+  color: black;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 500;
+  line-height: inherit;
+  resize: none;
+}
+
+.form-header {
+  margin: 0 0 40px;
+}
+
+.form-header h1 {
+  padding: 4px 0;
+  color: #4285F4;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* 첨부파일 css */
+
+.file_box{
+  position:relative;
+  margin-top:30px;
+  margin-bottom:30px;
+  font-size:0;
+  border: none;
+  border-radius: 5px;
+  background-color: #EDEDED;
+}
+
+.file_box input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip:rect(0,0,0,0);
+  border: 0;
+}
+
+.file_box label {
+  display: inline-block;
+  line-height: 0;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #999;
+  vertical-align: middle;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  color: #0fb5bf;
+  text-align:center;
+  box-sizing:border-box;
+  background:#fff;
+}
+
+/* 파일 이름 */
+.file_box .upload_name {
+  display: inline-block;
+  text-align: center;
+  width: calc(100% - 42px);
+  height:40px;
+  line-height:40px;
+  vertical-align: middle;
+  font-size: 14px;
+  font-weight: 500;
+  color: #a8a8a8;
+  background-color: #EDEDED;
+  border: none;
+}
+
+#file {
+  outline: none;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 8px;
+  color: black;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 500;
+  line-height: inherit;
+  transition: 0.3s ease;
+}
+
+.file_box img {
+  background-color: #EDEDED;
+}
+/* 첨부파일 css end */

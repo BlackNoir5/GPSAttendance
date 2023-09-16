@@ -1,65 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../CSS/qrPage.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <title>QRPage</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/CSS/qrPage.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <title>QRPage</title>
 </head>
 <body>
-<div class="head">
-    <form>
-        <div class="head_btn">
-            <div class="search">
-                <input type="text" placeholder=" ">
-                <div>
-                    <svg>
-                        <use xlink:href="#path"/>
-                    </svg>
-                </div>
-            </div>
-
-            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-                <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 28" id="path">
-                    <path d="M32.9418651,-20.6880772 C37.9418651,-20.6880772 40.9418651,-16.6880772 40.9418651,-12.6880772 C40.9418651,-8.68807717 37.9418651,-4.68807717 32.9418651,-4.68807717 C27.9418651,-4.68807717 24.9418651,-8.68807717 24.9418651,-12.6880772 C24.9418651,-16.6880772 27.9418651,-20.6880772 32.9418651,-20.6880772 L32.9418651,-29.870624 C32.9418651,-30.3676803 33.3448089,-30.770624 33.8418651,-30.770624 C34.08056,-30.770624 34.3094785,-30.6758029 34.4782612,-30.5070201 L141.371843,76.386562"
-                          transform="translate(83.156854, 22.171573) rotate(-225.000000) translate(-83.156854, -22.171573)"></path>
-                </symbol>
-            </svg>
-
-            <!-- dribbble -->
-            <a class="dribbble" href="https://dribbble.com/shots/5547403-Search-input-animation" target="_blank"><img
-                    src="https://dribbble.com/assets/logo-small-2x-9fe74d2ad7b25fba0f50168523c15fda4c35534f9ea0b1011179275383035439.png"
-                    alt=""></a>
-
-            <span id="name">이름</span>
-            <span> | </span>
-            <button type="submit">Logout</button>
-        </div>
-    </form>
-</div>
+<div class="head"></div>
 <!-- Form-->
 <div class="form">
-    <div class="form-toggle"></div>
-    <div class="form-panel one">
-        <div class="form-content">
-            <form>
-                <div class="form-group">
-                    <!--오기 아래로 QR코드 넣으면 될듯-->
-                    <div class="qr">
-                        <iframe id = "QR" src="http://localhost:8080/qr"></iframe>
-                        <input id="Timer" type="text" value="" readonly/>
-                    </div>
-                </div>
-            </form>
+  <div class="form-toggle"></div>
+  <div class="form-panel one">
+    <div class="form-content">
+      <form>
+        <div class="form-group">
+          <!--오기 아래로 QR코드 넣으면 될듯-->
+          <div class="qr">
+            <iframe id="QR" src="http://localhost:8080/qr" style="display:block; width: 300px; height: 300px"></iframe>
+            <input id="Timer" type="text" value="" readonly/>
+          </div>
         </div>
+      </form>
     </div>
-    <div class="form-panel two">
-        <div class="form-header">
-        </div>
-        <div class="form-content">
-        </div>
+  </div>
+  <div class="form-panel two">
+    <div class="form-header">
     </div>
+    <div class="form-content">
+    </div>
+  </div>
 </div>
 </body>
+<script>
+</script>
 <script type="text/javascript" src="../JS/timer.js"></script>
 </html>

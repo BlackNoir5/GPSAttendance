@@ -4,24 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, intial-scale=1, minimum-sacle=1, maximum-scale=1, user-scalable-no">
-  <title>Login</title>
+  <title>관리자 로그인</title>
   <link rel="stylesheet" type="text/css" href="../CSS/login.css">
-  <script type="text/javascript" src="/JS/login.js"></script>
 </head>
 <body>
 <div class="form">
   <div class="form-panel one">
     <div class="form-header">
-      <h1>Account Login</h1>
+      <h1>관리자 로그인</h1>
     </div>
     <div class="form-content">
-      <form>
+      <form method="post" action="">
         <div class="form-group">
-          <label for="username">Username</label>
+          <label for="username">학번</label>
           <input type="text" id="username" name="username" required="required"/>
         </div>
         <div class="form-group">
-          <label for="password">Password</label>
+          <label for="password">비밀번호</label>
           <input type="password" id="password" name="password" required="required"/>
         </div>
         <div class="form-group">
@@ -30,7 +29,8 @@
           <a class="form-recovery" href="#">비밀번호 찾기</a>
         </div>
         <div class="form-group">
-          <button type="submit">로그인</button>
+          <button type="submit">학생 출결 관리</button>
+          <button type="submit">QR</button>
         </div>
       </form>
     </div>
