@@ -13,6 +13,7 @@ public class HomeController {
     @RequestMapping(value = "/admin")
     private String admin() { return "AdminPage/login.html"; }
 
+
     @RequestMapping(value = "/adminPW")
     private String adminPW() { return "AdminPage/findPW.html"; }
 
@@ -26,7 +27,7 @@ public class HomeController {
 
     @RequestMapping(value = "/QRPage")
     protected String write(){
-        return "AdminPage/qrPage.html";
+        return "AdminPage/adminqrPage.html";
     }
 
     @RequestMapping(value = "/Ahead")

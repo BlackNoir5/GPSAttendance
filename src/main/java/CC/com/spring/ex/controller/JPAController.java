@@ -56,7 +56,7 @@ public class JPAController {
             model.addAttribute("attend", attend);
             model.addAttribute("id", users.get(0).getUid());
             model.addAttribute("name", users.get(0).getName());
-            mv = new ModelAndView("AdminPage/userPage");
+            mv = new ModelAndView("AdminPage/adminuserPage");
         } else {
             System.out.println("===== Login Fail =====");
             System.out.println("===== Page Loading =====");
@@ -94,7 +94,7 @@ public class JPAController {
             System.out.println("===== Page Loading =====");
             List<AttendEntity> attend = attendService.findByAttendEntityList(uid);
             model.addAttribute("attend", attend);
-            mv = new ModelAndView("UserPage/mobileUserPage");
+            mv = new ModelAndView("UserPage/mobileCheckAtt");
         } else {
             System.out.println("===== Login Fail =====");
 
@@ -146,7 +146,7 @@ public class JPAController {
         UserEntity usr = userService.getUserById(uid);
         model.addAttribute("attend", attend);
         model.addAttribute("name", usr.getName());
-        mv = new ModelAndView("AdminPage/userPage");
+        mv = new ModelAndView("AdminPage/adminuserPage");
         return mv;
     }
 
