@@ -12,9 +12,9 @@
 </head>
 <header>
   <div id="head">
-    <form method="post" action="">
+    <form method="post" action="/logout">
       <div class="head_btn">
-        <span id="name">이름</span>
+        <span id="name" th:text="${session.name}"></span>
         <span> | </span>
         <button type="submit">Logout</button>
       </div>
@@ -30,13 +30,16 @@
       <h1>이의 신청</h1>
     </div>
     <div class="form-content">
-      <form method="post" action="">
+      <form method="post" action="/suggest">
+        <input type="hidden" name="week" th:value="${week}">
+        <input type="hidden" name="uid" th:value="${session.uid}">
+        <input type="hidden" name="file" value="">
         <div class="form-group_1">
-          <textarea id="username" name="username" required="required" placeholder="이의신청 내용"></textarea>
+          <textarea id="suggest" name="suggest" required="required" placeholder="이의신청 내용"></textarea>
         </div>
         <div class="file_box">
           <input type="file" id="input_file" class="file_hidden">
-          <label for="input_file"><img src="../../static/img/file.png" alt="파일 찾기"></label>
+          <label for="input_file"><img src="/img/file.png" alt="파일 찾기"></label>
           <input class="upload_name" value="파일명.jpg/png" disabled="disabled"/>
         </div>
         <!--<input type="file" id="file" name="file" required="required"/>-->
@@ -62,6 +65,7 @@
     ;
 
     $(this).siblings('.upload_name').val(filename);
+    $('input[name=file]').attr('value', filename);
   });
   /* 파일명 가져오기 end */
 </script>

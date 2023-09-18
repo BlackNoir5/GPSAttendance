@@ -12,7 +12,7 @@
 </head>
 <header>
   <div id="head">
-    <form>
+    <form method="post" action="/logout">
       <div class="head_btn">
         <span id="name" th:text="${session.name}"></span>
         <span> | </span>
@@ -33,7 +33,8 @@
       <h1>출결 확인</h1>
     </div>
     <div class="form-content">
-      <form method="post" action="">
+      <form method="post" action="/suggestU">
+        <input type="hidden" name="week" value="">
         <table class="type02">
           <tr th:each=" att : ${attend}" onclick="HighLightTR(this)">
             <th scope="row" th:text="${att.getWeek()} + 주차"></th>
@@ -59,9 +60,9 @@
   let cColor = '#c9cc99';
 
   function HighLightTR(target) {
-    var tbody = target.parentNode;
-    var trs = tbody.getElementsByTagName('tr');
-    for (var i = 0; i < trs.length; i++) {
+    const tbody = target.parentNode;
+    const trs = tbody.getElementsByTagName('tr');
+    for (let i = 0; i < trs.length; i++) {
       if (trs[i] != target) {
         trs[i].style.backgroundColor = BColor;
       } else {
@@ -69,8 +70,8 @@
       }
     }
     let weektext = target.children[0].innerHTML;
-    week = weektext.slice(0, weeks.length - 2);
-    console.log(week);
+    week = weektext.slice(0, weektext.length - 2);
+    $('input[name=week]').val(week);
   }
 </script>
 </html>

@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
-public class JPAController {
+public class AdminController {
     @Autowired
     private HttpSession session;
 
@@ -24,6 +24,21 @@ public class JPAController {
 
     @Autowired
     private AttendService attendService;
+
+    private String showMessageAndRedirect(String message, String Uri, Model model) {
+        model.addAttribute("message", message);
+        model.addAttribute("Uri", Uri);
+        return "common/messageRedirect";
+    }
+
+    @RequestMapping("logout")
+    public String logout() {
+        System.out.println("===== User LogOut =====");
+
+        session.invalidate();
+
+        return "index";
+    }
 
     @RequestMapping("/loginCheckA")
     public ModelAndView loginCheckA(HttpServletRequest request, Model model) {
@@ -67,45 +82,6 @@ public class JPAController {
         return mv;
     }
 
-    @RequestMapping("/loginCheckU")
-    public ModelAndView loginCheckU(HttpServletRequest request, Model model) {
-        System.out.println("===== Login Checking =====");
-
-        String uid = request.getParameter("uid");
-        String pw = request.getParameter("pw");
-        System.out.println("===== ID : " + uid + ", PW : " + pw + " =====");
-
-        UserEntity result = userService.getUserById(uid);
-        ModelAndView mv;
-        if (pw.equals(result.getPw())) {
-            if (1 == result.getAuthority()){
-                model.addAttribute("message", "유저 로그인 실패");
-                model.addAttribute("Uri", "/mobile");
-                mv = new ModelAndView("Common/messageRedirect");
-                return mv;
-            }
-            System.out.println("===== Login Success =====");
-            session.setAttribute("uid", result.getUid());
-            session.setAttribute("name", result.getName());
-            session.setAttribute("pw", result.getPw());
-            session.setAttribute("authority", result.getAuthority());
-            model.addAttribute("uid", uid);
-
-            System.out.println("===== Page Loading =====");
-            List<AttendEntity> attend = attendService.findByAttendEntityList(uid);
-            model.addAttribute("attend", attend);
-            mv = new ModelAndView("UserPage/mobileCheckAtt");
-        } else {
-            System.out.println("===== Login Fail =====");
-
-            System.out.println("===== Page Loading =====");
-            model.addAttribute("message", "로그인 실패");
-            model.addAttribute("Uri", "/mobile");
-            mv = new ModelAndView("Common/messageRedirect");
-        }
-        return mv;
-    }
-
     @RequestMapping(value = "/pwSearchA")
     private String pwSearchA(HttpServletRequest request, Model model){
         String uid = request.getParameter("uid");
@@ -121,21 +97,6 @@ public class JPAController {
         }
     }
 
-    @RequestMapping(value = "/pwSearchU")
-    private String pwSearchU(HttpServletRequest request, Model model){
-        String uid = request.getParameter("uid");
-
-        if (userService.existsById(uid)) {
-            UserEntity result = userService.getUserById(uid);
-            System.out.println("===== ID Loading =====");
-            return showMessageAndRedirect("패스워드는 " + result.getPw() + " 입니다.", "/mobile", model);
-        } else {
-            System.out.println("===== Search Fail =====");
-            System.out.println("===== Page Loading =====");
-            return showMessageAndRedirect("존재하지 않는 아이디입니다.", "/mobilePW", model);
-        }
-    }
-
     @RequestMapping("searchUser")
     private ModelAndView searchUser(HttpServletRequest request, Model model){
         String uid = request.getParameter("id");
@@ -148,15 +109,6 @@ public class JPAController {
         model.addAttribute("name", usr.getName());
         mv = new ModelAndView("AdminPage/adminuserPage");
         return mv;
-    }
-
-    @RequestMapping("logout")
-    public String logout() {
-        System.out.println("===== User LogOut =====");
-
-        session.invalidate();
-
-        return "index";
     }
 
     @RequestMapping("/changeAttend")
@@ -184,9 +136,4 @@ public class JPAController {
         return mv;
     }
 
-    private String showMessageAndRedirect(String message, String Uri, Model model) {
-        model.addAttribute("message", message);
-        model.addAttribute("Uri", Uri);
-        return "common/messageRedirect";
-    }
 }
