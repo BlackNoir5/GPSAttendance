@@ -15,7 +15,7 @@
   <div id="head">
     <form method="post" action="">
       <div class="head_btn">
-        <span id="name">이름</span>
+        <span id="name" th:text="${session.name}">이름</span>
         <span> | </span>
         <button type="submit">Logout</button>
       </div>
@@ -25,7 +25,7 @@
 <body>
 <div class="form">
   <div id="top">
-    <a href="mobileUserPage.html">출결확인</a>
+    <a href="/userPage">출결확인</a>
   </div>
   <div class="form-panel one">
     <div class="form-top">

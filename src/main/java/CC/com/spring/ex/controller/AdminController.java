@@ -97,6 +97,37 @@ public class AdminController {
         }
     }
 
+    @RequestMapping("/qrWrite")
+    public ModelAndView qrWrite(HttpServletRequest request, Model model) {
+        System.out.println("===== Login Checking =====");
+
+        String uid = request.getParameter("uid");
+        String pw = request.getParameter("pw");
+        System.out.println("===== ID : " + uid + ", PW : " + pw + " =====");
+
+        UserEntity result = userService.getUserById(uid);
+        ModelAndView mv;
+
+        if (pw.equals(result.getPw())) {
+            if (0 == result.getAuthority()){
+                model.addAttribute("message", "관리자 로그인 실패");
+                model.addAttribute("Uri", "/admin");
+                mv = new ModelAndView("Common/messageRedirect");
+                return mv;
+            }
+            System.out.println("===== Login Success =====");
+            System.out.println("===== Page Loading =====");
+            mv = new ModelAndView("/qrWrite");
+        } else {
+            System.out.println("===== Login Fail =====");
+            System.out.println("===== Page Loading =====");
+            model.addAttribute("message", "로그인 실패");
+            model.addAttribute("Uri", "/admin");
+            mv = new ModelAndView("Common/messageRedirect");
+        }
+        return mv;
+    }
+
     @RequestMapping("searchUser")
     private ModelAndView searchUser(HttpServletRequest request, Model model){
         String uid = request.getParameter("id");

@@ -37,5 +37,5 @@ public class HomeController {
     private String uHeader() { return "Header/mobileHeader.html"; }
 
     @RequestMapping(value = "/mobileQR")
-    private String mobileQR() { return "UserPage/mobileQRPage.html";}
+    private String mobileQR() { return "UserPage/mobileAttendance.html";}
 }
