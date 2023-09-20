@@ -134,7 +134,7 @@ table {
 }
 
 table.type02 th {
-  width: 150px;
+  width: 450px;
   padding: 10px;
   font-weight: bold;
   vertical-align: top;
@@ -145,7 +145,7 @@ table.type02 th {
 }
 
 table.type02 td {
-  width: 350px;
+  width: 1250px;
   padding: 10px;
   vertical-align: top;
   border-right: 1px solid #ccc;
