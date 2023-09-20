@@ -30,11 +30,19 @@
         </div>
         <div class="form-group">
           <button type="submit">학생 출결 관리</button>
-          <button type="button" >QR</button>
+          <button type="button" onclick="qrPage()">QR</button>
         </div>
       </form>
     </div>
   </div>
 </div>
 </body>
+<script>
+  function qrPage() {
+    let uid = document.getElementById("uid").value;
+    let pw = document.getElementById("pw").value;
+
+    location.href='/qrPage.do?uid=' + uid + '&pw=' + pw;
+  }
+</script>
 </html>

@@ -97,7 +97,7 @@ public class AdminController {
         }
     }
 
-    @RequestMapping("/qrWrite")
+    @RequestMapping("/qrPage.do")
     public ModelAndView qrWrite(HttpServletRequest request, Model model) {
         System.out.println("===== Login Checking =====");
 
@@ -117,7 +117,7 @@ public class AdminController {
             }
             System.out.println("===== Login Success =====");
             System.out.println("===== Page Loading =====");
-            mv = new ModelAndView("/qrWrite");
+            mv = new ModelAndView("AdminPage/adminqrPage");
         } else {
             System.out.println("===== Login Fail =====");
             System.out.println("===== Page Loading =====");
@@ -158,7 +158,7 @@ public class AdminController {
             model.addAttribute("attend", attends);
             model.addAttribute("id", uid);
             model.addAttribute("name", user.getName());
-            mv = new ModelAndView("AdminPage/userPage");
+            mv = new ModelAndView("AdminPage/adminuserPage");
         }else {
             model.addAttribute("message", "업데이트 실패");
             model.addAttribute("Uri", "AdminPage/userPage");
