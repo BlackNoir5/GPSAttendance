@@ -20,7 +20,7 @@ body {
   border-radius: 4px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  margin: 250px auto 10px;
+  margin: 125px auto 60px;
   overflow: hidden;
 }
 
@@ -109,4 +109,115 @@ table.type02 td {
   border: 1px solid white;
   text-align: center;
 }
+
 /* 테이블 css end */
+
+/* 검색창 css  */
+
+.head {
+  display: flex;
+  justify-content: center;
+}
+
+.head_btn {
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+}
+
+.head_btn input {
+  height: 3vh;
+  padding: 13px;
+  position: relative;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.keywords {
+  z-index: 1;
+  background-color: white;
+  display: none;
+  position: absolute;
+  width: 25%;
+  top: 64px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.keywords li:hover,
+.keywords .selected {
+  cursor: pointer;
+  background-color: lightskyblue;
+  color: white;
+}
+
+.keywords .active {
+  background-color: lightskyblue;
+  color: white;
+}
+
+.keywords ul {
+  padding: 0;
+  margin: 0;
+}
+
+.keywords li {
+  list-style: none;
+  padding-left: 10px;
+}
+
+/* 검색창 css end */
+
+/* 오른쪽 상단 header css*/
+.head_top {
+  text-align: right;
+  display: inline-block;
+  width: 100%;
+  padding-right: 25px;
+}
+
+button {
+  position: relative;
+  color: white;
+  border: none;
+  background-color: unset;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button > img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+span {
+  position: relative;
+  bottom: 4px;
+  color: white;
+  font-size: 15px;
+}
+
+#name {
+  position: relative;
+  right: 1px;
+}
+
+#logout {
+  position: relative;
+  bottom: 4px;
+}
+
+/* 오른쪽 상단 header css end */
+
+/* footer css */
+
+#footer {
+  display: block;
+  text-align: right;
+  margin-right: 30px;
+}
+
+/* footer css end */

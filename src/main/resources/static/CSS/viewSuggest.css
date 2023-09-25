@@ -20,7 +20,7 @@ body {
   border-radius: 4px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  margin: 250px auto 10px;
+  margin: 165px auto 10px;
   overflow: hidden;
 }
 
@@ -88,11 +88,11 @@ body {
 
 /* 첨부파일 css */
 
-.file_box{
-  position:relative;
-  margin-top:30px;
-  margin-bottom:30px;
-  font-size:0;
+.file_box {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 0;
   border: none;
   border-radius: 5px;
   background-color: #EDEDED;
@@ -105,7 +105,7 @@ body {
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip:rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   border: 0;
   pointer-events: none;
 }
@@ -122,9 +122,9 @@ body {
   font-size: 14px;
   font-weight: 400;
   color: #0fb5bf;
-  text-align:center;
-  box-sizing:border-box;
-  background:#fff;
+  text-align: center;
+  box-sizing: border-box;
+  background: #fff;
   pointer-events: none;
 }
 
@@ -133,8 +133,8 @@ body {
   display: inline-block;
   text-align: center;
   width: calc(100% - 42px);
-  height:40px;
-  line-height:40px;
+  height: 40px;
+  line-height: 40px;
   vertical-align: middle;
   font-size: 14px;
   font-weight: 500;
@@ -165,4 +165,48 @@ body {
 .file_box img {
   background-color: #EDEDED;
 }
+
 /* 첨부파일 css end */
+
+/* 오른쪽 상단 header css*/
+.head_top {
+  text-align: right;
+  display: inline-block;
+  width: 100%;
+  padding-right: 25px;
+}
+
+button {
+  position: relative;
+  color: white;
+  border: none;
+  background-color: unset;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button > img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+span {
+  position: relative;
+  bottom: 4px;
+  color: white;
+  font-size: 15px;
+}
+
+#name {
+  position: relative;
+  right: 1px;
+}
+
+#logout {
+  position: relative;
+  bottom: 4px;
+}
+
+/* 오른쪽 상단 header css end */

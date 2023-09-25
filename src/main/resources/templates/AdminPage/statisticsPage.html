@@ -2,20 +2,28 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, intial-scale=1, minimum-sacle=1, maximum-scale=1, user-scalable-no">
+  <meta name="viewport" content="width=device-width, intial-scale=1.0">
   <title>통계</title>
   <link rel="stylesheet" type="text/css" href="../CSS/statisticsPage.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
           integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
           crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
-
-
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
 </head>
+<header>
+  <div class="head_top">
+    <form>
+      <div class="head_right">
+        <button type="button"><img src="../img/bell.png" alt=""></button>
+        <span id="name">이름</span>
+        <span> | </span>
+        <button type="submit" id="logout">Logout</button>
+      </div>
+    </form>
+  </div>
+</header>
 <body>
 <div class="form">
   <div class="form-panel one">
@@ -28,7 +36,6 @@
           <!-- 통계 차트 부분 -->
           <div id="chart">
             <div id="employee_piechart" style="width: 600px; height: 400px;"></div>
-            <!--<canvas id="myChart"></canvas>-->
           </div>
           <!-- 통게 차트 end -->
         </div>
@@ -41,46 +48,7 @@
 </div>
 </body>
 <script type="text/javascript">
-  /*var context = document
-    .getElementById('myChart')
-    .getContext('2d');
-  var myChart = new Chart(context, {
-    type: 'pie', // 차트의 형태
-    data: { // 차트에 들어갈 데이터
-      datasets: [
-        { //데이터
-          label: 'test1', //차트 제목
-          fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
-          data: [
-            21, 19 //x축 label에 대응되는 데이터 값
-          ],
-          backgroundColor: [
-            //색상
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-          ],
-          borderColor: [
-            //경계선 색상
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-          ],
-          borderWidth: 1 //경계선 굵기
-        }
-      ]
-    },
-    /!*options: {
-      scales: {
-        yAxes: [
-          {
-            ticks: {
-              beginAtZero: true
-            }
-          }
-        ]
-      }
-    }*!/
-  });*/
-
+  /* google chart api */
   google.load("visualization", "1", {packages: ["corechart"]});
   google.setOnLoadCallback(drawChart);
 
