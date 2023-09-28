@@ -20,8 +20,9 @@ body {
   transform: translate(-50%, -50%);
   background: #FFFFFF;
   width: 90%;
+  height: 80vh;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: scroll;
   border-radius: 15px;
 }
 
@@ -94,7 +95,7 @@ body {
   position: absolute;
   background: #397DED;
   width: 100%;
-  height: 50px;
+  height: 6vh;
   top: 7%;
   right: 0%;
   border: none;
@@ -102,7 +103,7 @@ body {
 }
 
 .form-header {
-  margin: 35px 0 20px;
+  margin: 20px 0 20px;
 }
 
 .form-header h1 {
@@ -116,6 +117,7 @@ body {
 /* 테이블 css */
 
 table.type02 {
+  height: 43vh;
   border-collapse: separate;
   border-spacing: 0;
   text-align: center;
@@ -159,8 +161,8 @@ table.type02 td {
 #top {
   width: 100%;
   background-color: #6197F1;
-  height: 60px;
-  padding: 18px;
+  height: 7vh;
+  padding: 16px;
 }
  #top a {
    color: white;
@@ -172,8 +174,9 @@ table.type02 td {
 .head_btn {
   display: inline-block;
   background-color: #397DED;
-  width: 100px;
+  width: 130px;
   height: 10%;
+  text-align: center;
   color: white;
   padding: 8px;
   float: right;
