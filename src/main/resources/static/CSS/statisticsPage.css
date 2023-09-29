@@ -146,12 +146,16 @@ span {
 #menu2 a {
   display: block;
   color: black;
-  list-style-type: none;
 }
 
 .M01 {
   width: 100%;
   background-color: #ECF3FF;
+}
+
+.M01 > li {
+  border-bottom: 3px solid #397DED;
+  border-left: 3px solid #397DED;
 }
 
 .M01 > li, .M02 > li {
@@ -172,7 +176,6 @@ span {
 .M02 {
   width: 100%;
   height: 50px;
-  background: black;
   position: absolute;
   top: 0;
   left: -9999px;
@@ -180,6 +183,17 @@ span {
 
 .M02 > li a:hover {
   display: block;
+}
+
+.M02 > li {
+  width: 100%;
+  height: 30px;
+  border: 1px solid black;
+  line-height: 30px;
+}
+
+#top {
+  border-radius: 15px 15px 0px 0px;
 }
 
 /* 세로형 드랍메뉴 end */
