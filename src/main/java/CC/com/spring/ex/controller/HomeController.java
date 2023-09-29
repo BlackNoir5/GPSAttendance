@@ -38,4 +38,7 @@ public class HomeController {
 
     @RequestMapping(value = "/mobileQR")
     private String mobileQR() { return "UserPage/mobileAttendance.html";}
+
+    @RequestMapping(value = "/test")
+    private String test() { return "UserPage/ttest.html";}
 }

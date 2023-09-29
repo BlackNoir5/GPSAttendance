@@ -45,23 +45,10 @@
   <div id="menu">
     <div id="menu2">
       <ul class="M01">
-        <li><a href="#">N주차</a>
+        <li><a href="#" th:text="${week + '주차'}">주차</a>
           <ul class="M02">
-            <li><a href="#">1주차</a></li>
-            <li><a href="#">1주차</a></li>
-            <li><a href="#">1주차</a></li>
-            <li><a href="#">1주차</a></li>
-            <li><a href="#">1주차</a></li>
-            <li><a href="#">1주차</a></li>
-            <li><a href="#">1주차</a></li>
-            <li><a href="#">1주차</a></li>
-            <li><a href="#">1주차</a></li>
-            <li><a href="#">1주차</a></li>
-            <li><a href="#">1주차</a></li>
-            <li><a href="#">1주차</a></li>
-            <li><a href="#">1주차</a></li>
-            <li><a href="#">1주차</a></li>
-            <li><a href="#">1주차</a></li>
+            <li th:each="num : ${#numbers.sequence(1,16)}"><a href="#" th:text="${num + '주차'}">주차</a></li>
+
           </ul>
         </li>
         <li><a href="#">5교시</a></li>
@@ -71,7 +58,7 @@
         <li><a href="#">9교시</a></li>
         <li><a href="#">MENU</a>
           <ul class="M02">
-            <li><a href="#">이의신청 관리</a></li>
+            <li><a href="/checkAttend">이의신청 관리</a></li>
             <li><a href="#">학생 찾기</a></li>
           </ul>
         </li>

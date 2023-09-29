@@ -44,8 +44,8 @@
               <th scope="row" th:text="${att.getWeek()} + 주차"></th>
               <td>
                 <span class="text" th:if="${#strings.isEmpty(att.getAttend())}"></span>
-                <span class="text" th:if="${att.getAttend() == 1}">O</span>
-                <span class="text" th:if="${att.getAttend() == 0}">X</span>
+                <span class="text" th:if="${att.getAttend() == 1}"></span>
+                <span class="text" th:if="${att.getAttend() == 0}"></span>
               </td>
             </tr>
           </table>
@@ -61,7 +61,7 @@
 </body>
 <footer>
   <div id="footer">
-    <a href=""><img src="../img/statistics.png"></a>
+    <a href="/"><img src="../img/statistics.png"></a>
   </div>
 </footer>
 <script>

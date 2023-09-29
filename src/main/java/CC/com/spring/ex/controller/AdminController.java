@@ -52,7 +52,7 @@ public class AdminController {
         ModelAndView mv;
 
         if (pw.equals(result.getPw())) {
-            if (0 == result.getAuthority()){
+            if (0 == result.getAuthority()) {
                 model.addAttribute("message", "관리자 로그인 실패");
                 model.addAttribute("Uri", "/admin");
                 mv = new ModelAndView("Common/messageRedirect");
@@ -63,15 +63,8 @@ public class AdminController {
             session.setAttribute("name", result.getName());
             session.setAttribute("pw", result.getPw());
             session.setAttribute("authority", result.getAuthority());
-            model.addAttribute("uid", uid);
-
-            System.out.println("===== Page Loading =====");
-            List<UserEntity> users = userService.findByAuthority(0);
-            List<AttendEntity> attend = attendService.findByAttendEntityList(users.get(0).getUid());
-            model.addAttribute("attend", attend);
-            model.addAttribute("id", users.get(0).getUid());
-            model.addAttribute("name", users.get(0).getName());
-            mv = new ModelAndView("AdminPage/adminuserPage");
+            model.addAttribute("Uri", "/stat");
+            mv = new ModelAndView("Common/messageRedirect");
         } else {
             System.out.println("===== Login Fail =====");
             System.out.println("===== Page Loading =====");
@@ -83,7 +76,7 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/pwSearchA")
-    private String pwSearchA(HttpServletRequest request, Model model){
+    private String pwSearchA(HttpServletRequest request, Model model) {
         String uid = request.getParameter("uid");
 
         if (userService.existsById(uid)) {
@@ -109,7 +102,7 @@ public class AdminController {
         ModelAndView mv;
 
         if (pw.equals(result.getPw())) {
-            if (0 == result.getAuthority()){
+            if (0 == result.getAuthority()) {
                 model.addAttribute("message", "관리자 로그인 실패");
                 model.addAttribute("Uri", "/admin");
                 mv = new ModelAndView("Common/messageRedirect");
@@ -128,8 +121,20 @@ public class AdminController {
         return mv;
     }
 
+    @RequestMapping("/checkAttend")
+    public ModelAndView checkAttend(HttpServletRequest request, Model model) {
+        System.out.println("===== Page Loading =====");
+        List<UserEntity> users = userService.findByAuthority(0);
+        List<AttendEntity> attend = attendService.findByAttendEntityList(users.get(0).getUid());
+        model.addAttribute("attend", attend);
+        model.addAttribute("id", users.get(0).getUid());
+        model.addAttribute("name", users.get(0).getName());
+        ModelAndView mv = new ModelAndView("AdminPage/adminuserPage");
+        return mv;
+    }
+
     @RequestMapping("searchUser")
-    private ModelAndView searchUser(HttpServletRequest request, Model model){
+    private ModelAndView searchUser(HttpServletRequest request, Model model) {
         String uid = request.getParameter("id");
         ModelAndView mv;
 
@@ -152,14 +157,14 @@ public class AdminController {
         ModelAndView mv;
         int result = attendService.updateByUid(uid, week, attend);
 
-        if (result == 1){
+        if (result == 1) {
             UserEntity user = userService.getUserById(uid);
             List<AttendEntity> attends = attendService.findByAttendEntityList(uid);
             model.addAttribute("attend", attends);
             model.addAttribute("id", uid);
             model.addAttribute("name", user.getName());
             mv = new ModelAndView("AdminPage/adminuserPage");
-        }else {
+        } else {
             model.addAttribute("message", "업데이트 실패");
             model.addAttribute("Uri", "AdminPage/userPage");
             mv = new ModelAndView("Common/messageRedirect");
@@ -167,4 +172,10 @@ public class AdminController {
         return mv;
     }
 
+    @RequestMapping("/stat")
+    private ModelAndView stat(){
+        ModelAndView mv;
+        mv = new ModelAndView("AdminPage/statisticsPage");
+        return mv;
+    }
 }
