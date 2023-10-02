@@ -45,10 +45,9 @@
   <div id="menu">
     <div id="menu2">
       <ul class="M01">
-        <li><a href="#" th:text="${week + '주차'}">주차</a>
+        <li><a th:text="${week + '주차'}">주차</a>
           <ul class="M02">
-            <li th:each="num : ${#numbers.sequence(1,16)}"><a href="#" th:text="${num + '주차'}">주차</a></li>
-
+            <li th:each="num : ${#numbers.sequence(1,16)}"><a th:href="@{/stat(week=${num})}" th:text="${num + '주차'}">주차</a></li>
           </ul>
         </li>
         <li><a href="#">5교시</a></li>
@@ -67,16 +66,19 @@
   </div>
 </div>
 </body>
-<script type="text/javascript">
+<script th:inline="javascript" type="text/javascript">
   window.onload = function () {
     pieChartDraw();
     document.getElementById('legend-div').innerHTML = window.pieChart.generateLegend();
   }
 
+  let Y = [[${attend}]];
+  let N = [[${all}]] - Y;
+
   let pieChartData = {
     labels: ['출석', '결석'],
     datasets: [{
-      data: [95, 12],
+      data: [Y, N],
       backgroundColor: ['rgb(255, 99, 132)', 'rgb(255, 205, 86)']
     }]
   };

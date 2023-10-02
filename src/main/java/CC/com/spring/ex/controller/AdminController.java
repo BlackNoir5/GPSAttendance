@@ -1,6 +1,7 @@
 package CC.com.spring.ex.controller;
 
 import CC.com.spring.ex.Entity.AttendEntity;
+import CC.com.spring.ex.Entity.StatEntity;
 import CC.com.spring.ex.Entity.UserEntity;
 import CC.com.spring.ex.Service.AttendService;
 import CC.com.spring.ex.Service.UserService;
@@ -173,8 +174,22 @@ public class AdminController {
     }
 
     @RequestMapping("/stat")
-    private ModelAndView stat(){
+    private ModelAndView stat(HttpServletRequest request, Model model){
+
+        int week = 1;
+        int time = 0;
+        if (request.getParameter("week") != null)
+         week = Integer.parseInt(request.getParameter("week"));
+        if (request.getParameter("time") != null)
+         time = Integer.parseInt(request.getParameter("time"));
         ModelAndView mv;
+
+        StatEntity result = attendService.statisticWeek(week);
+
+        model.addAttribute("attend", result.getAttend());
+        model.addAttribute("all", result.getAll());
+        model.addAttribute("week", week);
+
         mv = new ModelAndView("AdminPage/statisticsPage");
         return mv;
     }
