@@ -15,7 +15,7 @@ public class AttendEntity {
     private int aid;
 
     @ManyToOne
-    @JoinColumn(name = "uid")
+    @JoinColumn(name = "uid", referencedColumnName = "uid")
     private UserEntity user;
 
     @Column

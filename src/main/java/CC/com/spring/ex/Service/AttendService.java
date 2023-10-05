@@ -18,4 +18,6 @@ public class AttendService {
     public int updateByUid(String uid, int week, int attend) { return attendRepository.updateByUid(uid, week, attend);}
 
     public StatEntity statisticWeek(int week) { return attendRepository.statisticWeek(week);}
+
+    public StatEntity StatisticTime(int week, int times) { return attendRepository.statisticTime(week, times);}
 }

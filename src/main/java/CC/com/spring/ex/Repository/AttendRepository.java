@@ -20,4 +20,7 @@ public interface AttendRepository extends JpaRepository<AttendEntity, Integer> {
 
     @Query("SELECT SUM(CASE WHEN attend = 1  then 1 ELSE 0 END) AS attend, COUNT(*) AS all FROM attendance where week = ?1")
     StatEntity statisticWeek(int week);
+
+    @Query("SELECT SUM(CASE WHEN attend = 1  then 1 ELSE 0 END) AS attend, COUNT(*) AS all FROM attendance where week = ?1 and user.times.times = ?2")
+    StatEntity statisticTime(int week, int times);
 }

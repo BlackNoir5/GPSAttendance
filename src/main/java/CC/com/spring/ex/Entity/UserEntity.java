@@ -20,8 +20,9 @@ public class UserEntity {
     @Column
     private String pw;
 
-    @Column
-    private String dept;
+    @ManyToOne
+    @JoinColumn(name = "dept", referencedColumnName = "dept")
+    private TimeEntity times;
 
     @Column
     private int authority;

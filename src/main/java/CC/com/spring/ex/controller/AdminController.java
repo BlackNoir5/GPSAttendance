@@ -177,18 +177,29 @@ public class AdminController {
     private ModelAndView stat(HttpServletRequest request, Model model){
 
         int week = 1;
-        int time = 0;
-        if (request.getParameter("week") != null)
-         week = Integer.parseInt(request.getParameter("week"));
-        if (request.getParameter("time") != null)
-         time = Integer.parseInt(request.getParameter("time"));
+        int times = 0;
+        StatEntity result = null;
+
+        if (request.getParameter("week") != null){
+            week = Integer.parseInt(request.getParameter("week"));
+            result = attendService.statisticWeek(week);
+        }
+
+        if (request.getParameter("times") != null){
+            times = Integer.parseInt(request.getParameter("times"));
+            result = attendService.StatisticTime(week, times);
+        }
+
         ModelAndView mv;
 
-        StatEntity result = attendService.statisticWeek(week);
+        if (null == result) {
+            result = attendService.statisticWeek(week);
+        }
 
         model.addAttribute("attend", result.getAttend());
         model.addAttribute("all", result.getAll());
         model.addAttribute("week", week);
+        model.addAttribute("times", times);
 
         mv = new ModelAndView("AdminPage/statisticsPage");
         return mv;

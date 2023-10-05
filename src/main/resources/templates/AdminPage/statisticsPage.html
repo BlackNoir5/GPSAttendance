@@ -10,7 +10,7 @@
 </head>
 <header>
   <div class="head_top">
-    <form>
+    <form method="post" action="/logout">
       <div class="head_right">
         <button type="button"><img src="../img/bell.png" alt=""></button>
         <span id="name" th:text="${session.name}">이름</span>
@@ -50,12 +50,12 @@
             <li th:each="num : ${#numbers.sequence(1,16)}"><a th:href="@{/stat(week=${num})}" th:text="${num + '주차'}">주차</a></li>
           </ul>
         </li>
-        <li><a href="#">5교시</a></li>
-        <li><a href="#">6교시</a></li>
-        <li><a href="#">7교시</a></li>
-        <li><a href="#">8교시</a></li>
-        <li><a href="#">9교시</a></li>
-        <li><a href="#">MENU</a>
+        <li><a th:href="@{/stat(week=${week}, times=1)}">5교시</a></li>
+        <li><a th:href="@{/stat(week=${week}, times=2)}">6교시</a></li>
+        <li><a th:href="@{/stat(week=${week}, times=3)}">7교시</a></li>
+        <li><a th:href="@{/stat(week=${week}, times=4)}">8교시</a></li>
+        <li><a th:href="@{/stat(week=${week}, times=5)}">9교시</a></li>
+        <li><a>MENU</a>
           <ul class="M02">
             <li><a href="/checkAttend">이의신청 관리</a></li>
             <li><a href="#">학생 찾기</a></li>
