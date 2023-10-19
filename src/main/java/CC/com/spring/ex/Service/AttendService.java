@@ -1,6 +1,7 @@
 package CC.com.spring.ex.Service;
 
 import CC.com.spring.ex.Entity.AttendEntity;
+import CC.com.spring.ex.Entity.ExcelEntity;
 import CC.com.spring.ex.Entity.StatEntity;
 import CC.com.spring.ex.Repository.AttendRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,4 +21,6 @@ public class AttendService {
     public StatEntity statisticWeek(int week) { return attendRepository.statisticWeek(week);}
 
     public StatEntity StatisticTime(int week, int times) { return attendRepository.statisticTime(week, times);}
+
+    public List<ExcelEntity> excel() { return attendRepository.excel();}
 }

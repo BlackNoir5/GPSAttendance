@@ -1,10 +1,13 @@
 package CC.com.spring.ex.controller;
 
 import CC.com.spring.ex.Entity.AttendEntity;
+import CC.com.spring.ex.Entity.ExcelEntity;
 import CC.com.spring.ex.Entity.StatEntity;
 import CC.com.spring.ex.Entity.UserEntity;
 import CC.com.spring.ex.Service.AttendService;
 import CC.com.spring.ex.Service.UserService;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -134,7 +140,14 @@ public class AdminController {
         return mv;
     }
 
-    @RequestMapping("searchUser")
+    @RequestMapping("/viewSuggest")
+    public ModelAndView viewSuggest(HttpServletRequest request, Model model) {
+        System.out.println("===== Page Loading =====");
+        ModelAndView mv = new ModelAndView("AdminPage/manageAtt");
+        return mv;
+    }
+
+    @RequestMapping("/searchUser")
     private ModelAndView searchUser(HttpServletRequest request, Model model) {
         String uid = request.getParameter("id");
         ModelAndView mv;
@@ -203,5 +216,78 @@ public class AdminController {
 
         mv = new ModelAndView("AdminPage/statisticsPage");
         return mv;
+    }
+
+    @RequestMapping("/excel")
+    public void excelDownload(HttpServletResponse response) throws IOException {
+        Workbook wb = new XSSFWorkbook();
+        Sheet sheet = wb.createSheet("첫번째 시트");
+        Row row = null;
+        Cell cell = null;
+        int rowNum = 0;
+
+        // Header
+        List<String> rows = new ArrayList<String>();
+        rows.add("교시");
+        rows.add("학과");
+        rows.add("학번");
+        rows.add("이름");
+        for (int i=1; i<=16; i++){
+            rows.add(i+"주차");
+        }
+        rows.add("성적");
+
+        row = sheet.createRow(rowNum++);
+        for (int i=0; i<rows.size(); i++){
+            cell = row.createCell(i);
+            cell.setCellValue(rows.get(i));
+        }
+
+        // Body
+        List<ExcelEntity> excels = attendService.excel();
+
+        for (int i=0; i<excels.size(); i++) {
+            row = sheet.createRow(rowNum++);
+            ExcelEntity val = excels.get(i);
+            String[] value =
+                    {Integer.toString(val.getTimes()),
+                    val.getDept(),val.getUid(), val.getName(),
+                    val.getWeek1(), val.getWeek2(), val.getWeek3(),
+                    val.getWeek4(), val.getWeek5(), val.getWeek6(),
+                    val.getWeek7(), val.getWeek8(), val.getWeek9(),
+                    val.getWeek10(), val.getWeek11(), val.getWeek12(),
+                    val.getWeek13(), val.getWeek14(), val.getWeek15(),
+                    val.getWeek16(), val.getResult()};
+            for (int j=0; j<4; j++){
+                cell = row.createCell(j);
+                cell.setCellValue(value[j]);
+            }
+            for (int j=4; j<20; j++){
+                cell = row.createCell(j);
+                if (value[j].equals("1")) {
+                    cell.setCellValue("O");
+                }else {
+                    cell.setCellValue("X");
+                }
+            }
+            for (int j=20; j<value.length; j++){
+                cell = row.createCell(j);
+                if (Integer.parseInt(value[j]) < 3){
+                    cell.setCellValue("P");
+                }else {
+                    cell.setCellValue("NP");
+                }
+            }
+
+        }
+
+        // 컨텐츠 타입과 파일명 지정
+        response.setContentType("ms-vnd/excel");
+//        response.setHeader("Content-Disposition", "attachment;filename=example.xls");
+        response.setHeader("Content-Disposition", "attachment;filename=test.xlsx");
+
+        // Excel File Output
+        wb.write(response.getOutputStream());
+        wb.close();
     }
 }
