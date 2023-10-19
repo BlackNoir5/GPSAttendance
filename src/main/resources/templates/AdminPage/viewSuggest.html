@@ -31,14 +31,14 @@
     <div class="form-content">
       <form method="post" action="">
         <div class="form-group_1">
-          <textarea id="username" name="username" required="required">이의신청 한 내용 들어가는 곳</textarea>
+          <textarea id="username" name="username" required="required" th:text="${suggest.getSuggest}"></textarea>
         </div>
         <!-- 파일 첨부 기능 들어가야 할 곳-->
         <!-- 파일 첨부 못하게 클릭 막았음-->
         <div class="file_box">
           <input type="file" id="input_file" class="file_hidden">
           <label for="input_file" vlaue="disabled" disabled><img src="../img/file.png" alt="파일 찾기"></label>
-          <input class="upload_name" value="파일명.jpg/png" readonly/>
+          <input class="upload_name" th:value="${suggest.getFile()}" readonly/>
         </div>
         <!-- End -->
         <div class="form-group">

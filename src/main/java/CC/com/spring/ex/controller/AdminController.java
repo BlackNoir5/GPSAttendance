@@ -1,10 +1,9 @@
 package CC.com.spring.ex.controller;
 
-import CC.com.spring.ex.Entity.AttendEntity;
-import CC.com.spring.ex.Entity.ExcelEntity;
-import CC.com.spring.ex.Entity.StatEntity;
-import CC.com.spring.ex.Entity.UserEntity;
+import CC.com.spring.ex.Entity.*;
+import CC.com.spring.ex.Repository.SuggestRepository;
 import CC.com.spring.ex.Service.AttendService;
+import CC.com.spring.ex.Service.SuggestService;
 import CC.com.spring.ex.Service.UserService;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -31,6 +30,9 @@ public class AdminController {
 
     @Autowired
     private AttendService attendService;
+
+    @Autowired
+    private SuggestService suggestService;
 
     private String showMessageAndRedirect(String message, String Uri, Model model) {
         model.addAttribute("message", message);
@@ -140,10 +142,22 @@ public class AdminController {
         return mv;
     }
 
+    @RequestMapping("/manageSuggest")
+    public ModelAndView manageSuggest(HttpServletRequest request, Model model) {
+        System.out.println("===== Page Loading =====");
+        List<SuggestEntity> suggest = suggestService.findByProcess(0);
+        model.addAttribute("suggest", suggest);
+        ModelAndView mv = new ModelAndView("AdminPage/manageAtt");
+        return mv;
+    }
+
     @RequestMapping("/viewSuggest")
     public ModelAndView viewSuggest(HttpServletRequest request, Model model) {
         System.out.println("===== Page Loading =====");
-        ModelAndView mv = new ModelAndView("AdminPage/manageAtt");
+        int num = Integer.parseInt(request.getParameter("num"));
+        SuggestEntity suggest = suggestService.findByNum(num);
+        model.addAttribute("suggest", suggest);
+        ModelAndView mv = new ModelAndView("AdminPage/viewSuggest");
         return mv;
     }
 

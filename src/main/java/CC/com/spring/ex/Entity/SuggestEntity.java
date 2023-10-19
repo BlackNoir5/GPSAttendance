@@ -14,8 +14,9 @@ public class SuggestEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int num;
 
-    @Column
-    private String uid;
+    @ManyToOne
+    @JoinColumn(name = "uid", referencedColumnName = "uid")
+    private UserEntity user;
 
     @Column
     private int week;
@@ -26,11 +27,14 @@ public class SuggestEntity {
     @Column
     private String file;
 
+    @Column int process;
+
 
     public SuggestEntity( String uid, int week, String suggest, String file) {
-        this.uid = uid;
+        this.user.setUid(uid);
         this.week = week;
         this.suggest = suggest;
         this.file = file;
+        this.process = 0;
     }
 }
