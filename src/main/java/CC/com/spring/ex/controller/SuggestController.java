@@ -31,7 +31,7 @@ public class SuggestController {
 
         System.out.println(uid + week + suggest + file);
 
-        SuggestEntity entity = new SuggestEntity(uid, week, suggest, file);
+        SuggestEntity entity = new SuggestEntity(uid, week, suggest, file, 0);
 
         SuggestEntity result = suggestService.save(entity);
         if(null != result){

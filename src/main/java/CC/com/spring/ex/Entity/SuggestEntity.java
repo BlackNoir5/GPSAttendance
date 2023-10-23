@@ -27,14 +27,16 @@ public class SuggestEntity {
     @Column
     private String file;
 
-    @Column int process;
+    @Column
+    private int process;
 
 
-    public SuggestEntity( String uid, int week, String suggest, String file) {
-        this.user.setUid(uid);
+    public SuggestEntity(String uid, int week, String suggest, String file, int process) {
+        this.user = new UserEntity();
+        user.setUid(uid);
         this.week = week;
         this.suggest = suggest;
         this.file = file;
-        this.process = 0;
+        this.process = process;
     }
 }
