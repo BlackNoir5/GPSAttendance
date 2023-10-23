@@ -213,16 +213,12 @@ public class AdminController {
         int attendResult = attendService.updateByUid(uid, week, 1);
         if (attendResult == 1) {
             UserEntity user = userService.getUserById(uid);
-            List<AttendEntity> attends = attendService.findByAttendEntityList(uid);
-            model.addAttribute("attend", attends);
-            model.addAttribute("id", uid);
-            model.addAttribute("name", user.getName());
+            List<AttendEntity> attend = attendService.findByAttendEntityList(uid);
             int processResult = suggestService.updateProcess(1, num);
             if (1 == processResult) {
-                List<AttendEntity> attend = attendService.findByAttendEntityList(uid);
-                UserEntity usr = userService.getUserById(uid);
                 model.addAttribute("attend", attend);
-                model.addAttribute("name", usr.getName());
+                model.addAttribute("id", uid);
+                model.addAttribute("name", user.getName());
                 mv = new ModelAndView("AdminPage/adminuserPage");
             } else {
                 model.addAttribute("message", "업데이트 실패");
