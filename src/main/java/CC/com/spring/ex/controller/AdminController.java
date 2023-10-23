@@ -223,6 +223,13 @@ public class AdminController {
             result = attendService.statisticWeek(week);
         }
 
+        if (result.getAll() == 0){
+            model.addAttribute("message", "사람 없음");
+            model.addAttribute("Uri", "/stat?week="+ week);
+            mv = new ModelAndView("Common/messageRedirect");
+            return mv;
+        }
+
         model.addAttribute("attend", result.getAttend());
         model.addAttribute("all", result.getAll());
         model.addAttribute("week", week);
