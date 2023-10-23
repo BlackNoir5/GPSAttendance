@@ -29,21 +29,24 @@
       <h1>이의신청 관리</h1>
     </div>
     <div class="form-content">
-      <form method="post" action="">
+      <form method="post" action="/attendApprove">
         <div class="form-group_1">
-          <textarea id="username" name="username" required="required" th:text="${suggest.getSuggest}"></textarea>
+          <textarea id="username" name="username" required="required" th:text="${suggest.getSuggest}" readonly></textarea>
         </div>
         <!-- 파일 첨부 기능 들어가야 할 곳-->
         <!-- 파일 첨부 못하게 클릭 막았음-->
         <div class="file_box">
+          <input type="hidden" name="num" th:value="${num}">
+          <input type="hidden" name="uid" th:value="${suggest.getUser().getUid()}">
           <input type="file" id="input_file" class="file_hidden">
-          <label for="input_file" vlaue="disabled" disabled><img src="../img/file.png" alt="파일 찾기"></label>
+          <label for="input_file" value="disabled" disabled><img src="../img/file.png" alt="파일 찾기"></label>
           <input class="upload_name" th:value="${suggest.getFile()}" readonly/>
         </div>
         <!-- End -->
         <div class="form-group">
           <button type="submit">승인</button>
-          <button type="button" style="background-color: red" on>거부</button>
+          <button type="button" style="background-color: red"
+                  th:onclick="|location.href='@{/attendDenied(num=${num}, uid=${suggest.getUser().getUid()})}'|">거부</button>
         </div>
       </form>
     </div>

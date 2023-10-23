@@ -157,6 +157,7 @@ public class AdminController {
         int num = Integer.parseInt(request.getParameter("num"));
         SuggestEntity suggest = suggestService.findByNum(num);
         model.addAttribute("suggest", suggest);
+        model.addAttribute("num", num);
         ModelAndView mv = new ModelAndView("AdminPage/viewSuggest");
         return mv;
     }
@@ -195,6 +196,68 @@ public class AdminController {
         } else {
             model.addAttribute("message", "업데이트 실패");
             model.addAttribute("Uri", "AdminPage/userPage");
+            mv = new ModelAndView("Common/messageRedirect");
+        }
+        return mv;
+    }
+
+    @RequestMapping("/attendApprove")
+    private ModelAndView attendApprove(HttpServletRequest request, Model model) {
+
+        int num = Integer.parseInt(request.getParameter("num"));
+        String uid = request.getParameter("uid");
+        int week = Integer.parseInt(request.getParameter("week"));
+
+        ModelAndView mv;
+
+        int attendResult = attendService.updateByUid(uid, week, 1);
+        if (attendResult == 1) {
+            UserEntity user = userService.getUserById(uid);
+            List<AttendEntity> attends = attendService.findByAttendEntityList(uid);
+            model.addAttribute("attend", attends);
+            model.addAttribute("id", uid);
+            model.addAttribute("name", user.getName());
+            int processResult = suggestService.updateProcess(1, num);
+            if (1 == processResult) {
+                List<AttendEntity> attend = attendService.findByAttendEntityList(uid);
+                UserEntity usr = userService.getUserById(uid);
+                model.addAttribute("attend", attend);
+                model.addAttribute("name", usr.getName());
+                mv = new ModelAndView("AdminPage/adminuserPage");
+            } else {
+                model.addAttribute("message", "업데이트 실패");
+                model.addAttribute("Uri", "/manageSuggest");
+                mv = new ModelAndView("Common/messageRedirect");
+            }
+        } else {
+            model.addAttribute("message", "업데이트 실패");
+            model.addAttribute("Uri", "/manageSuggest");
+            mv = new ModelAndView("Common/messageRedirect");
+        }
+
+
+
+        return mv;
+    }
+
+    @RequestMapping("/attendDenied")
+    private ModelAndView attendDenied(HttpServletRequest request, Model model) {
+
+        int num = Integer.parseInt(request.getParameter("num"));
+        String uid = request.getParameter("uid");
+
+        ModelAndView mv;
+
+        int result = suggestService.updateProcess(1, num);
+        if (1 == result) {
+            List<AttendEntity> attend = attendService.findByAttendEntityList(uid);
+            UserEntity usr = userService.getUserById(uid);
+            model.addAttribute("attend", attend);
+            model.addAttribute("name", usr.getName());
+            mv = new ModelAndView("AdminPage/adminuserPage");
+        } else {
+            model.addAttribute("message", "업데이트 실패");
+            model.addAttribute("Uri", "/manageSuggest");
             mv = new ModelAndView("Common/messageRedirect");
         }
         return mv;
