@@ -151,6 +151,15 @@ public class AdminController {
         return mv;
     }
 
+    @RequestMapping("/manageSuggestList")
+    public ModelAndView manageSuggestList(HttpServletRequest request, Model model) {
+        System.out.println("===== Page Loading =====");
+        List<SuggestEntity> suggest = suggestService.findAll();
+        model.addAttribute("suggest", suggest);
+        ModelAndView mv = new ModelAndView("AdminPage/manageSugg");
+        return mv;
+    }
+
     @RequestMapping("/viewSuggest")
     public ModelAndView viewSuggest(HttpServletRequest request, Model model) {
         System.out.println("===== Page Loading =====");
