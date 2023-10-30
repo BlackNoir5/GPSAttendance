@@ -101,7 +101,7 @@ public class UserController {
         String week = request.getParameter("week");
         System.out.println("===== week : " + week + " =====");
 
-        ModelAndView mv = new ModelAndView("UserPage/mobilesuggest");
+        ModelAndView mv = new ModelAndView("mobileSuggest");
         model.addAttribute("week", week);
 
         return mv;
