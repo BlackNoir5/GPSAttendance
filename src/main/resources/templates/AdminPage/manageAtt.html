@@ -31,8 +31,9 @@
         <div class="scroll">
           <table class="type02">
             <tr th:each=" sugg : ${suggest}">
-              <td th:text="이의신청_+ ${sugg.getWeek()} +주차_+ ${sugg.user.getUid()} + ${sugg.user.getName()}"
-                  th:onclick="|location.href='@{/viewSuggest(num=${sugg.getNum()})}'|"></td>
+              <th th:text="이의신청_+ ${sugg.getWeek()} +주차_+ ${sugg.user.getUid()} + ${sugg.user.getName()}"
+                  th:onclick="|location.href='@{/viewSuggest(num=${sugg.getNum()})}'|"></th>
+              <td th:text="${sugg.getSuggest()}"></td>
             </tr>
           </table>
         </div>

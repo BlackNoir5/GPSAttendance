@@ -16,7 +16,7 @@ body {
 .form {
   position: relative;
   background: #FFFFFF;
-  width: 600px;
+  width: 850px;
   border-radius: 4px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
@@ -88,7 +88,7 @@ table {
 }
 
 table.type02 th {
-  width: 150px;
+  width: 600px;
   padding: 10px;
   font-weight: bold;
   vertical-align: top;
