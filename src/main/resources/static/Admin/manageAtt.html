@@ -9,10 +9,10 @@
 </head>
 <header>
   <div class="head_top">
-    <form>
+    <form method="post" action="/logout">
       <div class="head_right">
         <button type="button"><img src="../img/bell.png" alt=""></button>
-        <span id="name">이름</span>
+        <span id="name" th:text="${session.name}">이름</span>
         <span> | </span>
         <button type="submit" id="logout">Logout</button>
       </div>
@@ -30,13 +30,11 @@
         <!-- Table -->
         <div class="scroll">
           <table class="type02">
-            <tr th:each=" att : ${attend}" onclick="HighLightTR(this)">
-              <th scope="row" th:text="${att.getWeek()} + 주차"></th>
-              <td>
-                <span class="text" th:if="${#strings.isEmpty(att.getAttend())}"></span>
-                <span class="text" th:if="${att.getAttend() == 1}">O</span>
-                <span class="text" th:if="${att.getAttend() == 0}">X</span>
-              </td>
+            <tr th:each=" sugg : ${suggest}">
+              <th th:text="이의신청_+ ${sugg.getWeek()} +주차_+ ${sugg.user.getUid()} + ${sugg.user.getName()}"
+                  th:onclick="|location.href='@{/viewSuggest(num=${sugg.getNum()})}'|">이의신청_4주차_20234009박준영
+              </th>
+              <td th:text="${sugg.getSuggest()}">어래얀ㅁ러애ㅑ룽내ㅑ퓬애ㅑㅍ흉내ㅑ퓬이ㅏ풑치ㅏ픁ㅊ피ㅏㅇ누퍄ㅐㄴ울퍄ㅐㅜㅏ피ㅏㄴㅇㅍ ㅣ차 ㅍ챠ㅣㅋㅌ푸치ㅏㅌ푸ㅐㅑㄹ푸 ㅌ치ㅏ풏</td>
             </tr>
           </table>
         </div>
@@ -46,34 +44,4 @@
   </div>
 </div>
 </body>
-<script>
-  let week = "";
-  let atte = "";
-
-  let BColor = '#EDF2FF';
-  let cColor = '#c9cc99';
-
-  function HighLightTR(target) {
-    var tbody = target.parentNode;
-    var trs = tbody.getElementsByTagName('tr');
-    for (var i = 0; i < trs.length; i++) {
-      if (trs[i] != target) {
-        trs[i].style.backgroundColor = BColor;
-      } else {
-        trs[i].style.backgroundColor = cColor;
-      }
-    }
-    let weektext = target.children[0].innerHTML;
-    week = weektext.slice(0, weektext.length - 2);
-    atte = target.children[1].children[0].innerHTML;
-    $('input[name=week]').val(week);
-    if (atte == "O") {
-      $('input[name=attend]').val(0);
-    } else {
-      $('input[name=attend]').val(1);
-    }
-    console.log(week);
-    console.log(atte);
-  }
-</script>
 </html>
