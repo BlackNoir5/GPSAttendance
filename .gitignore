@@ -12,7 +12,7 @@
 
 # Package Files #
 *.jar
-!build/libs*
+!build/libs/*
 *.war
 *.nar
 *.ear
