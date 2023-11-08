@@ -1,6 +1,7 @@
 const Timer = document.getElementById('Timer'); //스코어 기록창-초
-let time = 15000;
 let sec = 15;
+let time = sec * 1000;
+
 
 Timer.value = sec;
 

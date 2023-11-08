@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
+import static CC.com.spring.ex.controller.QRController.QRPW;
+
 @Controller
 public class UserController {
     @Autowired
@@ -107,4 +109,24 @@ public class UserController {
         return mv;
     }
 
+    @RequestMapping("/checkPW.do")
+    private ModelAndView checkPW(HttpServletRequest request, Model model) {
+        System.out.println("suggestPW Checking");
+
+        String pwCheck = request.getParameter("pw");
+        System.out.println(pwCheck);
+        ModelAndView mv;
+        if (QRPW.equals(pwCheck)){
+
+
+            model.addAttribute("message", "출석 성공");
+            model.addAttribute("Uri", "/userPage");
+            mv = new ModelAndView("Common/messageRedirect");
+        } else {
+            model.addAttribute("message", "출석 실패");
+            model.addAttribute("Uri", "/userPage");
+            mv = new ModelAndView("Common/messageRedirect");
+        }
+        return mv;
+    }
 }
