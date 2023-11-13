@@ -23,7 +23,6 @@
 <div class="form">
   <div class="form-panel one">
     <div class="form-content">
-      <form method="post" action="">
         <div class="top_week">
           <select onchange="selectChange(this.value);">
             <option th:each="num : ${#numbers.sequence(1,16)}" th:value="${num}" th:text="${num + '주차'}">주차</option>
@@ -33,7 +32,6 @@
           <iframe id="QR"></iframe>
           <input id="Timer" type="text" value="" readonly/>
         </div>
-      </form>
     </div>
   </div>
 </div>

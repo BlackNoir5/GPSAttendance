@@ -30,7 +30,7 @@ body {
 }
 
 .form-panel {
-  padding: 60px calc(5% + 38px) 60px 60px;
+  padding: 30px calc(5% + 38px) 60px 65px;
   box-sizing: border-box;
 }
 
@@ -50,6 +50,8 @@ body {
 
 .qr {
   margin: 0 auto;
+  resize: none;
+  overflow: hidden;
 }
 
 .qr > iframe {
@@ -58,6 +60,8 @@ body {
   height: 300px;
   margin: 0 auto;
   margin-bottom: 40px;
+  resize: none;
+  overflow: hidden;
 }
 
 .qr > input {
@@ -67,6 +71,21 @@ body {
   font-weight: 400;
   font-size: 45px;
   text-align: center;
+  border: 1px solid black;
+}
+
+.top_week {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  padding-bottom: 60px;
+}
+
+select {
+  width: 100px;
+  border-radius: 10px;
+  text-align: center;
+  outline: none;
 }
 
 /* 오른쪽 상단 header css*/
