@@ -95,10 +95,6 @@
   }
 
   /* search js */
-  const getData = async () => {
-    const response = await fetch("https://reqres.in/api/users?page=1")
-    return response.json()
-  }
 
   const keyword = document.querySelector(".keyword")
   const keywords = document.querySelector(".keywords")
@@ -115,7 +111,7 @@
     // li.selected 가 없는 경우에만 api에서 데이터를 가져옴
     if (keyword.value.length > 2 && !selectedKeyword) {
       console.log("=== API 호출 ===")
-      const list = (await getData()).data
+      const list ;
 
       keywords.innerHTML = ""
 

@@ -55,7 +55,7 @@ public class UserController {
         if (pw.equals(result.getPw())) {
             if (1 == result.getAuthority()){
                 model.addAttribute("message", "유저 로그인 실패");
-                model.addAttribute("Uri", "/mobile");
+                model.addAttribute("Uri", "/");
                 mv = new ModelAndView("Common/messageRedirect");
                 return mv;
             }
@@ -75,7 +75,7 @@ public class UserController {
 
             System.out.println("===== Page Loading =====");
             model.addAttribute("message", "로그인 실패");
-            model.addAttribute("Uri", "/mobile");
+            model.addAttribute("Uri", "/");
             mv = new ModelAndView("Common/messageRedirect");
         }
         return mv;
@@ -97,7 +97,7 @@ public class UserController {
         if (userService.existsById(uid)) {
             UserEntity result = userService.getUserById(uid);
             System.out.println("===== ID Loading =====");
-            return showMessageAndRedirect("패스워드는 " + result.getPw() + " 입니다.", "/mobile", model);
+            return showMessageAndRedirect("패스워드는 " + result.getPw() + " 입니다.", "/", model);
         } else {
             System.out.println("===== Search Fail =====");
             System.out.println("===== Page Loading =====");
@@ -112,7 +112,7 @@ public class UserController {
         String week = request.getParameter("week");
         System.out.println("===== week : " + week + " =====");
 
-        ModelAndView mv = new ModelAndView("mobileSuggest");
+        ModelAndView mv = new ModelAndView("UserPage/mobileSuggest");
         model.addAttribute("week", week);
 
         return mv;
