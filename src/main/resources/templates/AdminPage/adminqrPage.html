@@ -9,7 +9,7 @@
 </head>
 <header>
   <div class="head_top">
-    <form method="post" action="/logout">
+    <form method="post" action="/logoutA">
       <div class="head_right">
         <button type="button"><img src="../img/bell.png" alt=""></button>
         <span id="name" th:text="${session.name}">이름</span>
@@ -25,12 +25,12 @@
     <div class="form-content">
       <form method="post" action="">
         <div class="top_week">
-          <select>
-            <option value="1">1주차</option>
+          <select onchange="selectChange(this.value);">
+            <option th:each="num : ${#numbers.sequence(1,16)}" th:value="${num}" th:text="${num + '주차'}">주차</option>
           </select>
         </div>
         <div class="qr">
-          <iframe id="QR" src="http://10.202.36.138:8080/qr"></iframe>
+          <iframe id="QR"></iframe>
           <input id="Timer" type="text" value="" readonly/>
         </div>
       </form>
@@ -38,5 +38,11 @@
   </div>
 </div>
 <script type="text/javascript" src="/JS/timer.js"></script>
+<script type="text/javascript">
+  let selectChange = function (value) {
+    let week = value;
+    document.getElementById("QR").src = "http://10.202.36.129:8080/qr?week="+week;
+  }
+</script>
 </body>
 </html>

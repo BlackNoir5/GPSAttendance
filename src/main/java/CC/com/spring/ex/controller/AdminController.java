@@ -40,13 +40,13 @@ public class AdminController {
         return "common/messageRedirect";
     }
 
-    @RequestMapping("logout")
+    @RequestMapping("logoutA")
     public String logout() {
         System.out.println("===== User LogOut =====");
 
         session.invalidate();
 
-        return "index";
+        return "AdminPage/login";
     }
 
     @RequestMapping("/loginCheckA")

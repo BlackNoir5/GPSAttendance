@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -18,7 +19,8 @@ public class QRController {
     static String QRPW;
 
     @RequestMapping(value = "/qr")
-    protected void renderMergedOutputModel(HttpServletResponse res) throws Exception {
+    protected void renderMergedOutputModel(HttpServletRequest request, HttpServletResponse res) throws Exception {
+        String week = request.getParameter("week");
         res.setContentType("image/png; charset=UTF-8");
         res.setHeader("Content-Transfer-Encoding", "binary");
         QRCodeWriter qr = new QRCodeWriter();
@@ -29,6 +31,7 @@ public class QRController {
         int code = (int) (Math.random() * 65536);
         String text = Integer.toString(code);
         QRPW = text;
+        text = week + "," + text;
 
         //qr에 코드 입력
         BitMatrix bitMatrix = qr.encode(text, BarcodeFormat.QR_CODE, 300, 300);

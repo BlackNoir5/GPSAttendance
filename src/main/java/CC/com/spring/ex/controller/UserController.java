@@ -33,6 +33,15 @@ public class UserController {
         return "common/messageRedirect";
     }
 
+    @RequestMapping("logoutU")
+    public String logout() {
+        System.out.println("===== User LogOut =====");
+
+        session.invalidate();
+
+        return "UserPage/mobileLogin";
+    }
+
     @RequestMapping("/loginCheckU")
     public ModelAndView loginCheckU(HttpServletRequest request, Model model) {
         System.out.println("===== Login Checking =====");
@@ -113,15 +122,27 @@ public class UserController {
     private ModelAndView checkPW(HttpServletRequest request, Model model) {
         System.out.println("suggestPW Checking");
 
-        String pwCheck = request.getParameter("pw");
+        String text = request.getParameter("text");
+        String[] arr = text.split(",");
+        String pwCheck = arr[1];
+        String week = arr[0];
+        System.out.println(text);
         System.out.println(pwCheck);
+        System.out.println(week);
         ModelAndView mv;
         if (QRPW.equals(pwCheck)){
+            int result = attendService.updateByUid(session.getAttribute("uid").toString(), Integer.parseInt(week), 1);
 
-
-            model.addAttribute("message", "출석 성공");
-            model.addAttribute("Uri", "/userPage");
-            mv = new ModelAndView("Common/messageRedirect");
+            if (result == 1){
+                model.addAttribute("message", "출석 성공");
+                model.addAttribute("Uri", "/userPage");
+                mv = new ModelAndView("Common/messageRedirect");
+            } else {
+                model.addAttribute("message", "출석 변경 실패");
+                model.addAttribute("Uri", "/userPage");
+                mv = new ModelAndView("Common/messageRedirect");
+            }
+            
         } else {
             model.addAttribute("message", "출석 실패");
             model.addAttribute("Uri", "/userPage");

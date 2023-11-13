@@ -12,7 +12,7 @@
 </head>
 <header>
   <div id="head">
-    <form method="post" action="/logout">
+    <form method="post" action="/logoutU">
       <div class="head_btn">
         <span id="name" th:text="${session.name}">이름</span>
         <span> | </span>
@@ -44,110 +44,6 @@
               <span class="text" th:if="${att.getAttend() == 0}">X</span>
             </td>
           </tr>
-          <tr th:each=" att : ${attend}" onclick="HighLightTR(this)">
-            <th scope="row" th:text="${att.getWeek()} + 주차"></th>
-            <td>
-              <span class="text" th:if="${#strings.isEmpty(att.getAttend())}"></span>
-              <span class="text" th:if="${att.getAttend() == 1}">O</span>
-              <span class="text" th:if="${att.getAttend() == 0}">X</span>
-            </td>
-          </tr>
-          <tr th:each=" att : ${attend}" onclick="HighLightTR(this)">
-            <th scope="row" th:text="${att.getWeek()} + 주차"></th>
-            <td>
-              <span class="text" th:if="${#strings.isEmpty(att.getAttend())}"></span>
-              <span class="text" th:if="${att.getAttend() == 1}">O</span>
-              <span class="text" th:if="${att.getAttend() == 0}">X</span>
-            </td>
-          </tr>
-          <tr th:each=" att : ${attend}" onclick="HighLightTR(this)">
-            <th scope="row" th:text="${att.getWeek()} + 주차"></th>
-            <td>
-              <span class="text" th:if="${#strings.isEmpty(att.getAttend())}"></span>
-              <span class="text" th:if="${att.getAttend() == 1}">O</span>
-              <span class="text" th:if="${att.getAttend() == 0}">X</span>
-            </td>
-          </tr>
-          <tr th:each=" att : ${attend}" onclick="HighLightTR(this)">
-            <th scope="row" th:text="${att.getWeek()} + 주차"></th>
-            <td>
-              <span class="text" th:if="${#strings.isEmpty(att.getAttend())}"></span>
-              <span class="text" th:if="${att.getAttend() == 1}">O</span>
-              <span class="text" th:if="${att.getAttend() == 0}">X</span>
-            </td>
-          </tr>
-          <tr th:each=" att : ${attend}" onclick="HighLightTR(this)">
-            <th scope="row" th:text="${att.getWeek()} + 주차"></th>
-            <td>
-              <span class="text" th:if="${#strings.isEmpty(att.getAttend())}"></span>
-              <span class="text" th:if="${att.getAttend() == 1}">O</span>
-              <span class="text" th:if="${att.getAttend() == 0}">X</span>
-            </td>
-          </tr><tr th:each=" att : ${attend}" onclick="HighLightTR(this)">
-          <th scope="row" th:text="${att.getWeek()} + 주차"></th>
-          <td>
-            <span class="text" th:if="${#strings.isEmpty(att.getAttend())}"></span>
-            <span class="text" th:if="${att.getAttend() == 1}">O</span>
-            <span class="text" th:if="${att.getAttend() == 0}">X</span>
-          </td>
-        </tr><tr th:each=" att : ${attend}" onclick="HighLightTR(this)">
-          <th scope="row" th:text="${att.getWeek()} + 주차"></th>
-          <td>
-            <span class="text" th:if="${#strings.isEmpty(att.getAttend())}"></span>
-            <span class="text" th:if="${att.getAttend() == 1}">O</span>
-            <span class="text" th:if="${att.getAttend() == 0}">X</span>
-          </td>
-        </tr><tr th:each=" att : ${attend}" onclick="HighLightTR(this)">
-          <th scope="row" th:text="${att.getWeek()} + 주차"></th>
-          <td>
-            <span class="text" th:if="${#strings.isEmpty(att.getAttend())}"></span>
-            <span class="text" th:if="${att.getAttend() == 1}">O</span>
-            <span class="text" th:if="${att.getAttend() == 0}">X</span>
-          </td>
-        </tr><tr th:each=" att : ${attend}" onclick="HighLightTR(this)">
-          <th scope="row" th:text="${att.getWeek()} + 주차"></th>
-          <td>
-            <span class="text" th:if="${#strings.isEmpty(att.getAttend())}"></span>
-            <span class="text" th:if="${att.getAttend() == 1}">O</span>
-            <span class="text" th:if="${att.getAttend() == 0}">X</span>
-          </td>
-        </tr><tr th:each=" att : ${attend}" onclick="HighLightTR(this)">
-          <th scope="row" th:text="${att.getWeek()} + 주차"></th>
-          <td>
-            <span class="text" th:if="${#strings.isEmpty(att.getAttend())}"></span>
-            <span class="text" th:if="${att.getAttend() == 1}">O</span>
-            <span class="text" th:if="${att.getAttend() == 0}">X</span>
-          </td>
-        </tr><tr th:each=" att : ${attend}" onclick="HighLightTR(this)">
-          <th scope="row" th:text="${att.getWeek()} + 주차"></th>
-          <td>
-            <span class="text" th:if="${#strings.isEmpty(att.getAttend())}"></span>
-            <span class="text" th:if="${att.getAttend() == 1}">O</span>
-            <span class="text" th:if="${att.getAttend() == 0}">X</span>
-          </td>
-        </tr><tr th:each=" att : ${attend}" onclick="HighLightTR(this)">
-          <th scope="row" th:text="${att.getWeek()} + 주차"></th>
-          <td>
-            <span class="text" th:if="${#strings.isEmpty(att.getAttend())}"></span>
-            <span class="text" th:if="${att.getAttend() == 1}">O</span>
-            <span class="text" th:if="${att.getAttend() == 0}">X</span>
-          </td>
-        </tr><tr th:each=" att : ${attend}" onclick="HighLightTR(this)">
-          <th scope="row" th:text="${att.getWeek()} + 주차"></th>
-          <td>
-            <span class="text" th:if="${#strings.isEmpty(att.getAttend())}"></span>
-            <span class="text" th:if="${att.getAttend() == 1}">O</span>
-            <span class="text" th:if="${att.getAttend() == 0}">X</span>
-          </td>
-        </tr><tr th:each=" att : ${attend}" onclick="HighLightTR(this)">
-          <th scope="row" th:text="${att.getWeek()} + 주차"></th>
-          <td>
-            <span class="text" th:if="${#strings.isEmpty(att.getAttend())}"></span>
-            <span class="text" th:if="${att.getAttend() == 1}">O</span>
-            <span class="text" th:if="${att.getAttend() == 0}">X</span>
-          </td>
-        </tr>
-
         </table>
         <div class="form-group">
           <button type="submit">이의 신청</button>

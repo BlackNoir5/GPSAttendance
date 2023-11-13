@@ -8,7 +8,7 @@ public class HomeController {
 
 
     @RequestMapping(value = "/")
-    private String main() { return "index.html";}
+    private String main() { return "UserPage/mobileLogin.html";}
 
     @RequestMapping(value = "/admin")
     private String admin() { return "AdminPage/login.html"; }
@@ -16,11 +16,6 @@ public class HomeController {
 
     @RequestMapping(value = "/adminPW")
     private String adminPW() { return "AdminPage/findPW.html"; }
-
-    @RequestMapping(value = "/mobile")
-    protected String mobile(){
-        return "UserPage/mobileLogin.html";
-    }
 
     @RequestMapping(value = "/mobilePW")
     private String mobilePW() { return "UserPage/mobileFindPW.html"; }
