@@ -78,7 +78,7 @@ table.type02 {
   background-color: #EDF2FF;
   border-radius: 15px;
   margin-bottom: 30px;
-  overflow: auto;
+  overflow: hidden;
 }
 
 table {
@@ -90,12 +90,11 @@ table {
 table.type02 th {
   width: 600px;
   padding: 10px;
-  font-weight: bold;
   vertical-align: top;
-  background: #eee;
   border: 1px solid white;
   background-color: #EDF2FF;
   text-align: center;
+  font-size: 15px;
 }
 
 table.type02 td {
@@ -106,6 +105,14 @@ table.type02 td {
   border-bottom: 1px solid #ccc;
   border: 1px solid white;
   text-align: center;
+  font-size: 15px;
+}
+
+table.type02 td span {
+  color: black;
+  font-size: 15px;
+  text-align: center;
+  top: 0px;
 }
 
 /* 테이블 css end */
@@ -138,13 +145,6 @@ span {
   position: relative;
   bottom: 4px;
   color: white;
-  font-size: 15px;
-}
-
-td span {
-  position: relative;
-  bottom: 4px;
-  color: black;
   font-size: 15px;
 }
 
