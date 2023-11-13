@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, intial-scale=1, minimum-sacle=1, maximum-scale=1, user-scalable-no">
+  <title>이의신청 관리</title>
+  <link rel="stylesheet" type="text/css" href="../CSS/manageAtt.css">
+</head>
+<header>
+  <div class="head_top">
+    <form method="post" action="/logout">
+      <div class="head_right">
+        <button type="button"><img src="../img/bell.png" alt=""></button>
+        <span id="name" th:text="${session.name}">이름</span>
+        <span> | </span>
+        <button type="submit" id="logout">Logout</button>
+      </div>
+    </form>
+  </div>
+</header>
+<body>
+<div class="form">
+  <div class="form-panel one">
+    <div class="form-header">
+      <h1>이의신청 관리</h1>
+    </div>
+    <div class="form-content">
+      <form method="post" action="">
+        <!-- Table -->
+        <div class="scroll">
+          <table class="type02">
+            <tr th:each=" sugg : ${suggest}">
+              <th th:text="이의신청_+ ${sugg.getWeek()} +주차_+ ${sugg.user.getUid()} + ${sugg.user.getName()}"
+                  th:onclick="|location.href='@{/viewSuggest(num=${sugg.getNum()})}'|">이의신청_4주차_20234009박준영
+              </th>
+              <td th:text="${sugg.getSuggest()}">어래얀ㅁ러애ㅑ룽내ㅑ퓬애ㅑㅍ흉내ㅑ퓬이ㅏ풑치ㅏ픁ㅊ피ㅏㅇ누퍄ㅐㄴ울퍄ㅐㅜㅏ피ㅏㄴㅇㅍ ㅣ차 ㅍ챠ㅣㅋㅌ푸치ㅏㅌ푸ㅐㅑㄹ푸 ㅌ치ㅏ풏</td>
+            </tr>
+          </table>
+        </div>
+        <!-- Table End -->
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

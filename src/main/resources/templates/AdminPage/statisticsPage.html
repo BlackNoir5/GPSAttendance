@@ -50,14 +50,19 @@
             <li th:each="num : ${#numbers.sequence(1,16)}"><a th:href="@{/stat(week=${num})}" th:text="${num + '주차'}">주차</a></li>
           </ul>
         </li>
-        <li><a th:href="@{/stat(week=${week}, times=1)}">5교시</a></li>
-        <li><a th:href="@{/stat(week=${week}, times=2)}">6교시</a></li>
-        <li><a th:href="@{/stat(week=${week}, times=3)}">7교시</a></li>
-        <li><a th:href="@{/stat(week=${week}, times=4)}">8교시</a></li>
-        <li><a th:href="@{/stat(week=${week}, times=5)}">9교시</a></li>
-        <li><a>MENU</a>
+        <li><a href="#">N교시</a>
+          <ul class="M02">
+            <li><a th:href="@{/stat(week=${week}, times=1)}">5교시</a></li>
+            <li><a th:href="@{/stat(week=${week}, times=2)}">6교시</a></li>
+            <li><a th:href="@{/stat(week=${week}, times=3)}">7교시</a></li>
+            <li><a th:href="@{/stat(week=${week}, times=4)}">8교시</a></li>
+            <li><a th:href="@{/stat(week=${week}, times=5)}">9교시</a></li>
+          </ul>
+        </li>
+        <li><a href="#">MENU</a>
           <ul class="M02">
             <li><a href="/manageSuggest">이의신청 관리</a></li>
+            <li><a href="#">이의신청 로그</a></li>
             <li><a href="/checkAttend">학생 찾기</a></li>
           </ul>
         </li>
