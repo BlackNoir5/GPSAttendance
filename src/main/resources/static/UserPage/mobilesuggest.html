@@ -11,15 +11,7 @@
           crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <header>
-  <div id="head">
-    <form method="post" action="">
-      <div class="head_btn">
-        <span id="name">정명식</span>
-        <span> | </span>
-        <button type="submit">Logout</button>
-      </div>
-    </form>
-  </div>
+  <div id="header"></div>
 </header>
 <body>
 <div class="form">
@@ -39,7 +31,6 @@
           <label for="input_file"><img src="../img/file.png" alt="파일 찾기"></label>
           <input class="upload_name" value="파일명.jpg/png" disabled="disabled"/>
         </div>
-        <!--<input type="file" id="file" name="file" required="required"/>-->
         <div class="form-group">
           <button type="submit">신청하기</button>
         </div>
@@ -64,6 +55,11 @@
     $(this).siblings('.upload_name').val(filename);
   });
   /* 파일명 가져오기 end */
+
+  /*header 불러오기*/
+  $(document).ready(function(){
+    $("header").load("../Header/mobileHeader.html");
+  });
 </script>
 </body>
 </html>

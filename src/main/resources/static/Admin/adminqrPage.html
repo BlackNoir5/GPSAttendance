@@ -7,18 +7,12 @@
   <title>QRPage</title>
   <link rel="stylesheet" type="text/css" href="../CSS/adminqrPage.css">
   <script type="text/javascript" src="../JS/timer.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+          integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <header>
-  <div class="head_top">
-    <form>
-      <div class="head_right">
-        <button type="button"><img src="../img/bell.png" alt=""></button>
-        <span id="name">이름</span>
-        <span> | </span>
-        <button type="submit" id="logout">Logout</button>
-      </div>
-    </form>
-  </div>
+  <div id="header"></div>
 </header>
 <body>
 <div class="form">
@@ -37,4 +31,10 @@
   </div>
 </div>
 </body>
+<script>
+  /*header 불러오기*/
+  $(document).ready(function(){
+    $("header").load("../Header/header.html");
+  });
+</script>
 </html>

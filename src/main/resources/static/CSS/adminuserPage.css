@@ -14,14 +14,17 @@ body {
 }
 
 .form {
-  position: relative;
+  position: absolute;
   background: #FFFFFF;
   width: 850px;
   border-radius: 4px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  margin: 125px auto 60px;
   overflow: hidden;
+  top: 50%;
+  left: 50%;
+  margin-top: -290px;
+  margin-left: -410px;
 }
 
 .form-group {
@@ -63,7 +66,7 @@ body {
 .form-header h1 {
   padding: 4px 0;
   color: #4285F4;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -77,9 +80,7 @@ table.type02 {
   line-height: 1.5;
   border: 1px solid white;
   background-color: #EDF2FF;
-  border-radius: 15px;
   margin-bottom: 30px;
-  overflow: auto;
 }
 
 /* table css*/
@@ -91,6 +92,7 @@ table {
 
 table.type02 th {
   width: 150px;
+  height: 30px;
   padding: 10px;
   font-weight: bold;
   vertical-align: top;
@@ -101,11 +103,9 @@ table.type02 th {
 }
 
 table.type02 td {
-  width: 350px;
+  width: 600px;
   padding: 10px;
   vertical-align: top;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
   border: 1px solid white;
   text-align: center;
 }
@@ -126,7 +126,7 @@ table.type02 span {
 
 .head_btn {
   display: flex;
-  width: 25%;
+  width: 35%;
   flex-direction: column;
 }
 
@@ -144,7 +144,7 @@ table.type02 span {
   background-color: white;
   display: none;
   position: absolute;
-  width: 25%;
+  width: 35%;
   top: 64px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -220,9 +220,9 @@ span {
 /* footer css */
 
 #footer {
-  display: block;
-  text-align: right;
-  margin-right: 30px;
+  position: absolute;
+  bottom: 2%;
+  left: 94%;
 }
 
 /* footer css end */

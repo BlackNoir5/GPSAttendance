@@ -11,16 +11,7 @@
           crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <header>
-  <div class="head_top">
-    <form>
-      <div class="head_right">
-        <button type="button"><img src="../img/bell.png" alt=""></button>
-        <span id="name">이름</span>
-        <span> | </span>
-        <button type="submit" id="logout">Logout</button>
-      </div>
-    </form>
-  </div>
+  <div id="header"></div>
 </header>
 <body>
 <div class="form">
@@ -66,5 +57,10 @@
     $(this).siblings('.upload_name').val(filename);
   });
   /* 파일명 가져오기 end */
+
+  /*header 불러오기*/
+  $(document).ready(function(){
+    $("header").load("../Header/header.html");
+  });
 </script>
 </html>
