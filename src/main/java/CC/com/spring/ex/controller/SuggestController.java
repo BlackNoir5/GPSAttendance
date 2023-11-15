@@ -6,8 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 @Controller
 public class SuggestController {
@@ -21,23 +27,46 @@ public class SuggestController {
     }
 
     @RequestMapping("/suggest")
-    private String suggest(HttpServletRequest request, Model model){
+    private String suggest(@RequestParam("file")MultipartFile file, HttpServletRequest request, Model model){
         System.out.println("===== suggest start =====");
 
         String uid = request.getParameter("uid");
         int week = Integer.parseInt(request.getParameter("week"));
         String suggest = request.getParameter("suggest");
-        String file = request.getParameter("file");
 
-        System.out.println(uid + week + suggest + file);
+        if (file.isEmpty()){
+            return showMessageAndRedirect("파일이 없습니다.", "/userPage", model);
+        }else {
+            String fileName = file.getOriginalFilename();
+            String fileFolder = "D:\\CC\\" + uid;
+            String fileRoot = fileFolder + "\\" + week + "주차_" + fileName;
 
-        SuggestEntity entity = new SuggestEntity(uid, week, suggest, file, 0);
+            System.out.println(uid + week + suggest + fileName + fileRoot);
 
-        SuggestEntity result = suggestService.save(entity);
-        if(null != result){
-            return  showMessageAndRedirect("신청했습니다.", "/userPage", model);
-        }else{
-            return showMessageAndRedirect("신청을 실패했습니다.", "/userPage", model);
+            SuggestEntity entity = new SuggestEntity(uid, week, suggest, fileRoot, 0);
+
+            File folder = new File(fileFolder);
+            if (!folder.exists()) {
+                try{
+                    folder.mkdirs();
+                    System.out.println("폴더생성");
+                }catch (Exception e) {
+                    e.getStackTrace();
+                }
+            }
+            Path path = Paths.get(fileRoot).toAbsolutePath();
+            try{
+                file.transferTo(path.toFile());
+                SuggestEntity result = suggestService.save(entity);
+                if(null != result){
+                    return  showMessageAndRedirect("신청했습니다.", "/userPage", model);
+                }else{
+                    return showMessageAndRedirect("신청을 실패했습니다.", "/userPage", model);
+                }
+            }catch (IllegalStateException | IOException e){
+                e.printStackTrace();
+                return showMessageAndRedirect("업로드를 실패했습니다.", "/userPage", model);
+            }
         }
     }
 }

@@ -79,14 +79,17 @@ body {
 
 .form {
   z-index: 15;
-  position: relative;
+  position: absolute;
   background: #FFFFFF;
   width: 600px;
   border-radius: 4px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  margin: 250px auto 10px;
+  top: 50%;
+  left: 50%;
   overflow: hidden;
+  margin-top: -229px;
+  margin-left: -300px;
 }
 
 .form-toggle {
