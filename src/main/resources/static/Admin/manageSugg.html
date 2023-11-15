@@ -17,7 +17,7 @@
 <div class="form">
   <div class="form-panel one">
     <div class="form-header">
-      <h1>이의신청 전체 리스트</h1>
+      <h1>이의신청 관리</h1>
     </div>
     <div class="form-content">
       <form method="post" action="">
@@ -28,10 +28,6 @@
               <th th:text="이의신청_+ ${sugg.getWeek()} +주차_+ ${sugg.user.getUid()} + ${sugg.user.getName()}"
                   th:onclick="|location.href='@{/viewSuggest(num=${sugg.getNum()})}'|">테스트 이름</th>
               <td th:text="${sugg.getSuggest()}">내용을 넣어봐요</td>
-              <td>
-                <span class="text" th:if="${sugg.getProcess() == 1}">처리완료</span>
-                <span class="text" th:if="${sugg.getProcess() == 0}">처리중</span>
-              </td>
             </tr>
           </table>
         </div>
