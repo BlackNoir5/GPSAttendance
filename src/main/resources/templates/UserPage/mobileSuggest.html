@@ -49,5 +49,23 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  /* 파일명 가져오기 start */
+  var fileTarget = $('.file_box .file_hidden');
+
+  fileTarget.on('change', function () {
+    if (window.FileReader) {
+      // 파일명 추출
+      var filename = $(this)[0].files[0].name;
+    } else {
+      // Old IE 파일명 추출
+      var filename = $(this).val().split('/').pop().split('\\').pop();
+    }
+    ;
+
+    $(this).siblings('.upload_name').val(filename);
+  });
+  /* 파일명 가져오기 end */
+</script>
 </body>
 </html>
