@@ -1,13 +1,18 @@
 package CC.com.spring.ex.controller;
 
 import CC.com.spring.ex.Entity.*;
-import CC.com.spring.ex.Repository.SuggestRepository;
 import CC.com.spring.ex.Service.AttendService;
 import CC.com.spring.ex.Service.SuggestService;
 import CC.com.spring.ex.Service.UserService;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.ContentDisposition;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +21,11 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -147,7 +156,7 @@ public class AdminController {
         System.out.println("===== Page Loading =====");
         List<SuggestEntity> suggest = suggestService.findByProcess(0);
         model.addAttribute("suggest", suggest);
-        ModelAndView mv = new ModelAndView("AdminPage/manageAtt");
+        ModelAndView mv = new ModelAndView("AdminPage/manageSugg");
         return mv;
     }
 
@@ -156,7 +165,7 @@ public class AdminController {
         System.out.println("===== Page Loading =====");
         List<SuggestEntity> suggest = suggestService.findAll();
         model.addAttribute("suggest", suggest);
-        ModelAndView mv = new ModelAndView("AdminPage/manageSugg");
+        ModelAndView mv = new ModelAndView("AdminPage/manageSuggAll");
         return mv;
     }
 
@@ -266,6 +275,26 @@ public class AdminController {
             mv = new ModelAndView("Common/messageRedirect");
         }
         return mv;
+    }
+
+    @RequestMapping("/download")
+    private ResponseEntity<Object> download(HttpServletRequest request) {
+
+        String path = request.getParameter("path");
+
+        try {
+            Path filePath = Paths.get(path);
+            Resource resource = new InputStreamResource(Files.newInputStream(filePath)); // 파일 resource 얻기
+
+            File file = new File(path);
+
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentDisposition(ContentDisposition.builder("attachment").filename(file.getName()).build());  // 다운로드 되거나 로컬에 저장되는 용도로 쓰이는지를 알려주는 헤더
+
+            return new ResponseEntity<Object>(resource, headers, HttpStatus.OK);
+        } catch(Exception e) {
+            return new ResponseEntity<Object>(null, HttpStatus.CONFLICT);
+        }
     }
 
     @RequestMapping("/stat")
