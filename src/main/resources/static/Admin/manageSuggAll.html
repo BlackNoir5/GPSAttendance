@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, intial-scale=1, minimum-sacle=1, maximum-scale=1, user-scalable-no">
-  <title>이의신청 관리</title>
-  <link rel="stylesheet" type="text/css" href="../CSS/manageSugg.css">
+  <title>이의신청 전체 리스트</title>
+  <link rel="stylesheet" type="text/css" href="../CSS/manageSuggAll.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
           integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
           crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -17,7 +17,7 @@
 <div class="form">
   <div class="form-panel one">
     <div class="form-header">
-      <h1>이의신청 관리</h1>
+      <h1>이의신청 전체 리스트</h1>
     </div>
     <div class="form-content">
       <form method="post" action="">
@@ -26,8 +26,12 @@
           <table class="type02">
             <tr th:each=" sugg : ${suggest}">
               <th th:text="이의신청_+ ${sugg.getWeek()} +주차_+ ${sugg.user.getUid()} + ${sugg.user.getName()}"
-                  th:onclick="|location.href='@{/viewSuggest(num=${sugg.getNum()})}'|">테스트 이름</th>
-              <td th:text="${sugg.getSuggest()}">내용을 넣어봐요</td>
+                  th:onclick="|location.href='@{/viewSuggest(num=${sugg.getNum()})}'|">이의신청_1주차_20234019 정명식</th>
+              <td th:text="${sugg.getSuggest()}">내용을 넣어봐요sadlkajdasd,masnd,andand,nljasdsadasdasdsdaasljdlasdjlajajlsajdldsakjla</td>
+              <td>
+                <span class="text" th:if="${sugg.getProcess() == 1}">처리완료</span>
+                <span class="text" th:if="${sugg.getProcess() == 0}">처리중</span>
+              </td>
             </tr>
           </table>
         </div>

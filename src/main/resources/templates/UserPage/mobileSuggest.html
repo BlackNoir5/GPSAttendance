@@ -41,7 +41,6 @@
           <label for="input_file"><img src="/img/file.png" alt="파일 찾기"></label>
           <input class="upload_name" value="파일명.jpg/png" disabled="disabled"/>
         </div>
-        <!--<input type="file" id="file" name="file" required="required"/>-->
         <div class="form-group">
           <button type="submit">신청하기</button>
         </div>
@@ -66,6 +65,11 @@
     $(this).siblings('.upload_name').val(filename);
   });
   /* 파일명 가져오기 end */
+
+  /*header 불러오기*/
+  $(document).ready(function(){
+    $("header").load("../Header/mobileHeader.html");
+  });
 </script>
 </body>
 </html>

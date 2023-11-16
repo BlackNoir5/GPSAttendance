@@ -22,7 +22,7 @@ body {
   width: 90%;
   height: 80vh;
   box-sizing: border-box;
-  overflow: scroll;
+  overflow: hidden;
   border-radius: 15px;
 }
 
@@ -117,7 +117,7 @@ body {
 /* 테이블 css */
 
 table.type02 {
-  height: auto;
+  height: 388px;
   border-collapse: separate;
   border-spacing: 0;
   text-align: center;
@@ -126,7 +126,7 @@ table.type02 {
   background-color: #EDF2FF;
   border-radius: 15px;
   margin-bottom: 30px;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 table {

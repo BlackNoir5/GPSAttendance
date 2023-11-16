@@ -61,5 +61,10 @@
   let fileName = file.split('\\');
   $('.upload_name').val(fileName[3]);
   /* 파일명 가져오기 end */
+
+  /*header 불러오기*/
+  $(document).ready(function(){
+    $("header").load("../Header/header.html");
+  });
 </script>
 </html>

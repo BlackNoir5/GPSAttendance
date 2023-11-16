@@ -10,72 +10,7 @@ body {
   background-color: #21D6CC;
   font-size: 14px;
   line-height: 1.6em;
-  height: 100%;
 }
-
-/*.form-panel{
-  position: relative;
-  background-color: white;
-  width: 600px;
-  height: 400px;
-  margin: 0 auto;
-  border-radius: 3px;
-}
-
-.form-header h1 {
-  color: #397DED;
-}
-
-.form-group {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0 0 20px;
-}
-
-.form-group label {
-  display: block;
-  margin: 0 0 10px;
-  color: rgba(0, 0, 0, 0.6);
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1;
-  text-transform: uppercase;
-  letter-spacing: .2em;
-}
-
-.form-group input {
-  outline: none;
-  display: block;
-  background: rgba(0, 0, 0, 0.1);
-  width: 100%;
-  border: 0;
-  border-radius: 4px;
-  box-sizing: border-box;
-  padding: 12px 20px;
-  color: rgba(0, 0, 0, 0.6);
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: 500;
-  line-height: inherit;
-  transition: 0.3s ease;
-}
-
-.form-group button {
-  outline: none;
-  background: #4285F4;
-  width: 100%;
-  border: 0;
-  border-radius: 4px;
-  padding: 12px 20px;
-  color: #FFFFFF;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: 500;
-  line-height: inherit;
-  text-transform: uppercase;
-  cursor: pointer;
-}*/
 
 .form {
   z-index: 15;
@@ -85,9 +20,9 @@ body {
   border-radius: 4px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
+  overflow: hidden;
   top: 50%;
   left: 50%;
-  overflow: hidden;
   margin-top: -229px;
   margin-left: -300px;
 }

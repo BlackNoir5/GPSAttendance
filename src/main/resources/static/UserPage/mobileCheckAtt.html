@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, intial-scale=1, minimum-sacle=1, maximum-scale=1, user-scalable-no">
+  <title>모바일 출결 확인</title>
+  <link rel="stylesheet" type="text/css" href="../CSS/mobileCheckAtt.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+          integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<header>
+  <div id="header"></div>
+</header>
+<body>
+<div class="form">
+  <div id="top">
+    <a href="mobileUserPage.html">출석</a>
+  </div>
+  <div class="form-panel one">
+    <div class="form-top">
+    </div>
+    <div class="form-header">
+      <h1>출결 확인</h1>
+    </div>
+    <div class="form-content">
+      <form method="post" action="">
+        <table class="type02">
+          <tr th:each=" att : ${attend}" onclick="HighLightTR(this)">
+            <th scope="row" th:text="${att.getWeek()} + 주차">1주차</th>
+            <td>
+              <span class="text" th:if="${#strings.isEmpty(att.getAttend())}"></span>
+              <span class="text" th:if="${att.getAttend() == 1}">O</span>
+              <span class="text" th:if="${att.getAttend() == 0}">X</span>
+            </td>
+          </tr>
+        </table>
+        <div class="form-group">
+          <button type="submit">이의 신청</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+<script>
+  let week = "";
+
+  let BColor = '#EDF2FF';
+  let cColor = '#c9cc99';
+
+  function HighLightTR(target) {
+    var tbody = target.parentNode;
+    var trs = tbody.getElementsByTagName('tr');
+    for (var i = 0; i < trs.length; i++) {
+      if (trs[i] != target) {
+        trs[i].style.backgroundColor = BColor;
+      } else {
+        trs[i].style.backgroundColor = cColor;
+      }
+    }
+    let weektext = target.children[0].innerHTML;
+    week = weektext.slice(0, weeks.length - 2);
+    console.log(week);
+  }
+
+  /*header 불러오기*/
+  $(document).ready(function(){
+    $("header").load("../Header/mobileHeader.html");
+  });
+</script>
+</html>
