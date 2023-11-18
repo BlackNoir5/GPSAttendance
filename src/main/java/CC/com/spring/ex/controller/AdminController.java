@@ -110,7 +110,7 @@ public class AdminController {
 
     @RequestMapping("/qrPage.do")
     public ModelAndView qrWrite(HttpServletRequest request, Model model) {
-        System.out.println("===== Login Checking =====");
+        System.out.println("===== Login QR Checking =====");
 
         String uid = request.getParameter("uid");
         String pw = request.getParameter("pw");
@@ -127,7 +127,8 @@ public class AdminController {
                 return mv;
             }
             System.out.println("===== Login Success =====");
-            System.out.println("===== Page Loading =====");
+            session.setAttribute("name", result.getName());
+            System.out.println("===== QR Page Loading =====");
             mv = new ModelAndView("AdminPage/adminqrPage");
         } else {
             System.out.println("===== Login Fail =====");

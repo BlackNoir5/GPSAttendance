@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="CSS/mobileHeader.css">
 </head>
-<header>
-  <div id="head">
-    <form method="post" action="">
-      <div class="head_btn">
-        <span id="name">정명식</span>
-        <span> | </span>
-        <button type="submit">Logout</button>
-      </div>
-    </form>
-  </div>
-</header>
+<body>
+<div class="head">
+  <form method="post" action="/logoutU">
+    <div class="head_btn">
+      <span id="name" th:text="${session.name}"></span>
+      <span> | </span>
+      <button type="submit">Logout</button>
+    </div>
+  </form>
+</div>
+</body>
 </html>
