@@ -20,8 +20,8 @@ body {
   transform: translate(-50%, -50%);
   background: #FFFFFF;
   width: 90%;
-  height: 600px;
-  /*height: 75vh;*/
+  /*height: 600px;*/
+  height: 75vh;
   box-sizing: border-box;
   overflow: scroll;
   border-radius: 15px;
@@ -141,33 +141,33 @@ body {
 }
 
 .form-panel {
-  padding: 60px calc(0% + 25px) 60px 25px;
+  padding: 40px calc(0% + 0px) 60px 0px;
   box-sizing: border-box;
 }
 
 .form-top {
-  /*position: absolute;*/
-  position: fixed;
+  position: relative;
   background: #397DED;
   width: 100%;
-  /*height: 6vh;*/
   height: 50px;
-  top: 7%;
-  right: 0%;
   border: none;
   border-radius: 15px 15px 0px 0px;
 }
 
 .form-header {
-  margin: 55px 0 20px;
+  margin: 35px 0 35px;
 }
 
 .form-header h1 {
-  padding: 4px 0;
+  padding-left: 25px;
   color: #4285F4;
-  font-size: 24px;
+  font-size: 25px;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.form-content {
+  padding: 0px 15px 0px 15px;
 }
 
 /* top css */
@@ -175,9 +175,8 @@ body {
   position: fixed;
   width: 100%;
   background-color: #6197F1;
-  /*height: 7vh;*/
   height: 55px;
-  padding: 16px;
+  padding: 12px;
 }
 #top a {
   color: white;
