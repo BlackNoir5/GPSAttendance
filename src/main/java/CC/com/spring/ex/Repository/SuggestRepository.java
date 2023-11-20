@@ -16,6 +16,8 @@ public interface SuggestRepository extends JpaRepository<SuggestEntity, Integer>
 
     SuggestEntity findByNum(int num);
 
+    boolean existsByProcess(int process);
+
     @Modifying
     @Transactional
     @Query("update suggest set process = ?1 where num = ?2")

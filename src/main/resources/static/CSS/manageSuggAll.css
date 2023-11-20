@@ -84,7 +84,7 @@ table.type02 {
 }
 
 table.type02 th {
-  width: 32%;
+  width: 40%;
   padding: 10px;
   border: 1px solid white;
   text-align: center;
@@ -92,7 +92,7 @@ table.type02 th {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  max-width: 100px;
+  max-width: 300px;
 }
 
 table.type02 td {
@@ -104,7 +104,7 @@ table.type02 td {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  max-width: 350px;
+  max-width: 250px;
 }
 
 table.type02 td span {

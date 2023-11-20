@@ -20,5 +20,7 @@ public class SuggestService {
 
     public SuggestEntity findByNum(int num) {return suggestRepository.findByNum(num);}
 
+    public boolean existsByProcess(int process) { return suggestRepository.existsByProcess(process);}
+
     public int updateProcess(int process, int num) {return suggestRepository.updateProcess(process, num);}
 }

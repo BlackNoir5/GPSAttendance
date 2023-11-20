@@ -11,7 +11,13 @@
   <div class="head_top">
     <form method="post" action="/logoutA">
       <div class="head_right">
-        <button type="button"><img src="/img/bell.png" alt=""></button>
+        <button type="button" th:if="${session.process == false}">
+          <img src="/img/bell.png" alt="">
+        </button>
+        <button type="button" th:if="${session.process == true}"
+                onclick="location.href='/manageSuggest'">
+          <img src="/img/bellon.png" alt="">
+        </button>
         <span id="name" th:text="${session.name}">이름</span>
         <span> | </span>
         <button type="submit" id="logout">Logout</button>

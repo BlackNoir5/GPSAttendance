@@ -67,6 +67,7 @@ public class AdminController {
         System.out.println("===== ID : " + uid + ", PW : " + pw + " =====");
 
         UserEntity result = userService.getUserById(uid);
+        boolean suggest = suggestService.existsByProcess(0);
         ModelAndView mv;
 
         if (pw.equals(result.getPw())) {
@@ -81,6 +82,7 @@ public class AdminController {
             session.setAttribute("name", result.getName());
             session.setAttribute("pw", result.getPw());
             session.setAttribute("authority", result.getAuthority());
+            session.setAttribute("process", suggest);
             model.addAttribute("Uri", "/stat");
             mv = new ModelAndView("Common/messageRedirect");
         } else {
@@ -234,6 +236,8 @@ public class AdminController {
             UserEntity user = userService.getUserById(uid);
             List<AttendEntity> attend = attendService.findByAttendEntityList(uid);
             int processResult = suggestService.updateProcess(1, num);
+            boolean suggest = suggestService.existsByProcess(0);
+            session.setAttribute("process", suggest);
             if (1 == processResult) {
                 model.addAttribute("attend", attend);
                 model.addAttribute("id", uid);
@@ -264,6 +268,8 @@ public class AdminController {
         ModelAndView mv;
 
         int result = suggestService.updateProcess(1, num);
+        boolean suggest = suggestService.existsByProcess(0);
+        session.setAttribute("process", suggest);
         if (1 == result) {
             List<AttendEntity> attend = attendService.findByAttendEntityList(uid);
             UserEntity usr = userService.getUserById(uid);
