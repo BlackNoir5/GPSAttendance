@@ -39,7 +39,9 @@
             <li th:each="num : ${#numbers.sequence(1,16)}"><a th:href="@{/stat(week=${num})}" th:text="${num + '주차'}">주차</a></li>
           </ul>
         </li>
-        <li><a th:text="${(times + 4) + '교시'}">교시</a>
+        <li>
+          <a th:if="${times == 0}">전체</a>
+          <a th:unless="${times == 0}" th:text="${(times + 4) + '교시'}">교시</a>
           <ul class="M02">
             <li><a th:href="@{/stat(week=${week}, times=1)}">5교시</a></li>
             <li><a th:href="@{/stat(week=${week}, times=2)}">6교시</a></li>

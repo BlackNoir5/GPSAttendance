@@ -6,6 +6,8 @@
         content="width=device-width, intial-scale=1, minimum-sacle=1, maximum-scale=1, user-scalable-no">
   <title>주차별 출석 확인</title>
   <link rel="stylesheet" type="text/css" href="/CSS/adminuserPage.css">
+  <script>
+  </script>
 </head>
 <header>
   <div class="head_top">
@@ -43,8 +45,8 @@
     <div class="form-content">
       <form method="post" action="/changeAttend">
         <input type="hidden" name="uid" th:value="${id}">
-        <input type="hidden" name="week">
-        <input type="hidden" name="attend">
+        <input type="hidden" id="week" name="week">
+        <input type="hidden" id="attend" name="attend">
         <!-- Table -->
         <div class="scroll">
           <table class="type02">
@@ -89,19 +91,18 @@
         trs[i].style.backgroundColor = cColor;
       }
     }
-    let weektext = target.children[0].innerHTML;
-    week = weektext.slice(0, weektext.length - 2);
+    let weekText = target.children[0].innerHTML;
+    week = weekText.slice(0, weekText.length - 2);
     atte = target.children[1].children[0].innerHTML;
-    $('input[name=week]').val(week);
-    if (atte == "O") {
-      $('input[name=attend]').val(0);
+    document.getElementById("week").value = week;
+    if (atte === "O") {
+      document.getElementById("attend").value = 0;
     } else {
-      $('input[name=attend]').val(1);
+      document.getElementById("attend").value = 1;
     }
     console.log(week);
     console.log(atte);
   }
-
   /* search js */
 
   const keyword = document.querySelector(".keyword")
@@ -119,7 +120,7 @@
     // li.selected 가 없는 경우에만 api에서 데이터를 가져옴
     if (keyword.value.length > 2 && !selectedKeyword) {
       console.log("=== API 호출 ===")
-      const list ;
+      const list ="";
 
       keywords.innerHTML = ""
 
