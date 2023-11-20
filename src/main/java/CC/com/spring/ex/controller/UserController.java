@@ -124,27 +124,41 @@ public class UserController {
 
         String text = request.getParameter("text");
         String[] arr = text.split(",");
-        String pwCheck = arr[1];
-        String week = arr[0];
-        System.out.println(text);
-        System.out.println(pwCheck);
-        System.out.println(week);
         ModelAndView mv;
-        if (QRPW.equals(pwCheck)){
-            int result = attendService.updateByUid(session.getAttribute("uid").toString(), Integer.parseInt(week), 1);
+        String pwCheck;
+        String week;
+        if(arr.length == 2){
+            pwCheck = arr[1];
+            week = arr[0];
+            System.out.println(text);
+            System.out.println(pwCheck);
+            System.out.println(week);
+        }else {
+            pwCheck = null;
+            week = null;
+        }
+        if (pwCheck != null){
+            if (QRPW.equals(pwCheck)){
+                int result = attendService.updateByUid(session.getAttribute("uid").toString(), Integer.parseInt(week), 1);
 
-            if (result == 1){
-                model.addAttribute("message", "출석 성공");
-                model.addAttribute("Uri", "/userPage");
-                mv = new ModelAndView("Common/messageRedirect");
+                if (result == 1){
+                    model.addAttribute("message", "출석 성공");
+                    model.addAttribute("Uri", "/userPage");
+                    mv = new ModelAndView("Common/messageRedirect");
+                } else {
+                    model.addAttribute("message", "출석 변경 실패");
+                    model.addAttribute("Uri", "/userPage");
+                    mv = new ModelAndView("Common/messageRedirect");
+                }
+
             } else {
-                model.addAttribute("message", "출석 변경 실패");
+                model.addAttribute("message", "출석 실패");
                 model.addAttribute("Uri", "/userPage");
                 mv = new ModelAndView("Common/messageRedirect");
             }
-            
-        } else {
-            model.addAttribute("message", "출석 실패");
+        }
+        else {
+            model.addAttribute("message", "형식오류");
             model.addAttribute("Uri", "/userPage");
             mv = new ModelAndView("Common/messageRedirect");
         }

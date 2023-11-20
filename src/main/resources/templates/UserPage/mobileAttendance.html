@@ -79,8 +79,10 @@
                 drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#FF3B58");
                 drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF3B58");
                 let text = code.data;
-                console.log(text);
-                location.href="/checkPW.do?text=" + text;
+                console.log(text + "실행");
+                if(text != ""){
+                  location.href="/checkPW.do?text=" + text;
+                }
               } else {
               }
             }
@@ -95,7 +97,7 @@
 <script>
   /*header 불러오기*/
   $(document).ready(function(){
-    $("header").load("../Header/mobileHeader.html");
+    $("header").load("/Header/mobileHeader.html");
   });
 </script>
 </html>
