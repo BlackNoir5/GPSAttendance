@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-</head>
-<header>
+<header th:fragment="header">
   <div class="head_top">
     <form method="post" action="/logoutA">
       <div class="head_right">
-        <button type="button"><img src="../img/bell.png" alt=""></button>
+        <button type="button"><img src="/img/bell.png" alt=""></button>
         <span id="name" th:text="${session.name}">이름</span>
         <span> | </span>
         <button type="submit" id="logout">Logout</button>

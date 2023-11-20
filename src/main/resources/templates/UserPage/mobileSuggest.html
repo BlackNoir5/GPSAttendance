@@ -10,17 +10,7 @@
           integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
           crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
-<header>
-  <div id="head">
-    <form method="post" action="/logoutU">
-      <div class="head_btn">
-        <span id="name" th:text="${session.name}"></span>
-        <span> | </span>
-        <button type="submit">Logout</button>
-      </div>
-    </form>
-  </div>
-</header>
+<th:block th:replace="~{Header/mobileHeader :: mobileheader}"></th:block>
 <body>
 <div class="form">
   <div class="form-panel one">
