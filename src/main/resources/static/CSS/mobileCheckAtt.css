@@ -20,15 +20,17 @@ body {
   transform: translate(-50%, -50%);
   background: #FFFFFF;
   width: 90%;
-  height: 80vh;
+  height: 70vh;
   box-sizing: border-box;
   overflow: hidden;
   border-radius: 15px;
 }
 
+/*
 .form-group:last-child {
   margin: 0;
 }
+*/
 
 .two .form-group label {
   color: #FFFFFF;
@@ -186,8 +188,29 @@ table.type02 td {
 }
 /* header css end*/
 
+/*media query*/
 @media all and (max-height: 700px){
   table.type02 {
     height: 250px;
+  }
+
+  .form {
+    height: 80vh;
+  }
+}
+
+@media all and (min-height: 701px) and (max-height: 800px){
+  table.type02 {
+    height: 330px;
+  }
+
+  .form {
+    height: 88vh;
+  }
+}
+
+@media all and (min-height: 801px){
+  table.type02 {
+    height: 300px;
   }
 }
