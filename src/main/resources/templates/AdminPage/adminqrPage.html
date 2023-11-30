@@ -29,10 +29,16 @@
   </div>
 </div>
 </body>
-<script>
+<script type="text/javascript">
   /*header 불러오기*/
   $(document).ready(function(){
     $("header").load("../Header/header.html");
   });
+
+    let selectChange = function (value) {
+        let week = value;
+        document.getElementById("QR").src = "https://192.168.0.21/qr?week="+week;
+    }
 </script>
 </html>
+
