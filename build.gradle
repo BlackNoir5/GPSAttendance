@@ -6,7 +6,7 @@ plugins {
 
 group = 'CC'
 version = '0.0.2-SNAPSHOT'
-sourceCompatibility = '1.8'
+sourceCompatibility = '11'
 
 repositories {
 	mavenCentral()
@@ -30,6 +30,9 @@ dependencies {
 	implementation group: 'commons-fileupload', name: 'commons-fileupload', version: '1.4'
 	// https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
 	implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '5.2.4'
+
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-tomcat
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '2.3.12.RELEASE'
 }
 
 tasks.named('test') {
