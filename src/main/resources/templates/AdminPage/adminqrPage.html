@@ -6,7 +6,6 @@
         content="width=device-width, intial-scale=1, minimum-sacle=1, maximum-scale=1, user-scalable-no">
   <title>QRPage</title>
   <link rel="stylesheet" type="text/css" href="/CSS/adminqrPage.css">
-  <script type="text/javascript" src="/JS/timer.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
           integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
           crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -29,12 +28,13 @@
   </div>
 </div>
 </body>
+<script type="text/javascript" src="/JS/timer.js"></script>
 <script type="text/javascript">
-  /*header 불러오기*/
+    const Timer = document.getElementById('Timer'); //스코어 기록창-초
+    /*header 불러오기*/
   $(document).ready(function(){
     $("header").load("../Header/header.html");
   });
-
     let selectChange = function (value) {
         let week = value;
         document.getElementById("QR").src = "https://192.168.0.21/qr?week="+week;
