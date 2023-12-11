@@ -38,7 +38,7 @@ public class SuggestController {
             return showMessageAndRedirect("파일이 없습니다.", "/userPage", model);
         }else {
             String fileName = file.getOriginalFilename();
-            String fileFolder = "D:\\CC\\" + uid;
+            String fileFolder = "\\" + uid;
             String fileRoot = fileFolder + "\\" + week + "주차_" + fileName;
 
             System.out.println(uid + week + suggest + fileName + fileRoot);
