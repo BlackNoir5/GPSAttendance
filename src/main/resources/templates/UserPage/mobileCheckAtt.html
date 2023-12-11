@@ -23,7 +23,7 @@
       <h1>출결 확인</h1>
     </div>
     <div class="form-content">
-      <form method="post" action="/suggestU">
+      <form enctype="multipart/form-data" method="post" action="/suggestU">
         <input type="hidden" name="week" value="">
         <table class="type02">
           <tr th:each=" att : ${attend}" onclick="HighLightTR(this)">
