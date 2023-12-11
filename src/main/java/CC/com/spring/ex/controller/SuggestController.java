@@ -38,12 +38,12 @@ public class SuggestController {
             return showMessageAndRedirect("파일이 없습니다.", "/userPage", model);
         }else {
             String fileName = file.getOriginalFilename();
-            String fileFolder = "/home/server1/CAS/build/libs" + uid;
-            String fileRoot = fileFolder + "/" + week + "주차_" + fileName;
+            String fileFolder = "/home/server1/CAS/build/libs";
+            String fileRoot = uid + "/" + week + "주차_" + fileName;
 
             System.out.println(uid + week + suggest + fileName + fileRoot);
 
-            SuggestEntity entity = new SuggestEntity(uid, week, suggest, fileRoot, 0);
+            SuggestEntity entity = new SuggestEntity(uid, week, suggest, fileFolder + "/" + fileRoot, 0);
 
             File folder = new File(uid);
             if (!folder.exists()) {
