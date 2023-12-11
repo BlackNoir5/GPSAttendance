@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, intial-scale=1.0">
+  <title>통계</title>
+  <link rel="stylesheet" type="text/css" href="/CSS/statisticsPage.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+</head>
+<body>
+<th:block th:replace="~{Header/header :: header}"></th:block>
+<div class="form">
+  <div class="form-panel one">
+    <div class="form-header">
+      <h1>통계</h1>
+    </div>
+    <div class="form-content">
+      <form method="post" action="/excel">
+        <div class="form-group_1">
+          <!-- 통계 차트 부분 -->
+          <div class="chart-div">
+            <canvas id="pieChartCanvas" width="600px" height="400px"></canvas>
+            <div id='legend-div' class="legend-div"></div>
+          </div>
+          <!-- 통게 차트 end -->
+        </div>
+        <div class="form-group">
+          <button type="submit">엑셀로 내보내기</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="menu">
+    <div id="menu2">
+      <ul class="M01">
+        <li><a th:text="${week + '주차'}">주차</a>
+          <ul class="M02">
+            <li th:each="num : ${#numbers.sequence(1,16)}"><a th:href="@{/stat(week=${num})}" th:text="${num + '주차'}">주차</a></li>
+          </ul>
+        </li>
+        <li>
+          <a th:if="${times == 0}">전체</a>
+          <a th:unless="${times == 0}" th:text="${(times + 4) + '교시'}">교시</a>
+          <ul class="M02">
+            <li><a th:href="@{/stat(week=${week}, times=1)}">5교시</a></li>
+            <li><a th:href="@{/stat(week=${week}, times=2)}">6교시</a></li>
+            <li><a th:href="@{/stat(week=${week}, times=3)}">7교시</a></li>
+            <li><a th:href="@{/stat(week=${week}, times=4)}">8교시</a></li>
+            <li><a th:href="@{/stat(week=${week}, times=5)}">9교시</a></li>
+          </ul>
+        </li>
+        <li><a href="#">MENU</a>
+          <ul class="M02">
+            <li><a href="/manageSuggest">이의신청 관리</a></li>
+            <li><a href="/manageSuggestList">이의신청 로그</a></li>
+            <li><a href="/checkAttend">학생 찾기</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+<script th:inline="javascript" type="text/javascript">
+  window.onload = function () {
+    pieChartDraw();
+    document.getElementById('legend-div').innerHTML = window.pieChart.generateLegend();
+  }
+
+  let Y = [[${attend}]];
+  let N = [[${all}]] - Y;
+
+  let pieChartData = {
+    labels: ['출석', '결석'],
+    datasets: [{
+      data: [Y, N],
+      backgroundColor: ['rgb(255, 99, 132)', 'rgb(255, 205, 86)']
+    }]
+  };
+
+  let pieChartDraw = function () {
+    let ctx = document.getElementById('pieChartCanvas').getContext('2d');
+
+    window.pieChart = new Chart(ctx, {
+      type: 'pie',
+      data: pieChartData,
+      options: {
+        responsive: false,
+        legend: {
+          display: false
+        },
+        legendCallback: customLegend
+      }
+    });
+  };
+
+  let customLegend = function (chart) {
+    let ul = document.createElement('ul');
+    let color = chart.data.datasets[0].backgroundColor;
+
+    chart.data.labels.forEach(function (label, index) {
+      ul.innerHTML += `<li><span style="background-color: ${color[index]}"></span>${label}</li>`;
+    });
+
+    return ul.outerHTML;
+  };
+</script>
+</body>
+</html>
+</html>

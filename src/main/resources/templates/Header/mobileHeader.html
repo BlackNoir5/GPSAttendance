@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<header th:fragment="mobileheader">
+  <div class="head">
+    <form method="post" action="/logoutU">
+      <div class="head_btn">
+        <span id="name" th:text="${session.name}">이름</span>
+        <span> | </span>
+        <button type="submit">Logout</button>
+      </div>
+    </form>
+  </div>
+</header>
+</html>

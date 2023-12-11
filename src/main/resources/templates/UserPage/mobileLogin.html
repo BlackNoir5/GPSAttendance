@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, intial-scale=1, minimum-sacle=1, maximum-scale=1, user-scalable-no">
+  <title>모바일 로그인</title>
+  <link rel="stylesheet" type="text/css" href="/CSS/mobileLogin.css">
+  <script type="text/javascript" src="/JS/login.js"></script>
+</head>
+<body>
+<div class="form">
+  <div class="form-panel one">
+    <div class="form-header">
+      <h1>로그인</h1>
+    </div>
+    <div class="form-content">
+      <form method="post" action="/loginCheckU">
+        <div class="form-group">
+          <label for="uid">학 번</label>
+          <input type="text" id="uid" name="uid" required="required"/>
+        </div>
+        <div class="form-group">
+          <label for="pw">비밀번호</label>
+          <input type="password" id="pw" name="pw" required="required"/>
+        </div>
+        <div class="form-group">
+          <label class="form-remember">
+            <input type="checkbox"/>다음에도 기억하기</label>
+          <a class="form-recovery" href="/mobilePW">비밀번호 찾기</a>
+        </div>
+        <div class="form-group">
+          <button type="submit">로그인</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

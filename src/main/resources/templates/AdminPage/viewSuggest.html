@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, intial-scale=1, minimum-sacle=1, maximum-scale=1, user-scalable-no">
+  <title>이의신청 관리 보기</title>
+  <link rel="stylesheet" type="text/css" href="/CSS/viewSuggest.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+          integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+<th:block th:replace="~{Header/header :: header}"></th:block>
+<div class="form">
+  <div class="form-panel one">
+    <div class="form-header">
+      <h1>이의신청 관리</h1>
+    </div>
+    <div class="form-content">
+      <form method="post" action="/attendApprove">
+        <div class="form-group_1">
+          <textarea id="username" name="username" required="required" th:text="${suggest.getSuggest}" readonly></textarea>
+        </div>
+        <!-- 파일 첨부 기능 들어가야 할 곳-->
+        <!-- 파일 첨부 못하게 클릭 막았음-->
+        <div class="file_box">
+          <input type="hidden" name="num" th:value="${num}">
+          <input type="hidden" name="uid" th:value="${suggest.getUser().getUid()}">
+          <input type="hidden" name="week" th:value="${suggest.getWeek()}">
+          <input type="hidden" id="loadFile" th:value="${suggest.getFile()}">
+          <input type="file" id="input_file" class="file_hidden">
+          <label for="input_file" value="disabled" disabled><img src="../img/file.png" alt="파일 찾기"></label>
+          <input class="upload_name" th:onclick="|location.href='@{/download(path=${suggest.getFile()})}'|" readonly/>
+        </div>
+        <!-- End -->
+        <div class="form-group">
+          <button type="submit">승인</button>
+          <button type="button" style="background-color: red"
+                  th:onclick="|location.href='@{/attendDenied(num=${num}, uid=${suggest.getUser().getUid()})}'|">거부</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+<script type="text/javascript">
+  /* 파일명 가져오기 start */
+  let file = $('#loadFile').val();
+  let fileName = file.split('\\');
+  $('.upload_name').val(fileName[3]);
+  /* 파일명 가져오기 end */
+
+  /*header 불러오기*/
+  $(document).ready(function(){
+    $("header").load("../Header/header.html");
+  });
+</script>
+</html>

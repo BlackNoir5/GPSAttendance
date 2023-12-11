@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <form id="redirectForm" th:action="${Uri}" th:method="RequestMethod.POST" style="display: none;">
+  </form>
+  <script th:inline="javascript">
+    /* <![CDATA[ */
+
+    window.onload = () => {
+      const message = [[ ${message} ]];
+      if (message) {
+        alert(message);
+      }
+
+      const form = document.getElementById('redirectForm');
+      if (form) {
+        form.submit();
+        return false;
+      }
+
+      const redirectUri = [[ ${Uri} ]];
+      location.href = redirectUri;
+    }
+
+    /* ]]> */
+  </script>
+</body>
+</html>
