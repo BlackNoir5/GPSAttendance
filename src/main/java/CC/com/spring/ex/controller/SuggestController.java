@@ -23,7 +23,7 @@ public class SuggestController {
     private String showMessageAndRedirect(String message, String Uri, Model model) {
         model.addAttribute("message", message);
         model.addAttribute("Uri", Uri);
-        return "common/messageRedirect";
+        return "Common/messageRedirect";
     }
 
     @RequestMapping("/suggest")
@@ -38,14 +38,14 @@ public class SuggestController {
             return showMessageAndRedirect("파일이 없습니다.", "/userPage", model);
         }else {
             String fileName = file.getOriginalFilename();
-            String fileFolder = "\\" + uid;
-            String fileRoot = fileFolder + "\\" + week + "주차_" + fileName;
+            String fileFolder = "/home/server1/CAS/build/libs" + uid;
+            String fileRoot = fileFolder + "/" + week + "주차_" + fileName;
 
             System.out.println(uid + week + suggest + fileName + fileRoot);
 
             SuggestEntity entity = new SuggestEntity(uid, week, suggest, fileRoot, 0);
 
-            File folder = new File(fileFolder);
+            File folder = new File(uid);
             if (!folder.exists()) {
                 try{
                     folder.mkdirs();
@@ -54,7 +54,7 @@ public class SuggestController {
                     e.getStackTrace();
                 }
             }
-            Path path = Paths.get(fileRoot).toAbsolutePath();
+            Path path = Paths.get(fileRoot);
             try{
                 file.transferTo(path.toFile());
                 SuggestEntity result = suggestService.save(entity);
