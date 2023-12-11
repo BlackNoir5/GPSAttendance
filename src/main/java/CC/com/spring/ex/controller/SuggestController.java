@@ -54,9 +54,9 @@ public class SuggestController {
                     e.getStackTrace();
                 }
             }
-            Path path = Paths.get(fileRoot);
+            File path = new File(fileFolder + "/" +fileRoot);
             try{
-                file.transferTo(path.toFile());
+                file.transferTo(path);
                 SuggestEntity result = suggestService.save(entity);
                 if(null != result){
                     return  showMessageAndRedirect("신청했습니다.", "/userPage", model);
