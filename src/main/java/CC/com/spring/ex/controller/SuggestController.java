@@ -38,8 +38,8 @@ public class SuggestController {
             return showMessageAndRedirect("파일이 없습니다.", "/userPage", model);
         }else {
             String fileName = file.getOriginalFilename();
-            String fileFolder = "/home/server1/CAS/build/libs/" + uid + "/" + week;
-            String fileRoot = "주차_" + fileName;
+            String fileFolder = "/home/server1/CAS/build/libs/" + uid + "/";
+            String fileRoot = week + "주차_" + fileName;
 
             System.out.println(uid + week + suggest + fileName + fileRoot);
 
