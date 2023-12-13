@@ -54,7 +54,7 @@ public class SuggestController {
                     e.getStackTrace();
                 }
             }
-            File path = new File(fileFolder + fileRoot);
+            File path = new File(fileRoot);
             try{
                 file.transferTo(path);
                 SuggestEntity result = suggestService.save(entity);
